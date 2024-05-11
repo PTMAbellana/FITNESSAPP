@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".RegisterView">
+
+    <EditText
+        android:id="@+id/tfName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/tfEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tfName"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/tfUsername"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tfEmail"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/pfPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tfUsername"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pfPassword"
+        android:layout_marginTop="0dp"
+        android:text="Sign Up" />
+
+</RelativeLayout>
