@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -54,6 +55,8 @@ public class LoginView extends AppCompatActivity {
         protected void onPostExecute(Boolean result) {
             if (result) {
                 // Navigate to the next screen
+                Intent intent = new Intent(LoginView.this, HomeView.class);
+                startActivity(intent);
                 Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
             } else {
                 // Show error message

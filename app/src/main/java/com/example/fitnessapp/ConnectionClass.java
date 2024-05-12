@@ -26,4 +26,6 @@ public class ConnectionClass {
         }
         return conn;
     }
+
+    //GRANT ALL PRIVILEGES ON *.* TO 'paul'@'DESKTOP-VSREQPO' IDENTIFIED BY 'abellana';
 }
