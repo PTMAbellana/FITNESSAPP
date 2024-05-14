@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FITNESSAPP</string>
+    <string name="hellostart">Hello,\nwelcome to the journey \nto your dream body </string>
+    <string name="hellostart2">Here comes a few simple questions \nbefore we can personalize your daily goal \nand schedule</string>
+
+
 </resources>
