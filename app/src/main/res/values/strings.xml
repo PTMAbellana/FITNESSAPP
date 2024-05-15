@@ -2,6 +2,8 @@
     <string name="app_name">FITNESSAPP</string>
     <string name="hellostart">Hello,\nwelcome to the journey \nto your dream body </string>
     <string name="hellostart2">Here comes a few simple questions \nbefore we can personalize your daily goal \nand schedule</string>
+    <string name="tvWelcome">Welcome</string>
+    <string name="tvWelcome2">Welcome back! We\'re glad to see you again. Log in to continue enjoying our services</string>
 
 
 </resources>

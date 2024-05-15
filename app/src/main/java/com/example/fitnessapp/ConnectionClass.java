@@ -8,7 +8,9 @@ import java.sql.SQLException;
 
 public class ConnectionClass {
     protected static String db = "fitnessdb";
-    protected static String ip = "192.168.43.238";
+    protected static String ip = "192.168.1.7"; //paul connection
+//    protected static String ip = "192.168.11.90"; //ka chavez hotspot
+//    protected static String ip = "192.168.97.90"; //ka nina hotspot
 
     protected static String port = "3306";
     protected static String username = "paul";

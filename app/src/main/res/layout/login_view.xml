@@ -4,83 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#151924">
+    android:background="#232323">
 
-    <TextView
-        android:id="@+id/lblcheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="205dp"
-        android:layout_marginTop="488dp"
-        android:layout_marginEnd="206dp"
-        android:text=""
-        android:textColor="#E63333"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:text="Back"
+        android:onClick="onBackClicked"
+        android:textColor="#E2F163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/tfUsername"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="229dp"
-        android:layout_marginBottom="31dp"
-        android:hint="Username"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/pfPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
-
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="127dp"
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="142dp"
-        android:text="Sign In"
+        android:layout_marginTop="28dp"
+        android:text="Log In"
+        android:textColor="#E2F163"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="105dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="@string/tvWelcome"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome2"
+        android:layout_width="333dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:text="@string/tvWelcome2"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="410dp"
+        android:layout_height="575dp"
+        android:background="@drawable/layout_radius"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome2"
+        app:layout_constraintVertical_bias="1.0">
 
-    <EditText
-        android:id="@+id/pfPassword"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="17dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingTop="15dp"
+            android:text="Username"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="347dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="181dp"
-        app:layout_constraintBottom_toTopOf="@+id/tfUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fitmate" />
+        <EditText
+            android:id="@+id/tfUsername"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Username"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Password"
+            android:textColor="#020202"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/pfPassword"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:text=""
+            android:textColor="#E63333"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="178dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Sign In"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

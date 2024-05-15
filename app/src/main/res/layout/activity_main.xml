@@ -4,125 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#151924"
-    tools:context=".MainActivity">
+    android:background="@drawable/bg1"
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="111dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginEnd="235dp"
-        android:src="@tools:sample/avatars"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305"/>
+    tools:context=".MainActivity">
+<!--151924-->
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView4"-->
+<!--        android:layout_width="111dp"-->
+<!--        android:layout_height="103dp"-->
+<!--        android:layout_marginStart="65dp"-->
+<!--        android:layout_marginEnd="235dp"-->
+<!--        android:src="@tools:sample/avatars"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.305"/>-->
 <!--        app:srcCompat="@drawable/splashimg" />-->
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="552dp"
+        android:layout_height="939dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
-
-    <Button
-        android:id="@+id/display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginEnd="158dp"
-        android:onClick="btnClick"
-        android:text="DISPLAY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
+        app:srcCompat="@drawable/overlay" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
         android:onClick="onLoginClicked"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
         android:onClick="onRegisterClicked"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="186dp"
-        android:layout_height="70dp"
+        android:layout_width="308dp"
+        android:layout_height="143dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
+        app:layout_constraintVertical_bias="0.248"
         app:srcCompat="@drawable/fitmate" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="279dp"
-        android:layout_height="89dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="76dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/hellostart"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.429" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="281dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="76dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/hellostart2"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.569" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
