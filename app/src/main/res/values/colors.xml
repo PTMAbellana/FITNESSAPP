@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btnColorSignUp">#FFFFFFFF</color>
+
+    <!-- Added the Main Color Scheme -->
+    <color name="colorBlack">#232323</color>
+    <color name="colorYellow">#E2F163</color>
+    <color name="colorPurple">#B3A0FF</color>
 </resources>

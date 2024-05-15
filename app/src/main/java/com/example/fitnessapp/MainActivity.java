@@ -7,47 +7,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-    ConnectionClass connectionClass;
-    Connection con;
-    ResultSet rs;
-    String name, str;
+    private ConnectionClass connectionClass;
+    private String name, str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         connectionClass = new ConnectionClass();
         connect();
-    }
+    }   
 
-    public void connect() {
+    private void connect() {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
-            try {
-                con = connectionClass.CONN();
+            try (Connection con = connectionClass.getConnection()) {
                 if (con == null) {
-                    str = "Error in connection with MYSQL server";
+                    str = "Error in connection with MySQL server";
                 } else {
-                    str = "Connected with MYSQL server";
-
+                    str = "Connected with MySQL server";
+                    CreateTable.createTables();
                 }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (SQLException e) {
+                str = "Error in connection: " + e.getMessage();
             }
             runOnUiThread(() -> {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
             });
         });
@@ -56,36 +50,35 @@ public class MainActivity extends AppCompatActivity {
 //    public void btnClick(View view) {
 //        ExecutorService executorService = Executors.newSingleThreadExecutor();
 //        executorService.execute(() -> {
-//            try {
-//                con = connectionClass.CONN();
-//                System.out.println("Connection successful!"); // Debug print
-//                String query = "SELECT * FROM users"; // Update table name if necessary
-//                PreparedStatement stmt = con.prepareStatement(query);
-//                ResultSet rs = stmt.executeQuery();
-//                StringBuilder bStr = new StringBuilder("Userlist! \n");
-//                while (rs.next()) {
-//                    bStr.append("Username: ").append(rs.getString("username")).append("\n");
+//            StringBuilder bStr = new StringBuilder("Userlist! \n");
+//            try (Connection con = connectionClass.getConnection()) {
+//                if (con != null) {
+//                    String query = "SELECT * FROM tblUsers"; // Ensure this table name is correct
+//                    PreparedStatement stmt = con.prepareStatement(query);
+//                    ResultSet rs = stmt.executeQuery();
+//                    while (rs.next()) {
+//                        bStr.append("Username: ").append(rs.getString("username")).append("\n");
+//                    }
+//                } else {
+//                    bStr.append("Failed to connect to the database.");
 //                }
-//                name = bStr.toString();
 //            } catch (SQLException e) {
-//                throw new RuntimeException(e);
+//                bStr.append("Error: ").append(e.getMessage());
 //            }
 //
+//            String userList = bStr.toString();
 //            runOnUiThread(() -> {
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
 //                TextView txtlist = findViewById(R.id.textview);
-//                txtlist.setText(name);
+//                txtlist.setText(userList);
 //            });
 //        });
 //    }
+
     public void onRegisterClicked(View view) {
         Intent intent = new Intent(this, RegisterView.class);
         startActivity(intent);
     }
+
     public void onLoginClicked(View view) {
         Intent intent = new Intent(this, LoginView.class);
         startActivity(intent);

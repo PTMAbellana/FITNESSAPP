@@ -31,14 +31,14 @@ public class InsertData {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            Connection c = ConnectionClass.CONN();
+            Connection c = ConnectionClass.getConnection();
             if (c == null) {
                 return false; // Failed to connect to the database
             }
 
             try {
                 PreparedStatement statement = c.prepareStatement(
-                        "INSERT INTO users (name, email, username, password) VALUES (?,?,?,?)"
+                        "INSERT INTO tblUsers (name, email, username, password) VALUES (?,?,?,?)"
                 );
                 statement.setString(1, name);
                 statement.setString(2, email);

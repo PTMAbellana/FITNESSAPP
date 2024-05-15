@@ -5,5 +5,11 @@
     <string name="tvWelcome">Welcome</string>
     <string name="tvWelcome2">Welcome back! We\'re glad to see you again. Log in to continue enjoying our services</string>
 
+    <!-- Launch Activity Strings -->
+    <string name="logo_1">Logo 1</string>
+
+    <!-- On Boarding Strings -->
+    <string name="on_boarding_1_background">On Boarding 1 Background</string>
+
 
 </resources>
