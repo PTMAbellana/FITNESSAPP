@@ -7,28 +7,32 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionClass {
-    protected static String db = "fitnessdb";
-    protected static String ip = "192.168.1.7"; //paul connection
-//    protected static String ip = "192.168.11.90"; //ka chavez hotspot
-//    protected static String ip = "192.168.97.90"; //ka nina hotspot
+    private static final String TAG = "ConnectionClass";
+    private static final String DATABASE = "fitnessdb";
+//    private static final String IP = "192.168.43.238";
+//    private static final String IP = "192.168.1.3";
+    private static final String IP = "10.0.2.2";
+    private static final String PORT = "3306";
+//    private static final String USERNAME = "paul";
+    private static final String USERNAME = "francis";
+//    private static final String PASSWORD = "abellana";
 
-    protected static String port = "3306";
-    protected static String username = "paul";
-    protected static String password = "abellana";
+    private static final String PASSWORD = "chavez";
 
-    public static Connection CONN() {
+    public static Connection getConnection() {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionString = "jdbc:mysql://" + ip + ":" + port + "/" + db;
-            conn = DriverManager.getConnection(connectionString, username, password);
+            String connectionString = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE;
+            conn = DriverManager.getConnection(connectionString, USERNAME, PASSWORD);
+            Log.d(TAG, "Connection successful");
         } catch (ClassNotFoundException e) {
-            Log.e("ERROR", "MySQL JDBC Driver not found", e);
+            e.printStackTrace();
+            Log.e(TAG, "MySQL JDBC Driver not found", e);
         } catch (SQLException e) {
-            Log.e("ERROR", "Failed to connect to MySQL server", e);
+            e.printStackTrace();
+            Log.e(TAG, "Failed to connect to MySQL server", e);
         }
         return conn;
     }
-
-    //GRANT ALL PRIVILEGES ON *.* TO 'paul'@'DESKTOP-VSREQPO' IDENTIFIED BY 'abellana';
 }
