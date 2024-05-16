@@ -7,17 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.registering.Registering1Activity;
 
-public class OnBoarding2Activity extends AppCompatActivity {
+public class OnBoarding4Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_boarding2);
+        setContentView(R.layout.activity_on_boarding4);
     }
 
-    public void onNextClicked(View view) {
-        Intent intent = new Intent(this, OnBoarding3Activity.class);
+    public void onCreateAccountClicked(View view) {
+        Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
     }
 }

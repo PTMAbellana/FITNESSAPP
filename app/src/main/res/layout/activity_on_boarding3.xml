@@ -8,26 +8,26 @@
     tools:context=".onboarding.OnBoarding1Activity">
 
     <ImageView
-        android:id="@+id/ivBackground1"
+        android:id="@+id/ivBackground3"
         android:layout_width="522dp"
         android:layout_height="967dp"
-        android:contentDescription="@string/on_boarding_background_2"
+        android:contentDescription="@string/on_boarding_background_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/background1" />
+        app:srcCompat="@drawable/background3" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/ivBackground1"
-        app:layout_constraintEnd_toEndOf="@id/ivBackground1"
-        app:layout_constraintStart_toStartOf="@id/ivBackground1"
-        app:layout_constraintTop_toTopOf="@id/ivBackground1">
+        app:layout_constraintBottom_toBottomOf="@id/ivBackground3"
+        app:layout_constraintEnd_toEndOf="@id/ivBackground3"
+        app:layout_constraintStart_toStartOf="@id/ivBackground3"
+        app:layout_constraintTop_toTopOf="@id/ivBackground3">
 
         <View
             android:layout_width="wrap_content"
@@ -49,13 +49,13 @@
 
 
         <ImageView
-            android:id="@+id/ivlogorun1"
+            android:id="@+id/ivlogoapple1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:contentDescription="Logo Run 1"
-            app:srcCompat="@drawable/logorun1" />
+            app:srcCompat="@drawable/logoapple1" />
 
         <TextView
             android:id="@+id/tvMsg1"
@@ -64,7 +64,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="Start Your Journey Towards A More Active Lifestyle"
+            android:text="Find Nutrition Tips That Fit Your Lifestyle"
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
 
@@ -76,7 +76,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:max="2"
-            android:progress="0"
+            android:progress="1"
             android:progressTint="@color/colorWhite"
             android:thumbTint="@color/colorWhite" />
 

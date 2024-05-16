@@ -8,16 +8,16 @@ import android.view.View;
 
 import com.example.fitnessapp.R;
 
-public class OnBoarding2Activity extends AppCompatActivity {
+public class OnBoarding3Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_boarding2);
+        setContentView(R.layout.activity_on_boarding3);
     }
 
     public void onNextClicked(View view) {
-        Intent intent = new Intent(this, OnBoarding3Activity.class);
+        Intent intent = new Intent(this, OnBoarding4Activity.class);
         startActivity(intent);
     }
 }

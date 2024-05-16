@@ -8,7 +8,7 @@
     tools:context=".onboarding.OnBoarding1Activity">
 
     <ImageView
-        android:id="@+id/ivBackground1"
+        android:id="@+id/ivBackground2"
         android:layout_width="522dp"
         android:layout_height="967dp"
         android:contentDescription="@string/on_boarding_1_background"
@@ -18,16 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/background1" />
+        app:srcCompat="@drawable/background2" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/ivBackground1"
-        app:layout_constraintEnd_toEndOf="@id/ivBackground1"
-        app:layout_constraintStart_toStartOf="@id/ivBackground1"
-        app:layout_constraintTop_toTopOf="@id/ivBackground1">
+        app:layout_constraintBottom_toBottomOf="@id/ivBackground2"
+        app:layout_constraintEnd_toEndOf="@id/ivBackground2"
+        app:layout_constraintStart_toStartOf="@id/ivBackground2"
+        app:layout_constraintTop_toTopOf="@id/ivBackground2">
 
         <View
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
         app:srcCompat="@drawable/logo2" />
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
