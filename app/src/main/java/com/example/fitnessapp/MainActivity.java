@@ -20,29 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        connectionClass = new ConnectionClass();
-        connect();
     }   
 
-    private void connect() {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(() -> {
-            try (Connection con = connectionClass.getConnection()) {
-                if (con == null) {
-                    str = "Error in connection with MySQL server";
-                } else {
-                    str = "Connected with MySQL server";
-                    CreateTable.createTblUsers();
-                }
-            } catch (SQLException e) {
-                str = "Error in connection: " + e.getMessage();
-            }
-            runOnUiThread(() -> {
-                Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-            });
-        });
-    }
 
 //    public void btnClick(View view) {
 //        ExecutorService executorService = Executors.newSingleThreadExecutor();

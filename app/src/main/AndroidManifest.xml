@@ -15,9 +15,6 @@
         android:theme="@style/Theme.FITNESSAPP"
         tools:targetApi="31">
         <activity
-            android:name=".onboarding.OnBoarding1Activity"
-            android:exported="false" />
-        <activity
             android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
@@ -27,13 +24,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".splashscreen.SplashScreen3Activity"
+            android:name=".onboarding.OnBoarding1Activity"
             android:exported="false" />
         <activity
-            android:name=".splashscreen.SplashScreen2Activity"
+            android:name=".onboarding.OnBoarding2Activity"
             android:exported="false" />
         <activity
-            android:name=".onboarding.SplashScreen1Activity"
+            android:name=".registering.Registering1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".registering.Registering2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".registering.Registering3Activity"
             android:exported="false" />
         <activity
             android:name=".HomeView"

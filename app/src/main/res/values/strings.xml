@@ -9,7 +9,7 @@
     <string name="has_account">Already have an account? </string>
     <string name="login">Log in</string>
 
-<!--    register-->
+    <!-- register -->
     <string name="gender_label">Gender</string>
     <string name="gender_m">Male</string>
     <string name="gender_f">Female</string>
@@ -21,6 +21,8 @@
     <string name="on_boarding_1_background">On Boarding 1 Background</string>
     <string name="get_started">GET STARTED</string>
     <string name="have_account">I ALREADY HAVE AN ACCOUNT</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="logo_2">Logo 2</string>
 
 
 </resources>

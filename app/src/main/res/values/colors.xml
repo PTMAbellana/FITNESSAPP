@@ -6,6 +6,8 @@
 
     <!-- Added the Main Color Scheme -->
     <color name="colorBlack">#232323</color>
-    <color name="colorYellow">#E2F163</color>
+    <color name="colorBlack25">#40232323</color>
     <color name="colorPurple">#B3A0FF</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorYellow">#E2F163</color>
 </resources>

@@ -17,12 +17,13 @@ public class OnBoarding1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_on_boarding1);
     }
 
-    public void onLoginClicked(View view) {
-        Intent intent = new Intent(this, LoginView.class);
+    public void onGetStartedClicked(View view) {
+        Intent intent = new Intent(this, OnBoarding2Activity.class);
         startActivity(intent);
     }
-    public void onGetStartedClicked(View view) {
-        Intent intent = new Intent(this, SplashScreen1Activity.class);
+
+    public void onLoginClicked(View view) {
+        Intent intent = new Intent(this, LoginView.class);
         startActivity(intent);
     }
 }
