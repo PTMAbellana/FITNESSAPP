@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ConnectionClass connectionClass;
     private String name, str;
 
-    @Override
+    @Override   
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     str = "Error in connection with MySQL server";
                 } else {
                     str = "Connected with MySQL server";
-                    CreateTable.createTables();
+                    CreateTable.createTblUsers();
                 }
             } catch (SQLException e) {
                 str = "Error in connection: " + e.getMessage();
