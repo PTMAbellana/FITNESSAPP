@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterView extends AppCompatActivity {
     EditText tfName, tfEmail, tfUsername, pfPassword;
+    RadioButton rbMale, rbFemale;
     Button btnSignUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class RegisterView extends AppCompatActivity {
         tfEmail = findViewById(R.id.tfEmail);
         tfUsername = findViewById(R.id.tfUsername);
         pfPassword = findViewById(R.id.pfPassword);
+        rbMale = findViewById(R.id.g_Male);
+        rbFemale = findViewById(R.id.g_Female);
         btnSignUp = findViewById(R.id.btnSignUp);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +41,15 @@ public class RegisterView extends AppCompatActivity {
         String username = tfUsername.getText().toString();
         String email = tfEmail.getText().toString();
         String password = pfPassword.getText().toString();
+        String gender;
+
+        if (rbMale.isChecked()) gender = "Male";
+        else if (rbFemale.isChecked()) gender = "Female";
+        else gender = "Genderless";
+
         try {
-            InsertData.insertData(RegisterView.this,name, email, username, password);
+//            InsertData.insertData(RegisterView.this,name, email, username, password);
+            InsertData.insertData(RegisterView.this,name, email, username, password, gender);
             Intent intent = new Intent(RegisterView.this, HomeView.class);
             startActivity(intent);
             Toast.makeText(RegisterView.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
@@ -87,5 +98,6 @@ public class RegisterView extends AppCompatActivity {
     public void onLoginClicked(View view) {
         Intent intent = new Intent(this, LoginView.class);
         startActivity(intent);
+        finish();
     }
 }

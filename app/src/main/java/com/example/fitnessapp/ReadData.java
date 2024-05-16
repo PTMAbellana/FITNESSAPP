@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ReadData {
     public static boolean readData(String username, String password) {
-        try (Connection c = ConnectionClass.CONN();) {
+        try (Connection c = ConnectionClass.getConnection();) {
             Statement statement = c.createStatement();
             String query = "SELECT * FROM tblUsers";
             ResultSet res = statement.executeQuery(query); //FOR READING
@@ -26,7 +26,7 @@ public class ReadData {
     }
 
     public static int readData(String username) {
-        try (Connection c = ConnectionClass.CONN();) {
+        try (Connection c = ConnectionClass.getConnection();) {
             Statement statement = c.createStatement();
             String query = "SELECT * FROM tblUsers";
             ResultSet res = statement.executeQuery(query);

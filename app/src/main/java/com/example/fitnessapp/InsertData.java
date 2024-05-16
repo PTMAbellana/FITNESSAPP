@@ -10,8 +10,8 @@ import java.sql.SQLException;
 
 public class InsertData {
 
-    public static void insertData(Context context, String name, String email, String username, String password) {
-        new InsertDataTask(context, name, email, username, password).execute();
+    public static void insertData(Context context, String name, String email, String username, String password, String gender) {
+        new InsertDataTask(context, name, email, username, password, gender).execute();
     }
 
     private static class InsertDataTask extends AsyncTask<Void, Void, Boolean> {
@@ -20,30 +20,37 @@ public class InsertData {
         private final String email;
         private final String username;
         private final String password;
+        private final String gender;
 
-        public InsertDataTask(Context context, String name, String email, String username, String password) {
+        public InsertDataTask(Context context, String name, String email, String username, String password, String gender) {
             this.context = context;
             this.name = name;
             this.email = email;
             this.username = username;
             this.password = password;
+            this.gender = gender;
         }
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            Connection c = ConnectionClass.CONN();
+            Connection c = ConnectionClass.getConnection();
             if (c == null) {
                 return false; // Failed to connect to the database
             }
 
+            if (!CreateTable.usersTable()){
+                CreateTable.createTblUsers();
+            }
+
             try {
                 PreparedStatement statement = c.prepareStatement(
-                        "INSERT INTO tblUsers (name, email, username, password) VALUES (?,?,?,?)"
+                        "INSERT INTO tblUsers (name, email, username, password, gender) VALUES (?,?,?,?,?)"
                 );
                 statement.setString(1, name);
                 statement.setString(2, email);
                 statement.setString(3, username);
                 statement.setString(4, password);
+                statement.setString(5, gender);
                 int rowsInserted = statement.executeUpdate();
                 System.out.println("Rows Inserted: " + rowsInserted);
 

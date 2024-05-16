@@ -53,26 +53,26 @@
         android:id="@+id/tvWelcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
         android:text="Please fill in the details below to get started."
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        app:layout_constraintVertical_bias="0.7" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="624dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="690dp"
         android:background="@drawable/layout_radius"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="60dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,6 +169,42 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/lblGender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/gender_label"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_Gender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/g_Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/gender_m"
+                android:textColorLink="@color/colorYellow" />
+
+            <RadioButton
+                android:id="@+id/g_Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/gender_f"
+                android:textColorLink="@color/colorYellow" />
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/lblcheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -184,7 +220,6 @@
             android:layout_width="178dp"
             android:layout_height="48dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Sign Up"
             android:textSize="16dp" />
