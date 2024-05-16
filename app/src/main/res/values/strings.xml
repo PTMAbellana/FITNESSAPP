@@ -1,15 +1,21 @@
 <resources>
-    <string name="app_name">FITNESSAPP</string>
+    <string name="app_name">FITMATE</string>
     <string name="hellostart">Hello,\nwelcome to the journey \nto your dream body </string>
     <string name="hellostart2">Here comes a few simple questions \nbefore we can personalize your daily goal \nand schedule</string>
     <string name="tvWelcome">Welcome</string>
     <string name="tvWelcome2">Welcome back! We\'re glad to see you again. Log in to continue enjoying our services</string>
-
+    <string name="no_account">Don\'t have an account? </string>
+    <string name="register">Register</string>
+    <string name="has_account">Already have an account? </string>
+    <string name="login">Log in</string>
     <!-- Launch Activity Strings -->
     <string name="logo_1">Logo 1</string>
 
     <!-- On Boarding Strings -->
     <string name="on_boarding_1_background">On Boarding 1 Background</string>
+
+    <string name="get_started">GET STARTED</string>
+    <string name="have_account">I ALREADY HAVE AN ACCOUNT</string>
 
 
 </resources>

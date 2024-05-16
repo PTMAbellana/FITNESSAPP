@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ConnectionClass connectionClass;
     private String name, str;
 
-    @Override
+    @Override   
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private void connect() {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
-            try (Connection con = connectionClass.getConnection()) {
+            try (Connection con = connectionClass.CONN()) {
                 if (con == null) {
                     str = "Error in connection with MySQL server";
                 } else {

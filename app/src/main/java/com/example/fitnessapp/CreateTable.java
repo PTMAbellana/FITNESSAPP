@@ -19,7 +19,7 @@ public class CreateTable {
                 "weight FLOAT(10) NOT NULL DEFAULT 0)";
 
         try {
-            conn = ConnectionClass.getConnection();
+            conn = ConnectionClass.CONN();
             if (conn != null) {
                 stmt = conn.createStatement();
                 stmt.execute(query);

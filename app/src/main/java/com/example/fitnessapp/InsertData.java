@@ -31,7 +31,7 @@ public class InsertData {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            Connection c = ConnectionClass.getConnection();
+            Connection c = ConnectionClass.CONN();
             if (c == null) {
                 return false; // Failed to connect to the database
             }

@@ -65,7 +65,12 @@ public class LoginView extends AppCompatActivity {
         }
     }
     public void onBackClicked(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+        finish();
+    }
+    public void onRegisterClicked(View view) {
+        Intent intent = new Intent(this, RegisterView.class);
         startActivity(intent);
     }
 }
