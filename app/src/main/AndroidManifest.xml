@@ -33,7 +33,7 @@
             android:name=".splashscreen.SplashScreen2Activity"
             android:exported="false" />
         <activity
-            android:name=".splashscreen.SplashScreen1Activity"
+            android:name=".onboarding.SplashScreen1Activity"
             android:exported="false" />
         <activity
             android:name=".HomeView"
