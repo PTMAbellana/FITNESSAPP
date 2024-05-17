@@ -1,11 +1,13 @@
 package com.example.fitnessapp.registering;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,10 +16,12 @@ import com.example.fitnessapp.HomeView;
 import com.example.fitnessapp.InsertData;
 import com.example.fitnessapp.LoginView;
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.ReadData;
 
 public class Registering1Activity extends AppCompatActivity {
     EditText tfName, tfEmail, tfUsername, pfPassword;
     RadioButton rbMale, rbFemale;
+    TextView lblCheck;
     Button btnSignUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class Registering1Activity extends AppCompatActivity {
         rbMale = findViewById(R.id.g_Male);
         rbFemale = findViewById(R.id.g_Female);
         btnSignUp = findViewById(R.id.btnSignUp);
+        lblCheck = findViewById(R.id.lblcheck);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,18 +55,38 @@ public class Registering1Activity extends AppCompatActivity {
         if (rbMale.isChecked()) gender = "Male";
         else if (rbFemale.isChecked()) gender = "Female";
         else gender = "Genderless";
+        new SignUpTask().execute(name, username, email, password, gender);
+    }
 
-        try {
-//            InsertData.insertData(RegisterView.this,name, email, username, password);
-            InsertData.insertData(Registering1Activity.this,name, email, username, password, gender);
-            Intent intent = new Intent(Registering1Activity.this, HomeView.class);
-            startActivity(intent);
-            Toast.makeText(Registering1Activity.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(Registering1Activity.this, "Database Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+    private class SignUpTask extends AsyncTask<String, Void, Boolean>{
+        @Override
+        protected Boolean doInBackground(String... params) {
+            String name = params[0];
+            String username = params[1];
+            String email = params[2];
+            String password = params[3];
+            String gender = params[4];
+            if( ReadData.usernameExist(username)) return false;
+            else {
+                InsertData.insertData(Registering1Activity.this,name, email, username, password, gender);
+                return true;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                // Navigate to the next screen
+                Intent intent = new Intent(Registering1Activity.this, HomeView.class);
+                startActivity(intent);
+                Toast.makeText(Registering1Activity.this, "Register Successfull", Toast.LENGTH_SHORT).show();
+            } else {
+                // Show error message
+                lblCheck.setText("Username already exist");
+            }
         }
     }
+
 //    private void signUp() {
 //        String name = tfName.getText().toString();
 //        String username = tfUsername.getText().toString();

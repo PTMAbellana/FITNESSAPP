@@ -218,7 +218,7 @@
         android:background="#00E2F163"
         android:fontFamily="@font/poppins_semibold"
         android:onClick="onBackClicked"
-        android:text="< My Profile"
+        android:text="My Profile"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
