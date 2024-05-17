@@ -24,6 +24,9 @@
             android:name=".onboarding.OnBoarding3Activity"
             android:exported="false" />
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
