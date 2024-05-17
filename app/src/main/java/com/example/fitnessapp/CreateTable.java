@@ -27,8 +27,12 @@ public class CreateTable {
                 "username VARCHAR(50) NOT NULL," +
                 "password VARCHAR(50) NOT NULL," +
                 "gender VARCHAR(50) NOT NULL DEFAULT 'Male'," +
+                "plan VARCHAR(50) NOT NULL DEFAULT 'Beginner'," +
+                "num_pushups INT(10) NOT NULL DEFAULT '0'," +
+                "num_plank INT(10) NOT NULL DEFAULT '0'," +
                 "height FLOAT(10) NOT NULL DEFAULT 0," +
-                "weight FLOAT(10) NOT NULL DEFAULT 0)";
+                "weight FLOAT(10) NOT NULL DEFAULT 0," +
+                "reminder TIME)";
 
         try {
             conn = ConnectionClass.getConnection();

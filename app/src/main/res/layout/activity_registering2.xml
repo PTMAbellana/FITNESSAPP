@@ -7,134 +7,77 @@
     android:background="#232323"
     tools:context=".registering.Registering2Activity">
 
-    <SeekBar
-        android:id="@+id/seekBar2"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="203dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:max="10"
-        android:progress="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/register"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Choose your plan"
-        android:textColor="#FEFEFE"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="170dp" />
+        android:onClick="onRegisterClicked"
+        android:text="No"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892" />
 
-    <FrameLayout
-        android:id="@+id/btnBeginner"
-        android:layout_width="300dp"
+    <Button
+        android:id="@+id/login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="onLoginClicked"
+        android:text="Yes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="429dp"
+        android:layout_height="487dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splashimg2" />
+
+    <TextView
+        android:id="@+id/tvWelcome3"
+        android:layout_width="413dp"
         android:layout_height="100dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="329dp">
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="71dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Do you have an \n account?"
+        android:textAlignment="center"
+        android:textColor="#E2F163"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-        <TextView
-            android:id="@+id/plan1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Beginner" />
-
-        <TextView
-            android:id="@+id/duration1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="5-10 min a day" />
-
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|fill_horizontal"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/btnIntermediate"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="454dp">
-
-        <TextView
-            android:id="@+id/plan2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Intermediate" />
-
-        <TextView
-            android:id="@+id/duration2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="10-20 min a day" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|fill_horizontal"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/btnAdvanced"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="577dp">
-
-        <TextView
-            android:id="@+id/plan3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Advanced" />
-
-        <TextView
-            android:id="@+id/duration3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="15-30 min a day" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|fill_horizontal"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    </FrameLayout>
+    <TextView
+        android:id="@+id/tvWelcome4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="58dp"
+        android:fontFamily="@font/poppins_light"
+        android:text="Hello there! Glad to see you're on your way to a \n healthier life!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

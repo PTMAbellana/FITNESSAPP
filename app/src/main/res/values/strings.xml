@@ -26,6 +26,15 @@
     <string name="on_boarding_background_2">On Boarding Background 2</string>
     <string name="on_boarding_background_3">On Boarding Background 3</string>
     <string name="on_boarding_background_4">On Boarding Background 4</string>
+    <string name="logo_run_1">Logo Run 1</string>
+    <string name="msg1">Start Your Journey Towards A More Active Lifestyle</string>
+    <string name="skip">Skip</string>
+    <string name="next">NEXT</string>
+    <string name="msg2">Find Nutrition Tips That Fit Your Lifestyle</string>
+    <string name="msg3">Start Your Journey Towards A More Active Lifestyle</string>
+    <string name="logo_apple_1">Logo Apple 1</string>
+    <string name="logo_community_1">Logo Community 1</string>
+    <string name="create_account">Create Account</string>
 
 
 </resources>

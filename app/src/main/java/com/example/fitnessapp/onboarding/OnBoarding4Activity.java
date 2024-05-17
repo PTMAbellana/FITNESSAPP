@@ -21,4 +21,7 @@ public class OnBoarding4Activity extends AppCompatActivity {
         Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
     }
+
+    public void onSkipClicked(View view) {
+    }
 }

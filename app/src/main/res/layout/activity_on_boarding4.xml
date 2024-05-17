@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
-    tools:context=".onboarding.OnBoarding1Activity">
+    tools:context=".onboarding.OnBoarding4Activity">
 
     <ImageView
         android:id="@+id/ivBackground4"
@@ -54,17 +54,17 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:contentDescription="Logo Run 1"
+            android:contentDescription="@string/logo_community_1"
             app:srcCompat="@drawable/logocommunity1" />
 
         <TextView
-            android:id="@+id/tvMsg1"
+            android:id="@+id/tvMsg3"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="Start Your Journey Towards A More Active Lifestyle"
+            android:text="@string/msg3"
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
 
@@ -92,7 +92,7 @@
         android:backgroundTint="@color/colorBlack25"
         android:fontFamily="@font/poppins_semibold"
         android:onClick="onCreateAccountClicked"
-        android:text="Create Account"
+        android:text="@string/create_account"
         android:textAlignment="gravity"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"

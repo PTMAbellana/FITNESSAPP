@@ -8,76 +8,247 @@
     tools:context=".registering.Registering1Activity">
 
     <Button
-        android:id="@+id/register"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onRegisterClicked"
-        android:text="No"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onLoginClicked"
-        android:text="Yes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="429dp"
-        android:layout_height="487dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splashimg2" />
-
-    <TextView
-        android:id="@+id/tvWelcome3"
-        android:layout_width="413dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="71dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Do you have an \n account?"
-        android:textAlignment="center"
+        android:id="@+id/btnBack"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:text="Back"
+        android:onClick="onBackClicked"
         android:textColor="#E2F163"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/register"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvWelcome4"
+        android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="58dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="Hello there! Glad to see you're on your way to a \n healthier life!"
-        android:textAlignment="center"
+        android:layout_marginTop="32dp"
+        android:text="Register"
+        android:textColor="#E2F163"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Create Your Account"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
 
+    <TextView
+        android:id="@+id/tvWelcome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:text="Please fill in the details below to get started."
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="690dp"
+        android:background="@drawable/layout_radius"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="60dp"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Name"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/tfName"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Name"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Email"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/tfEmail"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Email"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/lblUsername"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Username"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/tfUsername"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Username"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/lblPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Password"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/pfPassword"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/lblGender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/gender_label"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_Gender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/g_Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/gender_m"
+                android:textColorLink="@color/colorYellow" />
+
+            <RadioButton
+                android:id="@+id/g_Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/gender_f"
+                android:textColorLink="@color/colorYellow" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/lblcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:text=""
+            android:textColor="#E63333"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="178dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Sign Up"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:baselineAligned="true"
+            android:foregroundGravity="bottom"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/has_account" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:onClick="onLoginClicked"
+                android:text="@string/login"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

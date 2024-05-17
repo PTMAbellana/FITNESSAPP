@@ -4,6 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#232323"
     tools:context=".registering.Registering3Activity">
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="203dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Choose your plan"
+        android:textColor="#FEFEFE"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <FrameLayout
+        android:id="@+id/btnBeginner"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_frame_layout"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="329dp">
+
+        <TextView
+            android:id="@+id/plan1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Beginner" />
+
+        <TextView
+            android:id="@+id/duration1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="5-10 min a day" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/btnIntermediate"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_frame_layout"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="454dp">
+
+        <TextView
+            android:id="@+id/plan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Intermediate" />
+
+        <TextView
+            android:id="@+id/duration2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="10-20 min a day" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/btnAdvanced"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_frame_layout"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="577dp">
+
+        <TextView
+            android:id="@+id/plan3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Advanced" />
+
+        <TextView
+            android:id="@+id/duration3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="15-30 min a day" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

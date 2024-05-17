@@ -9,10 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import com.example.fitnessapp.registering.Registering1Activity;
 
 public class LoginView extends AppCompatActivity {
 
@@ -70,7 +68,7 @@ public class LoginView extends AppCompatActivity {
         finish();
     }
     public void onRegisterClicked(View view) {
-        Intent intent = new Intent(this, RegisterView.class);
+        Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
         finish();
     }

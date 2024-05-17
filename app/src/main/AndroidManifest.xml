@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FITNESSAPP"
         tools:targetApi="31">
         <activity
+            android:name=".TestingActivity"
+            android:exported="false" />
+        <activity
             android:name=".onboarding.OnBoarding4Activity"
             android:exported="false" />
         <activity
@@ -36,13 +39,13 @@
             android:name=".onboarding.OnBoarding2Activity"
             android:exported="false" />
         <activity
-            android:name=".registering.Registering1Activity"
-            android:exported="false" />
-        <activity
             android:name=".registering.Registering2Activity"
             android:exported="false" />
         <activity
             android:name=".registering.Registering3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".registering.Registering4Activity"
             android:exported="false" />
         <activity
             android:name=".HomeView"
@@ -51,7 +54,7 @@
             android:name=".LoginView"
             android:exported="false" />
         <activity
-            android:name=".RegisterView"
+            android:name=".registering.Registering1Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

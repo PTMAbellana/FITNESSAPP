@@ -5,12 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.example.fitnessapp.registering.Registering1Activity;
 
 public class MainActivity extends AppCompatActivity {
     private ConnectionClass connectionClass;
@@ -51,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void onRegisterClicked(View view) {
-        Intent intent = new Intent(this, RegisterView.class);
+        Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
     }
 
