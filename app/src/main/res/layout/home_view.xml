@@ -18,10 +18,10 @@
         android:textColor="#FFFFFF"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserLogged" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNutrition" />
 
     <TextView
-        android:id="@+id/tvUserLogged"
+        android:id="@+id/tvNutrition"
         android:layout_width="137dp"
         android:layout_height="29dp"
         android:layout_marginStart="38dp"
@@ -43,6 +43,7 @@
         android:layout_marginEnd="30dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
+        android:contentDescription="Update Profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/editprof" />
@@ -95,6 +96,7 @@
             android:layout_height="65dp"
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
+            android:contentDescription="Workout"
             app:srcCompat="@drawable/workoutbtn" />
 
         <TextView
@@ -113,6 +115,7 @@
             android:layout_height="65dp"
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
+            android:contentDescription="Progress Tracking"
             app:srcCompat="@drawable/progressbtn" />
 
         <TextView
@@ -131,6 +134,7 @@
             android:layout_height="65dp"
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
+            android:contentDescription="Nutrition"
             app:srcCompat="@drawable/nutritionbtn" />
     </LinearLayout>
 
@@ -140,8 +144,11 @@
         android:layout_height="138dp"
         android:layout_marginStart="39dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
+        android:contentDescription="Workout Video 1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/recoimg1" />
@@ -152,8 +159,14 @@
         android:layout_height="138dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="2dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
+        android:text=" "
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
+        android:contentDescription="Workout Video 2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnWorkoutVideo1"
         app:layout_constraintTop_toBottomOf="@+id/btnSeeAllVideos"
         app:srcCompat="@drawable/recoim2" />
@@ -269,6 +282,5 @@
             android:text="Start" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
