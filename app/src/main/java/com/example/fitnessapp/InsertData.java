@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,7 +13,8 @@ import java.sql.SQLException;
 public class InsertData {
 
     public static void insertData(Context context, String name, String email, String username, String password, String gender) {
-        new InsertDataTask(context, name, email, username, password, gender).execute();
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+        new InsertDataTask(context, name, email, username, hashedPassword, gender).execute();
     }
 
     private static class InsertDataTask extends AsyncTask<Void, Void, Boolean> {

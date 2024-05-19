@@ -1,6 +1,7 @@
 package com.example.fitnessapp;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,6 +24,19 @@ public class ReadData {
         }
 
         return false;
+    }
+
+    public static boolean usernameExist(String username) {
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT username FROM tblusers WHERE username = ?")) {
+
+            statement.setString(1, username);
+            try (ResultSet res = statement.executeQuery()) {
+                return res.next();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static int readData(String username) {
