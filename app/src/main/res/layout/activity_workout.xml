@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/editprof" />
 
     <TextView
-        android:id="@+id/tvNutrition"
+        android:id="@+id/tvProgressTracking"
         android:layout_width="137dp"
         android:layout_height="29dp"
         android:layout_marginStart="38dp"
@@ -37,36 +37,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgVideo3"
         android:layout_width="323dp"
         android:layout_height="110dp"
-        app:srcCompat="@drawable/Video3"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="462dp" />
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo2"
+        app:srcCompat="@drawable/video3" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imgVideo4"
         android:layout_width="323dp"
         android:layout_height="110dp"
-        app:srcCompat="@drawable/Video4"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="594dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="323dp"
-        android:layout_height="110dp"
-        app:srcCompat="@drawable/Video1"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="208dp" />
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo3"
+        app:srcCompat="@drawable/video4" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="323dp"
         android:layout_height="85dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="44dp"
         android:gravity="center"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="111dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfile">
 
         <Button
             android:id="@+id/beginnerbtn"
@@ -102,61 +107,93 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/btnVideo1"
+        android:id="@+id/imgVideo1"
         android:layout_width="323dp"
         android:layout_height="110dp"
-        app:srcCompat="@drawable/Video2"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:srcCompat="@drawable/video1" />
+
+    <ImageView
+        android:id="@+id/imgVideo2"
+        android:layout_width="323dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo1"
+        app:srcCompat="@drawable/video2" />
 
     <ImageButton
-        android:id="@+id/btnVideo2"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:id="@+id/btnvideo1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="46dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/playbtn"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:contentDescription="Play Video 1"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo1"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo1"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo1"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo1"
+        app:srcCompat="@drawable/playbtn" />
+
+    <ImageButton
+        android:id="@+id/btnVideo4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:contentDescription="Play Video 4"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo4"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo4"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo4"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo4"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
         android:id="@+id/btnVideo3"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="47dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/playbtn"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:contentDescription="Play Video 3"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo3"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo3"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo3"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo3"
+        app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
-        android:id="@+id/btnVideo4"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:id="@+id/btnVideo2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="26dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/playbtn"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="642dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/playbtn"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="508dp" />
-
-    <ImageButton
-        android:id="@+id/btnVideo4"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/playbtn"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="508dp" />
+        android:contentDescription="Play Video 2"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo2"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo2"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo2"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo2"
+        app:srcCompat="@drawable/playbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
