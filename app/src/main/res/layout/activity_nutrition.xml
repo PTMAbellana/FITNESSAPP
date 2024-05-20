@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/editprof" />
 
     <TextView
-        android:id="@+id/tvProgressTracking"
+        android:id="@+id/tvGreeting"
         android:layout_width="137dp"
         android:layout_height="29dp"
         android:layout_marginStart="38dp"

@@ -41,10 +41,10 @@ public class LoginView extends AppCompatActivity {
     }
 
     private class LoginTask extends AsyncTask<String, Void, Boolean> {
-
+        String username;
         @Override
         protected Boolean doInBackground(String... params) {
-            String username = params[0];
+            username = params[0];
             String password = params[1];
             return ReadData.readData(username, password);
         }
@@ -54,6 +54,7 @@ public class LoginView extends AppCompatActivity {
             if (result) {
                 // Navigate to the next screen
                 Intent intent = new Intent(LoginView.this, HomeView.class);
+                intent.putExtra("username",username);
                 startActivity(intent);
                 Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
             } else {

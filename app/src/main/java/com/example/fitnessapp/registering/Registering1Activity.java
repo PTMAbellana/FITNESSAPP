@@ -59,10 +59,12 @@ public class Registering1Activity extends AppCompatActivity {
     }
 
     private class SignUpTask extends AsyncTask<String, Void, Boolean>{
+        String username;
+
         @Override
         protected Boolean doInBackground(String... params) {
             String name = params[0];
-            String username = params[1];
+            username = params[1];
             String email = params[2];
             String password = params[3];
             String gender = params[4];
@@ -78,6 +80,7 @@ public class Registering1Activity extends AppCompatActivity {
             if (result) {
                 // Navigate to the next screen
                 Intent intent = new Intent(Registering1Activity.this, HomeView.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
                 Toast.makeText(Registering1Activity.this, "Register Successfull", Toast.LENGTH_SHORT).show();
             } else {
