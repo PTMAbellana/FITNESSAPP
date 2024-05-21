@@ -68,7 +68,7 @@ public class ReadData {
     public static int readData(String username) {
         try (Connection c = ConnectionClass.getConnection();) {
             Statement statement = c.createStatement();
-            String query = "SELECT * FROM tblUsers";
+            String query = "SELECT * FROM tblusers";
             ResultSet res = statement.executeQuery(query);
             while (res.next()) {
                 int id = res.getInt("id");

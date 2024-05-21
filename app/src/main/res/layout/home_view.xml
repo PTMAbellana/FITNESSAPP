@@ -43,6 +43,7 @@
         android:layout_marginEnd="30dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
+        android:onClick="onEditProfileActivityClicked"
         android:contentDescription="Update Profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -97,6 +98,7 @@
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
             android:contentDescription="Workout"
+            android:onClick="onWorkoutActivityClicked"
             app:srcCompat="@drawable/workoutbtn" />
 
         <TextView
@@ -115,6 +117,7 @@
             android:layout_height="65dp"
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
+            android:onClick="onProgressTrackingActivityClicked"
             android:contentDescription="Progress Tracking"
             app:srcCompat="@drawable/progressbtn" />
 
@@ -134,6 +137,7 @@
             android:layout_height="65dp"
             android:background="#00FFFFFF"
             android:scaleType="centerCrop"
+            android:onClick="onNutritionActivityClicked"
             android:contentDescription="Nutrition"
             app:srcCompat="@drawable/nutritionbtn" />
     </LinearLayout>

@@ -79,10 +79,8 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="12dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfile">
@@ -160,16 +158,18 @@
 
     <ImageButton
         android:id="@+id/btnVideo4"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="642dp"
         android:layout_marginBottom="231dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/playbtn"
         tools:ignore="DuplicateIds" />
 
@@ -183,8 +183,10 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
         app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
