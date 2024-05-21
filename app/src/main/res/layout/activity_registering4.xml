@@ -36,9 +36,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvChoosePlan"
+        android:id="@+id/tvChooseNoOfPushUps"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins_semibold"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
@@ -48,18 +49,22 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="122dp" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
     <FrameLayout
-        android:id="@+id/frameChoosePlan"
+        android:id="@+id/frameChoosePlan1"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="56dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="202dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChooseNoOfPushUps">
 
         <TextView
-            android:id="@+id/messageChoosePlan"
+            android:id="@+id/messageChoosePlan1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -70,7 +75,7 @@
             android:textSize="16sp" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView1"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center|right"
@@ -79,16 +84,19 @@
 
     </FrameLayout>
 
+
     <FrameLayout
-        android:id="@+id/frameChoosePlan"
+        android:id="@+id/frameChoosePlan2"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="393dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan1">
 
         <TextView
-            android:id="@+id/messageChoosePlan"
+            android:id="@+id/messageChoosePlan2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -99,7 +107,7 @@
             android:textSize="16sp" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView2"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center|right"
@@ -109,15 +117,48 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/frameChoosePlan"
+        android:id="@+id/frameChoosePlan3"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="499dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan2">
 
         <TextView
-            android:id="@+id/messageChoosePlan"
+            android:id="@+id/messageChoosePlan3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="0-5 repeats"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/circle_shape" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameChoosePlan4"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_frame_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan3">
+
+        <TextView
+            android:id="@+id/messageChoosePlan4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -128,7 +169,7 @@
             android:textSize="16sp" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView4"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center|right"
@@ -138,15 +179,17 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/frameChoosePlan"
+        android:id="@+id/frameChoosePlan5"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="603dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan4">
 
         <TextView
-            android:id="@+id/messageChoosePlan"
+            android:id="@+id/messageChoosePlan5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -165,79 +208,5 @@
             app:srcCompat="@drawable/circle_shape" />
 
     </FrameLayout>
-
-    <TextView
-        android:id="@+id/tvChoosePlan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:text="How many push-ups can you do at one time"
-        android:textAlignment="center"
-        android:textColor="#E2F163"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="122dp" />
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="202dp">
-
-        <TextView
-            android:id="@+id/messageChoosePlan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="I can't do it."
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="293dp">
-
-        <TextView
-            android:id="@+id/messageChoosePlan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="0-5 repeats"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
-
-    </FrameLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
