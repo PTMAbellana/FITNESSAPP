@@ -7,6 +7,19 @@
     android:background="#232323"
     tools:context=".NutritionActivity">
 
+    <Button
+        android:id="@+id/btnMyProfile"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:onClick="onBackClicked"
+        android:text="Back"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/btnUpdateProfile"
         android:layout_width="48dp"
@@ -24,75 +37,77 @@
         android:id="@+id/tvGreeting"
         android:layout_width="137dp"
         android:layout_height="29dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="173dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Nutrition"
         android:textColor="#896CFE"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnUpdateProfile"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnViewFood1"
         android:layout_width="323dp"
         android:layout_height="110dp"
+        android:layout_marginTop="120dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfile"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/food5"
-        tools:layout_editor_absoluteX="44dp" />
+        android:contentDescription="View Food 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/food5" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnViewFood2"
         android:layout_width="323dp"
         android:layout_height="110dp"
+        android:layout_marginTop="20dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/food2"
-        tools:layout_editor_absoluteX="44dp" />
+        android:contentDescription="View Food 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewFood1"
+        app:srcCompat="@drawable/food2" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btnViewFood3"
         android:layout_width="323dp"
         android:layout_height="110dp"
+        android:layout_marginTop="20dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/food3"
-        tools:layout_editor_absoluteX="44dp" />
+        android:contentDescription="View Food 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewFood2"
+        app:srcCompat="@drawable/food3" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btnViewFood4"
         android:layout_width="323dp"
         android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="View Food 4"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/food4"
-        tools:layout_editor_absoluteX="44dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewFood3"
+        app:srcCompat="@drawable/food4" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/btnViewFood5"
         android:layout_width="323dp"
         android:layout_height="110dp"
+        android:layout_marginTop="20dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/food1"
-        tools:layout_editor_absoluteX="44dp" />
+        android:contentDescription="View Food 5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewFood4"
+        app:srcCompat="@drawable/food1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,16 +7,30 @@
     android:background="#232323"
     tools:context=".WorkoutActivity">
 
+    <Button
+        android:id="@+id/btnMyProfile"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:text="Back"
+        android:onClick="onBackClicked"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/btnUpdateProfile"
         android:layout_width="48dp"
         android:layout_height="60dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="40dp"
         android:background="#00FFFFFF"
         android:contentDescription="Update Profile"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/editprof" />
 
@@ -24,66 +38,30 @@
         android:id="@+id/tvGreeting"
         android:layout_width="137dp"
         android:layout_height="29dp"
-        android:layout_marginStart="38dp"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="173dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Workout"
+        android:textAlignment="center"
         android:textColor="#896CFE"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnUpdateProfile"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="323dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVideo1"
-        app:srcCompat="@drawable/video3" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="323dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="187dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/video4" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="323dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVideo1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:srcCompat="@drawable/video1" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="323dp"
         android:layout_height="85dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="44dp"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfile">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.132">
 
         <Button
             android:id="@+id/beginnerbtn"
@@ -119,57 +97,115 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/btnVideo1"
+        android:id="@+id/imgVideo2"
         android:layout_width="323dp"
         android:layout_height="110dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        android:layout_marginTop="19dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo1"
         app:srcCompat="@drawable/video2" />
+
+    <ImageView
+        android:id="@+id/imgVideo3"
+        android:layout_width="323dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo2"
+        app:srcCompat="@drawable/video3" />
+
+    <ImageView
+        android:id="@+id/imgVideo4"
+        android:layout_width="323dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo3"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/video4" />
+
+    <ImageView
+        android:id="@+id/imgVideo1"
+        android:layout_width="323dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="208dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/video1" />
+
+    <ImageButton
+        android:id="@+id/btnVideo5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="Play Video 1"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo1"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo1"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo1"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo1"
+        app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
         android:id="@+id/btnVideo2"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="873dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Play Video 2"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo2"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo2"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo2"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
         android:id="@+id/btnVideo3"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="873dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Play Video 3"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnVideo1"
-        app:layout_constraintStart_toEndOf="@+id/btnVideo1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo3"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo3"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo3"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo3"
         app:srcCompat="@drawable/playbtn" />
 
     <ImageButton
         android:id="@+id/btnVideo4"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="642dp"
-        android:layout_marginBottom="231dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Play Video 4"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo4"
+        app:layout_constraintEnd_toEndOf="@+id/imgVideo4"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo4"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo4"
         app:srcCompat="@drawable/playbtn"
         tools:ignore="DuplicateIds" />
 
@@ -180,28 +216,14 @@
         android:layout_marginStart="42dp"
         android:layout_marginEnd="42dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Miscellaneous Button"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/imgVideo3"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imgVideo3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.018"
         app:srcCompat="@drawable/playbtn" />
-
-    <ImageButton
-        android:id="@+id/btnVideo4"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="42dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/playbtn"
-        tools:ignore="DuplicateIds" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
