@@ -47,7 +47,7 @@ public class InsertData {
 
             try {
                 PreparedStatement statement = c.prepareStatement(
-                        "INSERT INTO tblUsers (name, email, username, password, gender) VALUES (?,?,?,?,?)"
+                        "INSERT INTO tblusers (name, email, username, password, gender) VALUES (?,?,?,?,?)"
                 );
                 statement.setString(1, name);
                 statement.setString(2, email);

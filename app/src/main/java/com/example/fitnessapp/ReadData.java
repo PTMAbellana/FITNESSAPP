@@ -11,7 +11,7 @@ import java.sql.Statement;
 public class ReadData {
     public static boolean readData(String username, String password) {
         try (Connection c = ConnectionClass.getConnection();
-             PreparedStatement statement = c.prepareStatement("SELECT password FROM tblUsers WHERE username = ?")) {
+             PreparedStatement statement = c.prepareStatement("SELECT password FROM tblusers WHERE username = ?")) {
 
             statement.setString(1, username);
             try (ResultSet res = statement.executeQuery()) {
@@ -43,7 +43,7 @@ public class ReadData {
         Connection c = null;
         try{
             c = ConnectionClass.getConnection();
-            PreparedStatement statement = c.prepareStatement("SELECT SELECT name, email, height, weight FROM tblusers WHERE username=?");
+            PreparedStatement statement = c.prepareStatement("SELECT name, email, height, weight FROM tblusers WHERE username=?");
 
             statement.setString(1, username);
             return statement.executeQuery();
