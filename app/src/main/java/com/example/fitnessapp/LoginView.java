@@ -57,6 +57,7 @@ public class LoginView extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean result) {
+
             if (result) {
                 Log.e("TAWAG", "UID is "+uid);
                 if (uid != 0) {

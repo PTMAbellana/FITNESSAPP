@@ -30,6 +30,7 @@ public class Registering2Activity extends AppCompatActivity {
         greetings = (TextView) findViewById(R.id.tvStartJourneyGreetings);
         greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
         Log.e("Registering2Activity", "UID: " + uid);
+
     }
 
     public void onStartPersonalizationClicked(View view) {

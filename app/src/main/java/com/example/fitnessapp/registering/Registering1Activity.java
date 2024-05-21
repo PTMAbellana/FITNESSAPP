@@ -78,14 +78,14 @@ public class Registering1Activity extends AppCompatActivity {
             String gender = params[4];
             if( ReadData.usernameExist(username)) return false;
             else {
+                Intent intent = new Intent(Registering1Activity.this,
+                        Registering2Activity.class);
                 InsertData.insertUserData(Registering1Activity.this, name, email, username, password, gender, new InsertUserDataCallback() {
                     @Override
                     public void onUserInserted(int uid) {
                         Log.e("KAPOY NAA", "UID: " + uid);
 //                        user_id = uid;
                         // Navigate to the next screen
-                        Intent intent = new Intent(Registering1Activity.this,
-                                Registering2Activity.class);
 //                        intent.putExtra("username", username);
 
                         Log.e("Registering1Activity", "uid is " + uid);
@@ -95,6 +95,7 @@ public class Registering1Activity extends AppCompatActivity {
                     }
                 });
 //                uid = ReadData.getSession(username);
+
                 return true;
             }
         }
