@@ -44,8 +44,10 @@ public class ReadData {
         try{
             c = ConnectionClass.getConnection();
             PreparedStatement statement = c.prepareStatement("SELECT name, email, height, weight FROM tblusers WHERE username=?");
-
+//            Statement statement = c.createStatement();
+//            String query = "SELECT name, email, height, weight, FROM tblusers WHERE username="+username;
             statement.setString(1, username);
+//            ResultSet res = statement.executeQuery();
             return statement.executeQuery();
         }catch(SQLException e){
             throw new RuntimeException(e);

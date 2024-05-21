@@ -41,7 +41,7 @@ public class InsertData {
                 return false; // Failed to connect to the database
             }
 
-            if (!CreateTable.usersTable()){
+            if ( !CreateTable.usersTable() ){
                 CreateTable.createTblUsers();
             }
 

@@ -42,9 +42,9 @@
         android:layout_marginTop="34dp"
         android:layout_marginEnd="30dp"
         android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:onClick="onEditProfileActivityClicked"
         android:contentDescription="Update Profile"
+        android:onClick="onEditProfileActivityClicked"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/editprof" />

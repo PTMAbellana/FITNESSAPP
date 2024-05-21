@@ -43,20 +43,20 @@ public class EditProfileActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-
-        try (ResultSet userProfile = ReadData.getProfile(username)){
-            if (userProfile.next()){
-                tvName.setText(userProfile.getString("name"));
-                tvEmail.setText(userProfile.getString("email"));
-                tvHeight.setText(userProfile.getString("height"));
-                tvWeight.setText(userProfile.getString("weight"));
-//                tvAge.setText(userProfile.getString("age"));
-            } else {
-                Log.e("TAG", "NO PROFILE");
-            }
-        } catch (SQLException e){
-            throw new RuntimeException(e);
-        }
+        new GetProfileInfo().execute(username);
+//        try ( ResultSet userProfile = ReadData.getProfile(username) ){
+//            if (userProfile.next()){
+//                tvName.setText(userProfile.getString("name"));
+//                tvEmail.setText(userProfile.getString("email"));
+//                tvHeight.setText(userProfile.getString("height"));
+//                tvWeight.setText(userProfile.getString("weight"));
+////                tvAge.setText(userProfile.getString("age"));
+//            } else {
+//                Log.e("TAG", "NO PROFILE");
+//            }
+//        } catch (SQLException e){
+//            throw new RuntimeException(e);
+//        }
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +81,7 @@ public class EditProfileActivity extends AppCompatActivity {
 //        new UpdateHeight().execute(height);
 
 //        if it requires all fields
-        new UpdateProfile().execute(name, email, username, weight, height);
+//        new UpdateProfile().execute(name, email, username, weight, height);
     }
 
     private class UpdateName extends AsyncTask<String, Void, Boolean>{
@@ -154,9 +154,36 @@ public class EditProfileActivity extends AppCompatActivity {
             return true; //return if update successfull
         }
     }
-    public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-        finish();
+
+    private class GetProfileInfo extends AsyncTask<String, Void, ResultSet> {
+
+        @Override
+        protected ResultSet doInBackground(String... strings) {
+            return ReadData.getProfile(strings[0]);
+        }
+
+        @Override
+        protected void onPostExecute(ResultSet userProfile){
+            try {
+                if (userProfile.next()){
+                    tvName.setText(userProfile.getString("name"));
+                    tvEmail.setText(userProfile.getString("email"));
+                    tvHeight.setText(String.valueOf(userProfile.getString("height")));
+                    tvWeight.setText(String.valueOf(userProfile.getString("weight")));
+//                tvAge.setText(userProfile.getString("age"));
+                } else {
+                    Log.e("TAG", "NO PROFILE");
+                }
+            } catch (SQLException e){
+                throw new RuntimeException(e);
+            } finally {
+                try{
+                    userProfile.close();
+                } catch (SQLException r){
+                    r.printStackTrace();
+                }
+            }
+        }
     }
+
 }
