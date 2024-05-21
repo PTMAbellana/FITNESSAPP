@@ -12,12 +12,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fitnessapp.HomeView;
 import com.example.fitnessapp.InsertData;
 import com.example.fitnessapp.LoginView;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.ReadData;
 
+// Note: Ensure that the textfields are not NULL before clicking Sign Up
+// Additional Note: Ensure that the inputted username is not existing; Read the data if username exist
 public class Registering1Activity extends AppCompatActivity {
     EditText tfName, tfEmail, tfUsername, pfPassword;
     RadioButton rbMale, rbFemale;
@@ -58,6 +59,7 @@ public class Registering1Activity extends AppCompatActivity {
         new SignUpTask().execute(name, username, email, password, gender);
     }
 
+    // Pwede paexplain ani na part
     private class SignUpTask extends AsyncTask<String, Void, Boolean>{
         String username;
 
@@ -70,7 +72,7 @@ public class Registering1Activity extends AppCompatActivity {
             String gender = params[4];
             if( ReadData.usernameExist(username)) return false;
             else {
-                InsertData.insertData(Registering1Activity.this,name, email, username, password, gender);
+                InsertData.insertUserData(Registering1Activity.this,name, email, username, password, gender);
                 return true;
             }
         }
@@ -79,13 +81,16 @@ public class Registering1Activity extends AppCompatActivity {
         protected void onPostExecute(Boolean result) {
             if (result) {
                 // Navigate to the next screen
-                Intent intent = new Intent(Registering1Activity.this, HomeView.class);
+                Intent intent = new Intent(Registering1Activity.this,
+                        Registering2Activity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
-                Toast.makeText(Registering1Activity.this, "Register Successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registering1Activity.this, "Register Successful", Toast.LENGTH_SHORT).show();
+                finish();
             } else {
                 // Show error message
                 lblCheck.setText("Username already exist");
+                lblCheck.setTextColor(getColor(R.color.colorPurple));
             }
         }
     }
@@ -122,11 +127,11 @@ public class Registering1Activity extends AppCompatActivity {
 //            }
 //        }
 //    }
-    public void onBackClicked(View view) {
+//    public void onBackClicked(View view) {
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
-        finish();
-    }
+//        finish();
+//    }
     public void onLoginClicked(View view) {
         Intent intent = new Intent(this, LoginView.class);
         startActivity(intent);

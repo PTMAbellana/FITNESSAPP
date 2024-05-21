@@ -8,58 +8,46 @@
     tools:context=".registering.Registering2Activity">
 
     <Button
-        android:id="@+id/register"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onRegisterClicked"
-        android:text="No"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
-
-    <Button
         android:id="@+id/login"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="131dp"
+        android:backgroundTint="@color/colorPurple"
         android:fontFamily="@font/poppins_semibold"
-        android:onClick="onLoginClicked"
-        android:text="Yes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onStartPersonalization"
+        android:text="Start"
+        android:textColor="@color/colorDarkPurple"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome4" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="429dp"
-        android:layout_height="487dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
+        android:layout_width="346dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splashimg2" />
 
     <TextView
-        android:id="@+id/tvWelcome3"
-        android:layout_width="413dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="71dp"
+        android:id="@+id/tvStartJourneyGreetings"
+        android:layout_width="408dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Do you have an \n account?"
-        android:textAlignment="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Hello, name! \nWelcome to the journey \nto your dream body"
+        android:textAlignment="viewStart"
         android:textColor="#E2F163"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/register"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -67,17 +55,14 @@
         android:id="@+id/tvWelcome4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_light"
-        android:text="Hello there! Glad to see you're on your way to a \n healthier life!"
-        android:textAlignment="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Here comes a few simple questions before we can personalize your daily goal and schedule"
+        android:textAlignment="textStart"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tvWelcome3"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvStartJourneyGreetings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

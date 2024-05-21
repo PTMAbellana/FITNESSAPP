@@ -7,19 +7,6 @@
     android:background="#232323"
     tools:context=".registering.Registering1Activity">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="108dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:background="#00E2F163"
-        android:text="Back"
-        android:onClick="onBackClicked"
-        android:textColor="#E2F163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
@@ -30,8 +17,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

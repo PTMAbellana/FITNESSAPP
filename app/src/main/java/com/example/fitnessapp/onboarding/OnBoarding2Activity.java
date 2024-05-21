@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.registering.Registering1Activity;
 
+// Checked
 public class OnBoarding2Activity extends AppCompatActivity {
 
     @Override
@@ -20,10 +21,12 @@ public class OnBoarding2Activity extends AppCompatActivity {
     public void onNextClicked(View view) {
         Intent intent = new Intent(this, OnBoarding3Activity.class);
         startActivity(intent);
+        finish();
     }
 
     public void onSkipClicked(View view) {
         Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
+        finish();
     }
 }

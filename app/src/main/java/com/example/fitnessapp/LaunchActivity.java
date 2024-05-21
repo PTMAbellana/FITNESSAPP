@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// Checked
 public class LaunchActivity extends AppCompatActivity {
     private ConnectionClass connectionClass;
     private String name, str;
@@ -45,7 +46,8 @@ public class LaunchActivity extends AppCompatActivity {
                     str = "Error in connection with MySQL server";
                 } else {
                     str = "Connected with MySQL server";
-                    CreateTable.createTblUsers();
+                    CreateTable.createTables();
+                    InsertData.insertAllExercisesData();
                 }
             } catch (SQLException e) {
                 str = "Error in connection: " + e.getMessage();

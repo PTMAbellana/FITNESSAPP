@@ -7,27 +7,77 @@
     android:background="#232323"
     tools:context=".registering.Registering3Activity">
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:text="Back"
+        android:onClick="onBackClicked"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <SeekBar
         android:id="@+id/seekBar2"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="203dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:max="10"
+        android:layout_marginTop="64dp"
+        android:max="4"
         android:progress="0"
+        android:progressTint="@color/colorWhite"
+        android:thumbTint="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvChoosePlan"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:text="Choose your plan"
-        android:textColor="#FEFEFE"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="170dp" />
+        android:textAlignment="center"
+        android:textColor="#E2F163"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <FrameLayout
+        android:id="@+id/frameChoosePlan"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_frame_layout"
+        android:backgroundTint="@color/colorWhite"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="202dp">
+
+        <TextView
+            android:id="@+id/messageChoosePlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="80dp"
+            android:paddingRight="10dp"
+            android:text="Your coach will design a weight loss plan for you to suit you best" />
+
+        <ImageButton
+            android:id="@+id/imageChoosePlan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/beginnerbtn"
@@ -35,7 +85,7 @@
         android:layout_height="100dp"
         android:background="@drawable/rounded_frame_layout"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="329dp">
+        tools:layout_editor_absoluteY="345dp">
 
         <TextView
             android:id="@+id/plan1"
@@ -44,7 +94,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Beginner" />
+            android:text="Beginner"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/duration1"
@@ -63,6 +114,59 @@
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/circle_shape" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/btnAdvanced"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_frame_layout"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="593dp">
+
+        <TextView
+            android:id="@+id/plan3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Advanced"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/duration3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="15-30 min a day" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/circle_shape" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -71,7 +175,7 @@
         android:layout_height="100dp"
         android:background="@drawable/rounded_frame_layout"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="454dp">
+        tools:layout_editor_absoluteY="470dp">
 
         <TextView
             android:id="@+id/plan2"
@@ -80,7 +184,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Intermediate" />
+            android:text="Intermediate"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/duration2"
@@ -99,41 +204,13 @@
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/btnAdvanced"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="577dp">
-
-        <TextView
-            android:id="@+id/plan3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Advanced" />
-
-        <TextView
-            android:id="@+id/duration3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="15-30 min a day" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|fill_horizontal"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/circle_shape" />
 
     </FrameLayout>
 

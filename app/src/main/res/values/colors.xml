@@ -7,6 +7,8 @@
     <!-- Added the Main Color Scheme -->
     <color name="colorBlack">#232323</color>
     <color name="colorBlack25">#40232323</color>
+    <color name="colorDarkPurple">#301934</color>
+    <color name="colorGray">#B2BEB5</color>
     <color name="colorPurple">#B3A0FF</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorYellow">#E2F163</color>

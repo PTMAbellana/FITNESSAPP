@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fitnessapp.LoginView;
 import com.example.fitnessapp.R;
 
+// Checked
 public class OnBoarding1Activity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +20,12 @@ public class OnBoarding1Activity extends AppCompatActivity {
     public void onGetStartedClicked(View view) {
         Intent intent = new Intent(this, OnBoarding2Activity.class);
         startActivity(intent);
+        finish();
     }
 
     public void onLoginClicked(View view) {
         Intent intent = new Intent(this, LoginView.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -19,7 +19,6 @@ public class HomeView extends AppCompatActivity {
 
     public String username;
 
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

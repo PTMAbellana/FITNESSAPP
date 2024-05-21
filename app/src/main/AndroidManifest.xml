@@ -18,6 +18,15 @@
             android:name=".day.Day1"
             android:exported="false" />
         <activity
+            android:name=".registering.Registering7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".registering.Registering6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".registering.Registering5Activity"
+            android:exported="false" />
+        <activity
             android:name=".ProgressTrackingActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

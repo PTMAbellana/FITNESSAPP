@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.registering.Registering1Activity;
 
+// Checked
 public class OnBoarding4Activity extends AppCompatActivity {
 
     @Override
@@ -20,8 +21,6 @@ public class OnBoarding4Activity extends AppCompatActivity {
     public void onCreateAccountClicked(View view) {
         Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);
-    }
-
-    public void onSkipClicked(View view) {
+        finish();
     }
 }
