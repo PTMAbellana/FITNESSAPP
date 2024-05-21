@@ -3,6 +3,7 @@ package com.example.fitnessapp.registering;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,12 +14,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.InsertData;
+import com.example.fitnessapp.InsertUserDataCallback;
 import com.example.fitnessapp.LoginView;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.ReadData;
 
 // Note: Ensure that the textfields are not NULL before clicking Sign Up
-// Additional Note: Ensure that the inputted username is not existing; Read the data if username exist
+// Additional Note: Ensure that the inputted username is not existing; Read the data if username exist // this is done
 public class Registering1Activity extends AppCompatActivity {
     EditText tfName, tfEmail, tfUsername, pfPassword;
     RadioButton rbMale, rbFemale;
@@ -60,8 +62,12 @@ public class Registering1Activity extends AppCompatActivity {
     }
 
     // Pwede paexplain ani na part
+
+    //wa sd ko kasabot kay wa ko kasabot unsa ning AsyncTask, but this works...
+    // Murag radaw ni shag thread pero dili pang long term... ayy basta wa ko kasabot ehe
     private class SignUpTask extends AsyncTask<String, Void, Boolean>{
         String username;
+        protected int user_id;
 
         @Override
         protected Boolean doInBackground(String... params) {
@@ -72,7 +78,23 @@ public class Registering1Activity extends AppCompatActivity {
             String gender = params[4];
             if( ReadData.usernameExist(username)) return false;
             else {
-                InsertData.insertUserData(Registering1Activity.this,name, email, username, password, gender);
+                InsertData.insertUserData(Registering1Activity.this, name, email, username, password, gender, new InsertUserDataCallback() {
+                    @Override
+                    public void onUserInserted(int uid) {
+                        Log.e("KAPOY NAA", "UID: " + uid);
+//                        user_id = uid;
+                        // Navigate to the next screen
+                        Intent intent = new Intent(Registering1Activity.this,
+                                Registering2Activity.class);
+//                        intent.putExtra("username", username);
+
+                        Log.e("Registering1Activity", "uid is " + uid);
+                        intent.putExtra("user_id", uid);
+                        Log.e("Registering1Activity", "UID is " + uid);
+                        startActivity(intent);
+                    }
+                });
+//                uid = ReadData.getSession(username);
                 return true;
             }
         }
@@ -80,11 +102,6 @@ public class Registering1Activity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result) {
             if (result) {
-                // Navigate to the next screen
-                Intent intent = new Intent(Registering1Activity.this,
-                        Registering2Activity.class);
-                intent.putExtra("username", username);
-                startActivity(intent);
                 Toast.makeText(Registering1Activity.this, "Register Successful", Toast.LENGTH_SHORT).show();
                 finish();
             } else {

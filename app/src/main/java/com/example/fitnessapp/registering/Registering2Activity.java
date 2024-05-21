@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,10 +24,12 @@ public class Registering2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_registering2);
 
         Intent intent = getIntent();
-        username = intent.getStringExtra("username");
+//        username = intent.getStringExtra("username");
+        int uid = intent.getIntExtra("user_id", 0);
 
         greetings = (TextView) findViewById(R.id.tvStartJourneyGreetings);
         greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
+        Log.e("Registering2Activity", "UID: " + uid);
     }
 
     public void onStartPersonalization(View view) {

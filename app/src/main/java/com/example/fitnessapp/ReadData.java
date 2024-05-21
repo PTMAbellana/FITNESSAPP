@@ -1,5 +1,7 @@
 package com.example.fitnessapp;
 
+import android.util.Log;
+
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
@@ -54,11 +56,43 @@ public class ReadData {
         }
     }
 
+    public static int getSession(String username){
+        try (Connection c = ConnectionClass.getConnection();
+            PreparedStatement statement = c.prepareStatement("SELECT user_id FROM tblusers WHERE username=?");
+        ){
+            statement.setString(1, username);
+            ResultSet res = statement.executeQuery();
+            if (res.next()){
+                return res.getInt("user_id");
+            }
+        }catch (SQLException e){
+            throw new RuntimeException();
+        }
+        return 0;
+    }
+
+    public static String getUsername(int uid){
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT username FROM tblusers WHERE user_id=?");
+        ){
+            statement.setInt(1, uid);
+            ResultSet res = statement.executeQuery();
+            if (res.next()) {
+                return res.getString("username");
+            } else {
+                Log.e("ReadData", "No username found for user ID: " + uid);
+            }
+        }catch (SQLException e){
+            throw new RuntimeException();
+        }
+        return null;
+    }
+
     public static ResultSet getProfile(int uid){
         Connection c = null;
         try{
             c = ConnectionClass.getConnection();
-            PreparedStatement statement = c.prepareStatement("SELECT name, email, height, weight FROM tblusers WHERE user_id=?");
+            PreparedStatement statement = c.prepareStatement("SELECT name, email, username, height, weight FROM tblusers WHERE user_id=?");
 
             statement.setInt(1, uid);
             return statement.executeQuery();

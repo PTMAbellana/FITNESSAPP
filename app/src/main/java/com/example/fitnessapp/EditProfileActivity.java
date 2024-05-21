@@ -11,9 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -21,6 +26,8 @@ public class EditProfileActivity extends AppCompatActivity {
     TextView tvName, tvEmail, tvWeight, tvHeight, tvAge;
     EditText tfName, tfEmail, tfUsername, tfWeight, tfHeight;
     String username;
+    int uid;
+    ExecutorService executorService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,26 +49,17 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        username = intent.getStringExtra("username");
-        new GetProfileInfo().execute(username);
-//        try ( ResultSet userProfile = ReadData.getProfile(username) ){
-//            if (userProfile.next()){
-//                tvName.setText(userProfile.getString("name"));
-//                tvEmail.setText(userProfile.getString("email"));
-//                tvHeight.setText(userProfile.getString("height"));
-//                tvWeight.setText(userProfile.getString("weight"));
-////                tvAge.setText(userProfile.getString("age"));
-//            } else {
-//                Log.e("TAG", "NO PROFILE");
-//            }
-//        } catch (SQLException e){
-//            throw new RuntimeException(e);
-//        }
+//        username = intent.getStringExtra("username");
+        uid = intent.getIntExtra("user_id", -1);
+        new GetProfileInfo().execute(uid);
+
+        executorService = Executors.newFixedThreadPool(5);
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateProfile();
+//                Toast.makeText(EditProfileActivity.this, "Edit Profile Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -73,93 +71,99 @@ public class EditProfileActivity extends AppCompatActivity {
         String weight = tfWeight.getText().toString();
         String height = tfHeight.getText().toString();
 
-        //if it doesnt require all fields
-//        new UpdateName().execute(name);
-//        new UpdateEmail().execute(email);
-//        new UpdateUsername().execute(username);
-//        new UpdateWeight().execute(weight);
-//        new UpdateHeight().execute(height);
-
-//        if it requires all fields
 //        new UpdateProfile().execute(name, email, username, weight, height);
-    }
 
-    private class UpdateName extends AsyncTask<String, Void, Boolean>{
+        final Object lock = new Object();
+        final int numberOfUpdates = 5;
+        final int[] remainingTasks = {numberOfUpdates};
 
-        @Override
-        protected Boolean doInBackground(String... strings) {
-            if (!strings[0].isEmpty()){
-                //implement update here
-                return true;
-            }
-            return false;
-        }
-    }
-    private class UpdateEmail extends AsyncTask<String, Void, Boolean>{
+        executorService.execute(new UpdateProfile("UPDATE tblusers SET name=? WHERE user_id=?", name, lock, remainingTasks));
+        executorService.execute(new UpdateProfile("UPDATE tblusers SET email=? WHERE user_id=?", email, lock, remainingTasks));
+        executorService.execute(new UpdateProfile("UPDATE tblusers SET username=? WHERE user_id=?", username, lock, remainingTasks));
+        executorService.execute(new UpdateProfile("UPDATE tblusers SET weight=? WHERE user_id=?", weight, lock, remainingTasks));
+        executorService.execute(new UpdateProfile("UPDATE tblusers SET height=? WHERE user_id=?", height, lock, remainingTasks));
 
-        @Override
-        protected Boolean doInBackground(String... strings) {
-            if (!strings[0].isEmpty()){
-                //implement update here
-                return true;
-            }
-            return false;
-        }
-    }
-    private class UpdateUsername extends AsyncTask<String, Void, Boolean>{
-
+        new Thread(new Runnable() {
             @Override
-        protected Boolean doInBackground(String... strings) {
-            if (!strings[0].isEmpty()){
-                //implement update here
-                return true;
+            public void run() {
+                synchronized (lock) {
+                    while (remainingTasks[0] > 0) {
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
+                    }
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
+                        Toast.makeText(EditProfileActivity.this, "Edit Profile Successful", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
-            return false;
-        }
+        }).start();
     }
-    private class UpdateWeight extends AsyncTask<String, Void, Boolean>{
+
+    public void onBackClicked(View view) {
+//        Intent intent = new Intent(this, HomeView.class);
+//        startActivity(intent);
+        finish();
+    }
+
+    private class UpdateProfile implements Runnable {
+        String query;
+        String value;
+        final Object lock;
+        final int[] remainingtasks;
+
+        public UpdateProfile(String query, String value, Object lock, int[] remainingtasks) {
+            this.query = query;
+            this.value = value;
+            this.lock = lock;
+            this.remainingtasks = remainingtasks;
+        }
 
         @Override
-        protected Boolean doInBackground(String... strings) {
-            if (!strings[0].isEmpty()){
-                Float weight = Float.parseFloat(strings[0]);
-                //implement update here
-                return true;
+        public void run() {
+            try (
+                    Connection c = ConnectionClass.getConnection();
+                    PreparedStatement statement = c.prepareStatement(query);
+                    ){
+                if (!value.isEmpty()){
+                    if (query.contains("height") || query.contains("weight")) {
+                        statement.setFloat(1, Float.parseFloat(value));
+                    } else {
+                        statement.setString(1, value);
+                    }
+                    statement.setInt(2, uid);
+                    statement.executeUpdate();
+                } else {
+                    Log.e("EditProfileActivity", "Query "+query+" not kuan kay value is null or empty");
+                }
+            } catch (SQLException e){
+                throw new RuntimeException();
+            } finally {
+                synchronized (lock){
+                    remainingtasks[0]--;
+                    Log.d("UpdateProfile", "Task completed, remaining tasks: " + remainingtasks[0]);
+                    if (remainingtasks[0] == 0){
+                        lock.notifyAll();
+                    }
+                }
             }
-            return false;
-        }
-    }
-    private class UpdateHeight extends AsyncTask<String, Void, Boolean>{
-
-        @Override
-        protected Boolean doInBackground(String... strings) {
-            if (!strings[0].isEmpty()){
-                Float height = Float.parseFloat(strings[0]);
-                //implement update here
-                return true;
-            }
-            return false;
         }
     }
 
-    private class UpdateProfile extends AsyncTask<String, Void, Boolean> {
+    private class GetProfileInfo extends AsyncTask<Integer, Void, ResultSet> {
 
         @Override
-        protected Boolean doInBackground(String... params) {
-            String name = params[0];
-            String email = params[1];
-            String username = params[2];
-            Float weight = Float.parseFloat(params[3]);
-            Float height = Float.parseFloat(params[4]);
-            return true; //return if update successfull
-        }
-    }
-
-    private class GetProfileInfo extends AsyncTask<String, Void, ResultSet> {
-
-        @Override
-        protected ResultSet doInBackground(String... strings) {
-            return ReadData.getProfile(strings[0]);
+        protected ResultSet doInBackground(Integer... integers) {
+            return ReadData.getProfile(integers[0]);
         }
 
         @Override
@@ -168,8 +172,9 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (userProfile.next()){
                     tvName.setText(userProfile.getString("name"));
                     tvEmail.setText(userProfile.getString("email"));
-                    tvHeight.setText(String.valueOf(userProfile.getString("height")));
-                    tvWeight.setText(String.valueOf(userProfile.getString("weight")));
+                    tvHeight.setText(String.valueOf(userProfile.getString("height") + " cm"));
+                    tvWeight.setText(String.valueOf(userProfile.getString("weight")) + " kg");
+                    username = userProfile.getString("username");
 //                tvAge.setText(userProfile.getString("age"));
                 } else {
                     Log.e("TAG", "NO PROFILE");
@@ -184,10 +189,5 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-    public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, HomeView.class);
-//        startActivity(intent);
-        finish();
     }
 }

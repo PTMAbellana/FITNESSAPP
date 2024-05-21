@@ -179,10 +179,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Paul Abellana"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:text="Paul Abellana" />
 
         <TextView
             android:id="@+id/tvEmail"
@@ -190,9 +190,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="paulmabellana@gmail.com"
             android:textColor="#FFFFFF"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            tools:text="paulmabellana@gmail.com" />
 
         <TextView
             android:id="@+id/tvWeight"
@@ -200,9 +200,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="60kg"
             android:textColor="#FFFFFF"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            tools:text="60kg" />
 
         <TextView
             android:id="@+id/tvHeight"
@@ -210,9 +210,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="1.65cm"
             android:textColor="#FFFFFF"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            tools:text="1.65cm" />
 
         <TextView
             android:id="@+id/tvAge"

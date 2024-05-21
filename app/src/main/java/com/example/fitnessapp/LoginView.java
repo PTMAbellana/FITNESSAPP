@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,21 +43,33 @@ public class LoginView extends AppCompatActivity {
 
     private class LoginTask extends AsyncTask<String, Void, Boolean> {
         String username;
+        int uid;
         @Override
         protected Boolean doInBackground(String... params) {
             username = params[0];
             String password = params[1];
-            return ReadData.readData(username, password);
+            if (ReadData.readData(username, password)){
+                uid = ReadData.getSession(username);
+                return true;
+            }
+            return false;
         }
 
         @Override
         protected void onPostExecute(Boolean result) {
             if (result) {
-                // Navigate to the next screen
-                Intent intent = new Intent(LoginView.this, HomeView.class);
-                intent.putExtra("username",username);
-                startActivity(intent);
-                Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
+                Log.e("TAWAG", "UID is "+uid);
+                if (uid != 0) {
+                    Intent intent = new Intent(LoginView.this, HomeView.class);
+                    intent.putExtra("user_id", uid);
+                    Log.e("TAWAG", "Successful sha");
+//                    intent.putExtra("username",username);
+                    startActivity(intent);
+
+                    Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
+                } else {
+                    lblcheck.setText("Error retrieving user session.");
+                }
             } else {
                 // Show error message
                 lblcheck.setText("Invalid username/password");
