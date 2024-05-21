@@ -185,5 +185,9 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         }
     }
-
+    public void onBackClicked(View view) {
+//        Intent intent = new Intent(this, HomeView.class);
+//        startActivity(intent);
+        finish();
+    }
 }

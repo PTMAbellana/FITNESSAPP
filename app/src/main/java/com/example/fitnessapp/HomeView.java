@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.fitnessapp.day.Day1;
+
 public class HomeView extends AppCompatActivity {
     TextView greetings;
     ImageButton btnProfile;
@@ -50,6 +52,10 @@ public class HomeView extends AppCompatActivity {
     }
     public void onProgressTrackingActivityClicked(View view) {
         Intent intent = new Intent(HomeView.this, ProgressTrackingActivity.class);
+        startActivity(intent);
+    }
+    public void onStartDay1Clicked(View view) {
+        Intent intent = new Intent(this, Day1.class);
         startActivity(intent);
     }
 }

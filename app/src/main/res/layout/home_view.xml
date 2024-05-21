@@ -207,6 +207,7 @@
             android:layout_weight="1"
             android:backgroundTint="#232323"
             android:fontFamily="@font/poppins_semibold"
+            android:onClick="onStartDay1Clicked"
             android:text="Start"
             app:iconTint="#232323"
             app:strokeColor="#F8F8F8"

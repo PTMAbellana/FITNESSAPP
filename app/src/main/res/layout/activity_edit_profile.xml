@@ -8,7 +8,7 @@
     tools:context=".EditProfileActivity">
 
     <Button
-        android:id="@+id/btnMyProfile"
+        android:id="@+id/btnBack"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -162,8 +162,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="416dp"
-        android:layout_height="217dp"
+        android:layout_width="418dp"
+        android:layout_height="178dp"
         android:layout_marginTop="88dp"
         android:background="#B3A0FF"
         android:gravity="center"
@@ -226,7 +226,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnMyProfile"
+        android:id="@+id/btnBack"
         android:layout_width="165dp"
         android:layout_height="48dp"
         android:layout_marginStart="120dp"

@@ -2,8 +2,11 @@ package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.fitnessapp.day.Day1;
 
 public class WorkoutActivity extends AppCompatActivity {
 
@@ -17,4 +20,5 @@ public class WorkoutActivity extends AppCompatActivity {
 //        startActivity(intent);
         finish();
     }
+
 }
