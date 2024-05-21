@@ -8,7 +8,7 @@
     tools:context=".registering.Registering2Activity">
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btnstart"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="131dp"
         android:backgroundTint="@color/colorPurple"
         android:fontFamily="@font/poppins_semibold"
-        android:onClick="onStartPersonalization"
+        android:onClick="onStartPersonalizationClicked"
         android:text="Start"
         android:textColor="@color/colorDarkPurple"
         app:layout_constraintEnd_toEndOf="parent"

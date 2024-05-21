@@ -29,7 +29,7 @@ public class Registering2Activity extends AppCompatActivity {
         greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
     }
 
-    public void onStartPersonalization(View view) {
+    public void onStartPersonalizationClicked(View view) {
         Intent intent = new Intent(this, Registering3Activity.class);
         intent.putExtra("username", username);
         startActivity(intent);

@@ -8,6 +8,20 @@
     tools:context=".registering.Registering3Activity">
 
     <Button
+        android:id="@+id/btnNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/colorPurple"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="onNextClicked"
+        android:text="Next"
+        android:textColor="@color/colorDarkPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnBack"
         android:layout_width="108dp"
         android:layout_height="57dp"
@@ -19,7 +33,6 @@
         android:textColor="#E2F163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <SeekBar
         android:id="@+id/seekBar2"
@@ -39,6 +52,7 @@
         android:id="@+id/tvChoosePlan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins_semibold"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
@@ -48,16 +62,18 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="122dp" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
     <FrameLayout
         android:id="@+id/frameChoosePlan"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/rounded_frame_layout"
         android:backgroundTint="@color/colorWhite"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="202dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlan">
 
         <TextView
             android:id="@+id/messageChoosePlan"
@@ -69,12 +85,13 @@
             android:paddingRight="10dp"
             android:text="Your coach will design a weight loss plan for you to suit you best" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageChoosePlan"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|fill_horizontal"
             android:layout_marginLeft="20dp"
+            android:contentDescription="logothing1"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
     </FrameLayout>
@@ -83,9 +100,11 @@
         android:id="@+id/beginnerbtn"
         android:layout_width="300dp"
         android:layout_height="100dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="345dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan">
 
         <TextView
             android:id="@+id/plan1"
@@ -106,7 +125,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="5-10 min a day" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton1"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -115,52 +134,7 @@
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/btnAdvanced"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="593dp">
-
-        <TextView
-            android:id="@+id/plan3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Advanced"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/duration3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="15-30 min a day" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|fill_horizontal"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView1"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center|right"
@@ -173,9 +147,11 @@
         android:id="@+id/intermediateBtn"
         android:layout_width="300dp"
         android:layout_height="100dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="470dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerbtn">
 
         <TextView
             android:id="@+id/plan2"
@@ -196,7 +172,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="10-20 min a day" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton2"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -205,7 +181,54 @@
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/circle_shape" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/btnAdvanced"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_frame_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateBtn">
+
+        <TextView
+            android:id="@+id/plan3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Advanced"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/duration3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="15-30 min a day" />
+
+        <ImageView
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center|right"
