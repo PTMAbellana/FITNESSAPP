@@ -14,12 +14,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class InsertData {
-    public static int uid;
+
     public static void insertUserData(Context context, String name, String email, String username, String password, String gender) {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         new InsertUserDataTask(context, name, email, username, hashedPassword, gender).execute();
-//        Log.e("InsertData", "UID is " + uid);
-//        return uid;
     }
 
     private static class InsertUserDataTask extends AsyncTask<Void, Void, Boolean> {
@@ -29,7 +27,6 @@ public class InsertData {
         private final String username;
         private final String password;
         private final String gender;
-//        private final InsertUserDataCallback callback;
 
         public InsertUserDataTask(Context context, String name, String email, String username, String password, String gender) {
             this.context = context;
@@ -38,7 +35,6 @@ public class InsertData {
             this.username = username;
             this.password = password;
             this.gender = gender;
-//            this.callback = callback;
         }
 
         @Override
@@ -54,8 +50,7 @@ public class InsertData {
 
             try {
                 PreparedStatement statement = c.prepareStatement(
-                        "INSERT INTO tblusers (name, email, username, password, gender) VALUES (?,?,?,?,?)",
-                        Statement.RETURN_GENERATED_KEYS
+                        "INSERT INTO tblusers (name, email, username, password, gender) VALUES (?,?,?,?,?)"
                 );
                 statement.setString(1, name);
                 statement.setString(2, email);
@@ -64,26 +59,6 @@ public class InsertData {
                 statement.setString(5, gender);
                 int rowsInserted = statement.executeUpdate();
                 System.out.println("Rows Inserted: " + rowsInserted);
-
-                if (rowsInserted > 0) {
-
-                ResultSet generatedKeys = statement.getGeneratedKeys();
-
-//                if (generatedKeys.next()) {
-////                    uid = generatedKeys.getInt(1);
-//                    if (callback != null){
-//                        callback.onUserInserted(generatedKeys.getInt(1));
-//                    }
-////                    Log.e("InsertData", "insert successful, uid is " + uid);
-////                    return uid;
-//                } else {
-//                    if (callback != null){
-//                        callback.onUserInserted(0);
-//
-//                    }
-//                }
-
-            }
 
                 return true; // Insertion successful
             } catch (SQLException e) {

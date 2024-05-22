@@ -15,16 +15,12 @@ import com.example.fitnessapp.R;
 public class Registering4Activity extends AppCompatActivity {
 
     public String username;
-    static private RadioButton selectedRadioButton;
+    private int uid;
+
+    private RadioButton selectedRadioButton;
     private FrameLayout selectedFrameLayout;
 
-    int[] radioButtonIds = {
-            R.id.radioButton1,
-            R.id.radioButton2,
-            R.id.radioButton3,
-            R.id.radioButton4,
-            R.id.radioButton5
-    };
+    private int numPushups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +28,7 @@ public class Registering4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_registering4);
 
         username = getIntent().getStringExtra("username");
+        uid = getIntent().getIntExtra("user_id", 0);
     }
 
     public void onFrameClick(View view) {
@@ -42,12 +39,13 @@ public class Registering4Activity extends AppCompatActivity {
         if (selectedFrameLayout != null) {
             selectedFrameLayout.setBackgroundTintList(null);
         }
-
         frameLayout.setBackgroundTintList(getColorStateList(R.color.colorWhite));
         selectedFrameLayout = frameLayout;
 
         clearOtherRadioButtons(radioButton.getId());
         selectedRadioButton = radioButton;
+
+        numPushups = getNumPushups();
     }
 
     private void clearOtherRadioButtons(int selectedRadioButtonId) {
@@ -73,13 +71,12 @@ public class Registering4Activity extends AppCompatActivity {
         if (selectedRadioButton == null) {
             Toast.makeText(this, "Please select an option before proceeding.", Toast.LENGTH_SHORT).show();
         } else {
-            int numPushups = getNumPushups();
-
 //            Toast.makeText(this, numPushups, Toast.LENGTH_SHORT).show();
-//            UpdateData.updateNumPushups(username, numPushups);
+//            InsertData.insertNumPushups(numPushups);
 
             Intent intent = new Intent(this, Registering5Activity.class);
             intent.putExtra("username", username);
+            intent.putExtra("user_id", uid);
             startActivity(intent);
             finish();
         }
@@ -88,16 +85,37 @@ public class Registering4Activity extends AppCompatActivity {
     public void onBackClicked(View view) {
         Intent intent = new Intent(this, Registering3Activity.class);
         intent.putExtra("username", username);
+        intent.putExtra("user_id", uid);
         startActivity(intent);
 //        finish();
     }
 
     private int getNumPushups() {
-        // some reason, switch case not working
-//        int btn1 = R.id.radioButton1;
+//        if (selectedRadioButton.getId() == R.id.radioButton1) {
+//            return 0;
+//        }
 //
+//        if (selectedRadioButton.getId() == R.id.radioButton2) {
+//            return 5;
+//        }
+//
+//        if (selectedRadioButton.getId() == R.id.radioButton3) {
+//            return 10;
+//        }
+//
+//        if (selectedRadioButton.getId() == R.id.radioButton4) {
+//            return 20;
+//        }
+//
+//        if (selectedRadioButton.getId() == R.id.radioButton5) {
+//            return 21;
+//        }
+//        return 0;
+
+
+        // some reason, switch case not working
 //        switch (selectedRadioButton.getId()) {
-//            case btn1:
+//            case R.id.radioButton1:
 //                return 0;
 //            case R.id.radioButton2:
 //                return 5;
