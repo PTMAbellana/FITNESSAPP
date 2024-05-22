@@ -44,10 +44,20 @@ public class CreateTable {
         String query2 = "CREATE TABLE IF NOT EXISTS tblexercises (" +
                 "exercise_id INT(10) PRIMARY KEY AUTO_INCREMENT," +
                 "exercise_name TEXT NOT NULL," +
+                "target TEXT NOT NULL," +
                 "difficulty TEXT NOT NULL," +
                 "no_of_sets INT(10) NOT NULL," +
                 "no_of_reps INT(10)," +
                 "no_of_seconds INT(10))";
+
+//        String quesry3 = "CREATE TABLE IF NOT EXISTS tblusersexercises (" +
+//                "user_exercise_id INT(10) PRIMARY KEY AUTO_INCREMENT," +
+//                " TEXT NOT NULL," +
+//                "target TEXT NOT NULL," +
+//                "difficulty TEXT NOT NULL," +
+//                "no_of_sets INT(10) NOT NULL," +
+//                "no_of_reps INT(10)," +
+//                "no_of_seconds INT(10))";
 
         try {
             conn = ConnectionClass.getConnection();

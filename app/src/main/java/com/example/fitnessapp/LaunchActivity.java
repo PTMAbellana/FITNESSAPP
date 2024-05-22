@@ -48,6 +48,7 @@ public class LaunchActivity extends AppCompatActivity {
                     str = "Connected with MySQL server";
                     CreateTable.createTables();
                     InsertData.insertAllExercisesData();
+                    UpdateData.updateNumPushups("nina", 10 );
                 }
             } catch (SQLException e) {
                 str = "Error in connection: " + e.getMessage();

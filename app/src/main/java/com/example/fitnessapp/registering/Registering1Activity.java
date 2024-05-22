@@ -111,7 +111,7 @@ public class Registering1Activity extends AppCompatActivity {
             } else {
                 // Show error message
                 lblCheck.setText("Username already exist");
-                lblCheck.setTextColor(getColor(R.color.colorPurple));
+                lblCheck.setTextColor(getColor(R.color.colorBlack));
             }
         }
     }

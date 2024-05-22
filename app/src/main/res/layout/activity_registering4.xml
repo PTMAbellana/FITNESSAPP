@@ -93,7 +93,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white" />
+            android:buttonTint="@android:color/white"
+            android:clickable="false" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -123,7 +125,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white" />
+            android:buttonTint="@android:color/white"
+            android:clickable="false" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -153,7 +157,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white" />
+            android:buttonTint="@android:color/white"
+            android:clickable="false" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -183,7 +189,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white" />
+            android:buttonTint="@android:color/white"
+            android:clickable="false" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -213,7 +221,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white" />
+            android:buttonTint="@android:color/white"
+            android:clickable="false" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
