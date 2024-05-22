@@ -64,6 +64,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name=".LaunchActivity"-->
+<!--            android:exported="false"-->
+<!--            android:screenOrientation="portrait" />-->
         <activity
             android:name=".onboarding.OnBoarding1Activity"
             android:exported="false"
@@ -72,10 +76,23 @@
             android:name=".onboarding.OnBoarding2Activity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+<!--        <activity-->
+<!--            android:name=".registering.Registering2Activity"-->
+<!--            android:exported="true"-->
+<!--            android:screenOrientation="portrait" >-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
         <activity
             android:name=".registering.Registering2Activity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".registering.Registering3Activity"
             android:exported="false"

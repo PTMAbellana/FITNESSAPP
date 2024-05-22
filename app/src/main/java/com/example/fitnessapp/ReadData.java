@@ -56,6 +56,7 @@ public class ReadData {
         }
     }
 
+    // getting the user_id
     public static int getSession(String username){
         try (Connection c = ConnectionClass.getConnection();
             PreparedStatement statement = c.prepareStatement("SELECT user_id FROM tblusers WHERE username=?");

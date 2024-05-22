@@ -8,4 +8,30 @@
     tools:context=".registering.Registering7Activity">
 
 <!-- Probably Using Threads when generating the Plan -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/colorPurple"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="onNextClicked"
+        android:text="Next"
+        android:textColor="@color/colorDarkPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:onClick="onBackClicked"
+        android:text="Back"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

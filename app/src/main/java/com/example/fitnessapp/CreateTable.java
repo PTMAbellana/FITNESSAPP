@@ -38,7 +38,7 @@ public class CreateTable {
                 "height FLOAT(10) NOT NULL DEFAULT 0," +
                 "weight FLOAT(10) NOT NULL DEFAULT 0," +
                 "age INT(10) NOT NULL DEFAULT 0," +
-                "num_plank INT(10) NOT NULL DEFAULT '0'," +
+                "num_planks INT(10) NOT NULL DEFAULT '0'," +
                 "reminder TIME DEFAULT '00:00:00')";
 
         String query2 = "CREATE TABLE IF NOT EXISTS tblexercises (" +

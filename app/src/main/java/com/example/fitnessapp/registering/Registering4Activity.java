@@ -20,12 +20,12 @@ import java.util.List;
 public class Registering4Activity extends AppCompatActivity {
 
     public String username;
-    protected int uid;
+    protected int user_id;
     private Integer[] radioButtonIds = {
             R.id.radioButton1,
             R.id.radioButton2,
-            R.id.radioButton3,
             R.id.radioButton4,
+            R.id.radioButton3,
             R.id.radioButton5
     };
     List<Integer> rbID = Arrays.asList(radioButtonIds);
@@ -40,7 +40,7 @@ public class Registering4Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = getIntent().getStringExtra("username");
-        uid = getIntent().getIntExtra("user_id", 0);
+        user_id = getIntent().getIntExtra("user_id", 0);
     }
 
     public void onFrameClick(View view) {
@@ -73,11 +73,11 @@ public class Registering4Activity extends AppCompatActivity {
         if (selectedRadioButton == null) {
             Toast.makeText(this, "Please select an option before proceeding.", Toast.LENGTH_SHORT).show();
         } else {
-            new UpdateNumPushups().execute(uid, rbID.indexOf(selectedRadioButton.getId()));
+            new UpdateNumPushups().execute(user_id, rbID.indexOf(selectedRadioButton.getId()));
 
             Intent intent = new Intent(this, Registering5Activity.class);
             intent.putExtra("username", username);
-            intent.putExtra("user_id", uid);
+            intent.putExtra("user_id", user_id);
             startActivity(intent);
             finish();
         }
@@ -86,9 +86,9 @@ public class Registering4Activity extends AppCompatActivity {
     public void onBackClicked(View view) {
         Intent intent = new Intent(this, Registering3Activity.class);
         intent.putExtra("username", username);
-        intent.putExtra("user_id", uid);
+        intent.putExtra("user_id", user_id);
         startActivity(intent);
-//        finish();
+        finish();
     }
 
     private class UpdateNumPushups extends AsyncTask<Integer, Void, Boolean> {

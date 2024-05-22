@@ -19,7 +19,7 @@ public class Registering2Activity extends AppCompatActivity {
 
     TextView greetings;
     public String username;
-    protected int uid;
+    protected int user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class Registering2Activity extends AppCompatActivity {
     public void onStartPersonalizationClicked(View view) {
         Intent intent = new Intent(this, Registering3Activity.class);
         intent.putExtra("username", username);
-        intent.putExtra("user_id", uid);
+        intent.putExtra("user_id", user_id);
         startActivity(intent);
         finish();
     }
@@ -49,8 +49,8 @@ public class Registering2Activity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(String... strings) {
-            uid = ReadData.getSession(strings[0]);
-            return uid != 0;
+            user_id = ReadData.getSession(strings[0]);
+            return user_id != 0;
         }
     }
 

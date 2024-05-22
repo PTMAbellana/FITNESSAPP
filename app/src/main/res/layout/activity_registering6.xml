@@ -22,6 +22,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:onClick="onBackClicked"
+        android:text="Back"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <SeekBar
         android:id="@+id/seekBar2"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
@@ -85,8 +98,9 @@
     </FrameLayout>
 
     <ScrollView
+        android:id="@+id/scrollPlan"
         android:layout_width="0dp"
-        android:layout_height="356dp"
+        android:layout_height="370dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +108,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="370dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -127,7 +141,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
                     android:backgroundTint="@android:color/transparent"
-                    android:buttonTint="@android:color/white" />
+                    android:buttonTint="@android:color/white"
+                    android:clickable="false" />
+
             </FrameLayout>
 
             <FrameLayout
@@ -157,7 +173,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
                     android:backgroundTint="@android:color/transparent"
-                    android:buttonTint="@android:color/white" />
+                    android:buttonTint="@android:color/white"
+                    android:clickable="false" />
+
             </FrameLayout>
 
             <FrameLayout
@@ -187,7 +205,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
                     android:backgroundTint="@android:color/transparent"
-                    android:buttonTint="@android:color/white" />
+                    android:buttonTint="@android:color/white"
+                    android:clickable="false" />
+
             </FrameLayout>
 
             <FrameLayout
@@ -217,7 +237,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
                     android:backgroundTint="@android:color/transparent"
-                    android:buttonTint="@android:color/white" />
+                    android:buttonTint="@android:color/white"
+                    android:clickable="false" />
+
             </FrameLayout>
 
             <FrameLayout
@@ -247,7 +269,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
                     android:backgroundTint="@android:color/transparent"
-                    android:buttonTint="@android:color/white" />
+                    android:buttonTint="@android:color/white"
+                    android:clickable="false" />
+
             </FrameLayout>
         </LinearLayout>
     </ScrollView>

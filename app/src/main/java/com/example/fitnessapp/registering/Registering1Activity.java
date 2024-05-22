@@ -65,7 +65,6 @@ public class Registering1Activity extends AppCompatActivity {
     // Murag radaw ni shag thread pero dili pang long term... ayy basta wa ko kasabot ehe
     private class SignUpTask extends AsyncTask<String, Void, Integer>{
         String username;
-        protected int user_id;
 
         @Override
         protected Integer doInBackground(String... params) {

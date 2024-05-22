@@ -23,7 +23,7 @@ import java.util.List;
 public class Registering3Activity extends AppCompatActivity {
 
     public String username;
-    protected int uid;
+    protected int user_id;
     private Integer[] radioButtonIds = {
             R.id.radioButton1,
             R.id.radioButton2,
@@ -42,7 +42,7 @@ public class Registering3Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-        uid = intent.getIntExtra("user_id", 0);
+        user_id = intent.getIntExtra("user_id", 0);
     }
 
     public void onFrameClick(View view) {
@@ -50,7 +50,14 @@ public class Registering3Activity extends AppCompatActivity {
         RadioButton radioButton = (RadioButton) frameLayout.getChildAt(3);
         radioButton.setChecked(true);
 
+        if (selectedFrameLayout != null) {
+            selectedFrameLayout.setBackgroundTintList(null);
+        }
+        frameLayout.setBackgroundTintList(getColorStateList(R.color.colorWhite));
+        selectedFrameLayout = frameLayout;
+
         clearOtherRadioButtons(radioButton.getId());
+        selectedRadioButton = radioButton;clearOtherRadioButtons(radioButton.getId());
 
         selectedRadioButton = radioButton;
     }
@@ -70,11 +77,11 @@ public class Registering3Activity extends AppCompatActivity {
         if (selectedRadioButton == null) {
             Toast.makeText(this, "Please select an option before proceeding.", Toast.LENGTH_SHORT).show();
         } else {
-            new UpdatePlan().execute(uid, rbID.indexOf(selectedRadioButton.getId()));
+            new UpdatePlan().execute(user_id, rbID.indexOf(selectedRadioButton.getId()));
 
             Intent intent = new Intent(this, Registering4Activity.class);
             intent.putExtra("username", username);
-            intent.putExtra("user_id", uid);
+            intent.putExtra("user_id", user_id);
             startActivity(intent);
             finish();
         }
