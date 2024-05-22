@@ -33,6 +33,8 @@ public class Registering3Activity extends AppCompatActivity {
     List<Integer> rbID = Arrays.asList(radioButtonIds);
 
     private RadioButton selectedRadioButton;
+    private FrameLayout selectedFrameLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +56,6 @@ public class Registering3Activity extends AppCompatActivity {
     }
 
     private void clearOtherRadioButtons(int selectedRadioButtonId) {
-//        int[] radioButtonIds = {
-//                R.id.radioButton1,
-//                R.id.radioButton2,
-//                R.id.radioButton3
-//        };
-
         for (int id : radioButtonIds) {
             if (id != selectedRadioButtonId) {
                 RadioButton radioButton = findViewById(id);
@@ -74,16 +70,13 @@ public class Registering3Activity extends AppCompatActivity {
         if (selectedRadioButton == null) {
             Toast.makeText(this, "Please select an option before proceeding.", Toast.LENGTH_SHORT).show();
         } else {
-//            Log.e("THE PLAN", "clicked radio button: btn no." + rbID.indexOf(selectedRadioButton.getId()));
             new UpdatePlan().execute(uid, rbID.indexOf(selectedRadioButton.getId()));
-
-//            UpdateData.updatePlan(uid, rbID.indexOf(selectedRadioButton.getId()));
 
             Intent intent = new Intent(this, Registering4Activity.class);
             intent.putExtra("username", username);
             intent.putExtra("user_id", uid);
             startActivity(intent);
-//            finish();
+            finish();
         }
     }
 

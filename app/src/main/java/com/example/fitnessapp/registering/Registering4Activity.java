@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -11,22 +12,33 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.UpdateData;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Registering4Activity extends AppCompatActivity {
 
     public String username;
-    private int uid;
+    protected int uid;
+    private Integer[] radioButtonIds = {
+            R.id.radioButton1,
+            R.id.radioButton2,
+            R.id.radioButton3,
+            R.id.radioButton4,
+            R.id.radioButton5
+    };
+    List<Integer> rbID = Arrays.asList(radioButtonIds);
 
     private RadioButton selectedRadioButton;
     private FrameLayout selectedFrameLayout;
-
-    private int numPushups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registering4);
 
+        Intent intent = getIntent();
         username = getIntent().getStringExtra("username");
         uid = getIntent().getIntExtra("user_id", 0);
     }
@@ -44,19 +56,9 @@ public class Registering4Activity extends AppCompatActivity {
 
         clearOtherRadioButtons(radioButton.getId());
         selectedRadioButton = radioButton;
-
-        numPushups = getNumPushups();
     }
 
     private void clearOtherRadioButtons(int selectedRadioButtonId) {
-        int[] radioButtonIds = {
-                R.id.radioButton1,
-                R.id.radioButton2,
-                R.id.radioButton3,
-                R.id.radioButton4,
-                R.id.radioButton5
-        };
-
         for (int id : radioButtonIds) {
             if (id != selectedRadioButtonId) {
                 RadioButton radioButton = findViewById(id);
@@ -71,8 +73,7 @@ public class Registering4Activity extends AppCompatActivity {
         if (selectedRadioButton == null) {
             Toast.makeText(this, "Please select an option before proceeding.", Toast.LENGTH_SHORT).show();
         } else {
-//            Toast.makeText(this, numPushups, Toast.LENGTH_SHORT).show();
-//            InsertData.insertNumPushups(numPushups);
+            new UpdateNumPushups().execute(uid, rbID.indexOf(selectedRadioButton.getId()));
 
             Intent intent = new Intent(this, Registering5Activity.class);
             intent.putExtra("username", username);
@@ -90,45 +91,12 @@ public class Registering4Activity extends AppCompatActivity {
 //        finish();
     }
 
-    private int getNumPushups() {
-//        if (selectedRadioButton.getId() == R.id.radioButton1) {
-//            return 0;
-//        }
-//
-//        if (selectedRadioButton.getId() == R.id.radioButton2) {
-//            return 5;
-//        }
-//
-//        if (selectedRadioButton.getId() == R.id.radioButton3) {
-//            return 10;
-//        }
-//
-//        if (selectedRadioButton.getId() == R.id.radioButton4) {
-//            return 20;
-//        }
-//
-//        if (selectedRadioButton.getId() == R.id.radioButton5) {
-//            return 21;
-//        }
-//        return 0;
+    private class UpdateNumPushups extends AsyncTask<Integer, Void, Boolean> {
 
-
-        // some reason, switch case not working
-//        switch (selectedRadioButton.getId()) {
-//            case R.id.radioButton1:
-//                return 0;
-//            case R.id.radioButton2:
-//                return 5;
-//            case R.id.radioButton3:
-//                return 10;
-//            case R.id.radioButton4:
-//                return 20;
-//            case R.id.radioButton5:
-//                return 21;
-//            default:
-//                return 0;
-//        }
-        return 0;
+        @Override
+        protected Boolean doInBackground(Integer... integers) {
+            return UpdateData.updateNumPushups(integers[0], integers[1]);
+        }
     }
 }
 

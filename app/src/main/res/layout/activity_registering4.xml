@@ -91,7 +91,7 @@
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
+            android:layout_gravity="center|end"
             android:backgroundTint="@android:color/transparent"
             android:buttonTint="@android:color/white"
             android:clickable="false" />
@@ -123,7 +123,7 @@
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
+            android:layout_gravity="center|end"
             android:backgroundTint="@android:color/transparent"
             android:buttonTint="@android:color/white"
             android:clickable="false" />
@@ -155,7 +155,7 @@
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
+            android:layout_gravity="center|end"
             android:backgroundTint="@android:color/transparent"
             android:buttonTint="@android:color/white"
             android:clickable="false" />
@@ -187,7 +187,7 @@
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
+            android:layout_gravity="center|end"
             android:backgroundTint="@android:color/transparent"
             android:buttonTint="@android:color/white"
             android:clickable="false" />
@@ -219,7 +219,7 @@
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
+            android:layout_gravity="center|end"
             android:backgroundTint="@android:color/transparent"
             android:buttonTint="@android:color/white"
             android:clickable="false" />

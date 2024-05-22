@@ -148,7 +148,7 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Less than 5"
+                    android:text="0 - 30 seconds"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -178,7 +178,7 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="5 - 10"
+                    android:text="30 - 60 seconds"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -208,7 +208,7 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="10 - 20"
+                    android:text="60 - 120 seconds"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -238,7 +238,7 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="More than 20"
+                    android:text="Over 120 seconds"
                     android:textSize="16sp" />
 
                 <RadioButton
