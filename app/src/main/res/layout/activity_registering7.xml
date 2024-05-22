@@ -7,31 +7,34 @@
     android:background="#232323"
     tools:context=".registering.Registering7Activity">
 
-<!-- Probably Using Threads when generating the Plan -->
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="150dp"
+    <!-- Probably Using Threads when generating the Plan -->
+    <ProgressBar
+        android:id="@+id/pbLaunch"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:backgroundTint="@color/colorPurple"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onNextClicked"
-        android:text="Next"
-        android:textColor="@color/colorDarkPurple"
+        android:layout_marginBottom="128dp"
+        android:indeterminateTint="@color/colorYellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="108dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:background="#00E2F163"
-        android:onClick="onBackClicked"
-        android:text="Back"
+    <TextView
+        android:id="@+id/tvAgeWeightHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Generating Plan..."
+        android:textAlignment="center"
         android:textColor="#E2F163"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/pbLaunch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

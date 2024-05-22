@@ -34,19 +34,19 @@ public class UpdateData {
              )) {
             switch (numPushupsSelected){
                 case 0:
-                    statement.setString(1, "0");
+                    statement.setInt(1, 0);
                     break;
                 case 1:
-                    statement.setString(1, "5");
+                    statement.setInt(1, 5);
                     break;
                 case 2:
-                    statement.setString(1, "10");
+                    statement.setInt(1, 10);
                     break;
                 case 3:
-                    statement.setString(1, "20");
+                    statement.setInt(1, 20);
                     break;
                 case 4:
-                    statement.setString(1, "21");
+                    statement.setInt(1, 21);
                     break;
 
             }
@@ -93,19 +93,19 @@ public class UpdateData {
              )) {
             switch (numPlanksSelected){
                 case 0:
-                    statement.setString(1, "0");
+                    statement.setInt(1, 0);
                     break;
                 case 1:
-                    statement.setString(1, "30");
+                    statement.setInt(1, 30);
                     break;
                 case 2:
-                    statement.setString(1, "60");
+                    statement.setInt(1, 60);
                     break;
                 case 3:
-                    statement.setString(1, "120");
+                    statement.setInt(1, 120);
                     break;
                 case 4:
-                    statement.setString(1, "121");
+                    statement.setInt(1, 121);
                     break;
             }
             statement.setInt(2, user_id);

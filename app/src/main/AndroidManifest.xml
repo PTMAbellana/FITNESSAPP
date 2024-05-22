@@ -102,7 +102,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeView"
+            android:name=".HomeViewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

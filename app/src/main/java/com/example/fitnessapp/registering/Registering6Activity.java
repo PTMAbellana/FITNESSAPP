@@ -23,8 +23,8 @@ public class Registering6Activity extends AppCompatActivity {
     private Integer[] radioButtonIds = {
             R.id.radioButton1,
             R.id.radioButton2,
-            R.id.radioButton4,
             R.id.radioButton3,
+            R.id.radioButton4,
             R.id.radioButton5
     };
 

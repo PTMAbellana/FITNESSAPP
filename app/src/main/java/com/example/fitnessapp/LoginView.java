@@ -61,7 +61,7 @@ public class LoginView extends AppCompatActivity {
             if (result) {
                 Log.e("TAWAG", "UID is "+uid);
                 if (uid != 0) {
-                    Intent intent = new Intent(LoginView.this, HomeView.class);
+                    Intent intent = new Intent(LoginView.this, HomeViewActivity.class);
                     intent.putExtra("user_id", uid);
                     Log.e("TAWAG", "Successful sha");
 //                    intent.putExtra("username",username);
