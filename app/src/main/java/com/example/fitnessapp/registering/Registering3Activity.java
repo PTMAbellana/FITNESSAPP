@@ -14,6 +14,7 @@ import com.example.fitnessapp.R;
 public class Registering3Activity extends AppCompatActivity {
 
     public String username;
+    protected int uid;
 
     private RadioButton selectedRadioButton;
     @Override
@@ -23,6 +24,7 @@ public class Registering3Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
+        uid = intent.getIntExtra("user_id", 0);
     }
 
     public void onFrameClick(View view) {

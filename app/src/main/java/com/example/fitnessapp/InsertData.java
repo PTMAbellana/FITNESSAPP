@@ -15,9 +15,9 @@ import java.sql.Statement;
 
 public class InsertData {
     public static int uid;
-    public static void insertUserData(Context context, String name, String email, String username, String password, String gender, InsertUserDataCallback callback) {
+    public static void insertUserData(Context context, String name, String email, String username, String password, String gender) {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-        new InsertUserDataTask(context, name, email, username, hashedPassword, gender, callback).execute();
+        new InsertUserDataTask(context, name, email, username, hashedPassword, gender).execute();
 //        Log.e("InsertData", "UID is " + uid);
 //        return uid;
     }
@@ -29,16 +29,16 @@ public class InsertData {
         private final String username;
         private final String password;
         private final String gender;
-        private final InsertUserDataCallback callback;
+//        private final InsertUserDataCallback callback;
 
-        public InsertUserDataTask(Context context, String name, String email, String username, String password, String gender, InsertUserDataCallback callback) {
+        public InsertUserDataTask(Context context, String name, String email, String username, String password, String gender) {
             this.context = context;
             this.name = name;
             this.email = email;
             this.username = username;
             this.password = password;
             this.gender = gender;
-            this.callback = callback;
+//            this.callback = callback;
         }
 
         @Override
@@ -69,19 +69,19 @@ public class InsertData {
 
                 ResultSet generatedKeys = statement.getGeneratedKeys();
 
-                if (generatedKeys.next()) {
-//                    uid = generatedKeys.getInt(1);
-                    if (callback != null){
-                        callback.onUserInserted(generatedKeys.getInt(1));
-                    }
-//                    Log.e("InsertData", "insert successful, uid is " + uid);
-//                    return uid;
-                } else {
-                    if (callback != null){
-                        callback.onUserInserted(0);
-
-                    }
-                }
+//                if (generatedKeys.next()) {
+////                    uid = generatedKeys.getInt(1);
+//                    if (callback != null){
+//                        callback.onUserInserted(generatedKeys.getInt(1));
+//                    }
+////                    Log.e("InsertData", "insert successful, uid is " + uid);
+////                    return uid;
+//                } else {
+//                    if (callback != null){
+//                        callback.onUserInserted(0);
+//
+//                    }
+//                }
 
             }
 
