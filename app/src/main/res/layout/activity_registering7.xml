@@ -7,4 +7,5 @@
     android:background="#232323"
     tools:context=".registering.Registering7Activity">
 
+<!-- Probably Using Threads when generating the Plan -->
 </androidx.constraintlayout.widget.ConstraintLayout>

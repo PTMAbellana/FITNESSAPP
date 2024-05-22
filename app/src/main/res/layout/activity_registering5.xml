@@ -8,5 +8,150 @@
     tools:context=".registering.Registering5Activity">
 
     <!-- Height, Weight, Age -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/colorPurple"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="onNextClicked"
+        android:text="Next"
+        android:textColor="@color/colorDarkPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="108dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:onClick="onBackClicked"
+        android:text="Back"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="203dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="64dp"
+        android:max="4"
+        android:progress="2"
+        android:progressTint="@color/colorWhite"
+        android:thumbTint="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAgeWeightHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="What's your age, weight and height?"
+        android:textAlignment="center"
+        android:textColor="#E2F163"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+    <TextView
+        android:id="@+id/lblAge"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Age"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgeWeightHeight" />
+
+
+    <EditText
+        android:id="@+id/tfAge"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Age"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAge" />
+
+    <TextView
+        android:id="@+id/lblWeight"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Weight (kg)"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfAge" />
+
+    <EditText
+        android:id="@+id/tfWeight"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Weight"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWeight" />
+
+    <TextView
+        android:id="@+id/lblHeight"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Height (cm)"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfWeight" />
+
+    <EditText
+        android:id="@+id/tfHeight"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Height"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblHeight" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,19 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="108dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:background="#00E2F163"
-        android:text="Back"
-        android:onClick="onBackClicked"
-        android:textColor="#E2F163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <SeekBar
         android:id="@+id/seekBar2"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
@@ -86,7 +73,7 @@
             android:text="Your coach will design a weight loss plan for you to suit you best" />
 
         <ImageView
-            android:id="@+id/imageChoosePlan"
+            android:id="@+id/ivChoosePlan"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|fill_horizontal"
@@ -102,6 +89,8 @@
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/rounded_frame_layout"
+        android:clickable="true"
+        android:onClick="onFrameClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan">
@@ -126,20 +115,18 @@
             android:text="5-10 min a day" />
 
         <ImageView
-            android:id="@+id/imageButton1"
+            android:id="@+id/ivButton1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|fill_horizontal"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right" />
 
     </FrameLayout>
 
@@ -149,6 +136,8 @@
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
+        android:clickable="true"
+        android:onClick="onFrameClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beginnerbtn">
@@ -173,20 +162,19 @@
             android:text="10-20 min a day" />
 
         <ImageView
-            android:id="@+id/imageButton2"
+            android:id="@+id/ivButton2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|fill_horizontal"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right" />
+
 
     </FrameLayout>
 
@@ -196,6 +184,8 @@
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_frame_layout"
+        android:clickable="true"
+        android:onClick="onFrameClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intermediateBtn">
@@ -220,20 +210,18 @@
             android:text="15-30 min a day" />
 
         <ImageView
-            android:id="@+id/imageButton3"
+            android:id="@+id/ivButton3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center|fill_horizontal"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/circle_shape" />
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right" />
 
     </FrameLayout>
 

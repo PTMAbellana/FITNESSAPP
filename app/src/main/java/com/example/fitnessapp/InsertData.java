@@ -239,4 +239,5 @@ public class InsertData {
             insertStmt.addBatch();
         }
     }
+
 }
