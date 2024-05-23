@@ -8,6 +8,20 @@
     tools:context=".EditProfileActivity">
 
     <Button
+        android:id="@+id/btnBack2"
+        android:layout_width="165dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:background="#00E2F163"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="onBackClicked"
+        android:text="My Profile"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/btnBack"
         android:layout_width="92dp"
         android:layout_height="48dp"
@@ -224,19 +238,5 @@
             android:textColor="#FFFFFF"
             android:textSize="13sp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="165dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="28dp"
-        android:background="#00E2F163"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onBackClicked"
-        android:text="My Profile"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
