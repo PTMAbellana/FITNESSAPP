@@ -1,6 +1,9 @@
 package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,23 +13,39 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.example.fitnessapp.databinding.ActivityHomeViewBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class HomeViewActivity extends AppCompatActivity {
     TextView greetings;
 
     public String username;
     int uid;
+//     binding;
+    ActivityHomeViewBinding binding;
+    private Integer[] id = {
+            R.id.workout,
+            R.id.progress,
+            R.id.nutrition,
+            R.id.home
+    };
+
+    List<Integer> menus = Arrays.asList(id);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_view);
-
-//        uid = 1;
+        binding = ActivityHomeViewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+//        setContentView(R.layout.activity_home_view);
+        replaceFragment(new HomeFragment());
         Intent intent = getIntent();
         Log.e("TAWAG", "I was called! pero wa pay uid");
         uid = intent.getIntExtra("user_id", -1);
         Log.e("TAWAG", "I was called! uid is " + uid);
-//        username = intent.getStringExtra("username");
 
         if (uid != 0) {
             new GetUsername().execute(uid);
@@ -35,30 +54,53 @@ public class HomeViewActivity extends AppCompatActivity {
             Toast.makeText(this, "Error: Invalid user ID", Toast.LENGTH_SHORT).show();
         }
 
+        // Set up bottom navigation view
 
-
-//        btnProfile = findViewById(R.id.btnEditProfile);
-
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (menus.indexOf(item.getItemId())) {
+                case 0:
+                    replaceFragment(new WorkoutFragment());
+                    break;
+                case 1:
+                    replaceFragment(new ProgressTrackingFragment());
+                    break;
+                case 2:
+                    replaceFragment(new NutritionFragment());
+                    break;
+                case 3:
+                    replaceFragment(new HomeFragment());
+                    break;
+            }
+            return true;
+        });
     }
-
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
+    }
     public void onEditProfileActivityClicked(View view) {
         Intent intent = new Intent(HomeViewActivity.this, EditProfileActivity.class);
         intent.putExtra("user_id", uid);
-//        intent.putExtra("username", username);
         startActivity(intent);
     }
+
     public void onWorkoutActivityClicked(View view) {
         Intent intent = new Intent(HomeViewActivity.this, WorkoutActivity.class);
         startActivity(intent);
     }
+
     public void onNutritionActivityClicked(View view) {
         Intent intent = new Intent(HomeViewActivity.this, NutritionActivity.class);
         startActivity(intent);
     }
+
     public void onProgressTrackingActivityClicked(View view) {
         Intent intent = new Intent(HomeViewActivity.this, ProgressTrackingActivity.class);
         startActivity(intent);
     }
+
     private class GetUsername extends AsyncTask<Integer, Void, String> {
         private int uid;
 
@@ -68,7 +110,7 @@ public class HomeViewActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String result){
+        protected void onPostExecute(String result) {
             if (result != null) {
                 username = result;
                 greetings = findViewById(R.id.tvGreeting);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:icon="@drawable/workoutbtn"
+        android:id="@+id/home"/>
+    <item android:title="Workout"
+        android:icon="@drawable/workoutbtn"
+        android:id="@+id/workout"/>
+    <item android:title="Progress Tracking"
+        android:icon="@drawable/progressbtn"
+        android:id="@+id/progress"/>
+    <item android:title="Nutrition"
+        android:icon="@drawable/nutritionbtn"
+        android:id="@+id/nutrition"/>
+</menu>

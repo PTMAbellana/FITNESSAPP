@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NutritionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#232323"
+        tools:context=".NutritionActivity">
+
+        <Button
+            android:id="@+id/btnBack3"
+            android:layout_width="92dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="#00E2F163"
+            android:onClick="onBackClicked"
+            android:text="Back"
+            android:textColor="#E2F163"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnUpdateProfile"
+            android:layout_width="48dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="48dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="Update Profile"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/editprof" />
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="137dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Nutrition"
+            android:textColor="#896CFE"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnViewFood1"
+            android:layout_width="323dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="120dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="View Food 1"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/food5" />
+
+        <ImageButton
+            android:id="@+id/btnViewFood2"
+            android:layout_width="323dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="View Food 2"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewFood1"
+            app:srcCompat="@drawable/food2" />
+
+        <ImageButton
+            android:id="@+id/btnViewFood3"
+            android:layout_width="323dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="View Food 3"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewFood2"
+            app:srcCompat="@drawable/food3" />
+
+        <ImageButton
+            android:id="@+id/btnViewFood4"
+            android:layout_width="323dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="View Food 4"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewFood3"
+            app:srcCompat="@drawable/food4" />
+
+        <ImageButton
+            android:id="@+id/btnViewFood5"
+            android:layout_width="323dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="View Food 5"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewFood4"
+            app:srcCompat="@drawable/food1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
