@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity1;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity4;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +31,8 @@ public class NutritionFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ImageButton btnViewFood1, btnViewFood2, btnViewFood3, btnViewFood4, btnViewFood5;
+
 
     public NutritionFragment() {
         // Required empty public constructor
@@ -59,6 +69,55 @@ public class NutritionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nutrition, container, false);
+        View view= inflater.inflate(R.layout.fragment_nutrition, container, false);
+        btnViewFood1 = view.findViewById(R.id.btnViewFood1);
+        btnViewFood2 = view.findViewById(R.id.btnViewFood2);
+        btnViewFood3 = view.findViewById(R.id.btnViewFood3);
+        btnViewFood4 = view.findViewById(R.id.btnViewFood4);
+        btnViewFood5 = view.findViewById(R.id.btnViewFood5);
+        btnViewFood1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                startActivity(intent);
+            }
+        });
+
+        btnViewFood2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                startActivity(intent);
+            }
+        });
+
+        btnViewFood3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                startActivity(intent);
+            }
+        });
+
+        btnViewFood4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                startActivity(intent);
+            }
+        });
+        btnViewFood5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 }
