@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity4;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,8 @@ public class WorkoutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ImageButton btnVideo1, btnVideo2, btnVideo3, btnVideo4;
+
 
     public WorkoutFragment() {
         // Required empty public constructor
@@ -59,6 +68,56 @@ public class WorkoutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_workout, container, false);
+        View view =  inflater.inflate(R.layout.fragment_workout, container, false);
+        btnVideo1 = view.findViewById(R.id.btnVideo1);
+        btnVideo2 = view.findViewById(R.id.btnVideo2);
+        btnVideo3 = view.findViewById(R.id.btnVideo3);
+        btnVideo4 = view.findViewById(R.id.btnVideo4);
+        btnVideo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity1.class);
+                startActivity(intent);
+            }
+        });
+
+        btnVideo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        btnVideo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity3.class);
+                startActivity(intent);
+            }
+        });
+
+        btnVideo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity4.class);
+                startActivity(intent);
+            }
+        });
+
+        return view;
     }
+
+    // Method to navigate to VideoWorkoutFragment
+//    private void navigateToVideoWorkoutFragment() {
+//        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_layout_1, new VideoWorkoutFragment());
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+
 }

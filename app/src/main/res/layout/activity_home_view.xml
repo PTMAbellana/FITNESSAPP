@@ -207,7 +207,7 @@
             android:layout_weight="1"
             android:backgroundTint="#232323"
             android:fontFamily="@font/poppins_semibold"
-            android:onClick="onStartDay1Clicked"
+            android:onClick="onDay1Clicked"
             android:text="Start"
             app:iconTint="#232323"
             app:strokeColor="#F8F8F8"
@@ -288,7 +288,7 @@
 
     </LinearLayout>
     <FrameLayout
-        android:id="@+id/frame_layout"
+        android:id="@+id/frame_layout_workout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"

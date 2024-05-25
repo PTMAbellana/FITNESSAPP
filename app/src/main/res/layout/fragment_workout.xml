@@ -6,214 +6,220 @@
     android:layout_height="match_parent"
     tools:context=".WorkoutFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:id="@+id/frame_layout_workout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#232323"
-        tools:context=".WorkoutActivity">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="92dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
-            android:background="#00E2F163"
-            android:onClick="onBackClicked"
-            android:text="Back"
-            android:textColor="#E2F163"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnUpdateProfile"
-            android:layout_width="48dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="40dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Update Profile"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.867"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/editprof" />
-
-        <TextView
-            android:id="@+id/tvGreeting"
-            android:layout_width="137dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="52dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Workout"
-            android:textAlignment="center"
-            android:textColor="#896CFE"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="323dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginEnd="44dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.132">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#232323"
+            tools:context=".WorkoutActivity">
 
             <Button
-                android:id="@+id/beginnerbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:id="@+id/btnWorkoutBack2"
+                android:layout_width="92dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:background="#00E2F163"
+                android:onClick="onBackClicked"
+                android:text="Back"
+                android:textColor="#E2F163"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="48dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="Update Profile"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.867"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/editprof" />
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="137dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="52dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:padding="5dp"
-                android:text="Beginner"
-                android:textSize="13sp" />
+                android:text="Workout"
+                android:textAlignment="center"
+                android:textColor="#896CFE"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/intermediateBtn"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_semibold"
-                android:padding="5dp"
-                android:text="Intermediate"
-                android:textSize="13sp" />
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="323dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="44dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.132">
 
-            <Button
-                android:id="@+id/advancedBtn"
-                android:layout_width="89dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_semibold"
-                android:padding="5dp"
-                android:text="Advanced"
-                android:textSize="13sp" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/beginnerbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="5dp"
+                    android:text="Beginner"
+                    android:textSize="13sp" />
 
-        <ImageView
-            android:id="@+id/imgVideo2"
-            android:layout_width="323dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="19dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgVideo1"
-            app:srcCompat="@drawable/video2" />
+                <Button
+                    android:id="@+id/intermediateBtn"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="5dp"
+                    android:text="Intermediate"
+                    android:textSize="13sp" />
 
-        <ImageView
-            android:id="@+id/imgVideo3"
-            android:layout_width="323dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgVideo2"
-            app:srcCompat="@drawable/video3" />
+                <Button
+                    android:id="@+id/advancedBtn"
+                    android:layout_width="89dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="5dp"
+                    android:text="Advanced"
+                    android:textSize="13sp" />
+            </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imgVideo4"
-            android:layout_width="323dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="17dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgVideo3"
-            app:layout_constraintVertical_bias="0.037"
-            app:srcCompat="@drawable/video4" />
+            <ImageView
+                android:id="@+id/imgVideo2"
+                android:layout_width="323dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="19dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgVideo1"
+                app:srcCompat="@drawable/video2" />
 
-        <ImageView
-            android:id="@+id/imgVideo1"
-            android:layout_width="323dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="208dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/video1" />
+            <ImageView
+                android:id="@+id/imgVideo3"
+                android:layout_width="323dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgVideo2"
+                app:srcCompat="@drawable/video3" />
 
-        <ImageButton
-            android:id="@+id/btnVideo5"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="236dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="39dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Play Video 1"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/imgVideo1"
-            app:layout_constraintEnd_toEndOf="@+id/imgVideo1"
-            app:layout_constraintStart_toStartOf="@+id/imgVideo1"
-            app:layout_constraintTop_toTopOf="@+id/imgVideo1"
-            app:srcCompat="@drawable/playbtn" />
+            <ImageView
+                android:id="@+id/imgVideo4"
+                android:layout_width="323dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgVideo3"
+                app:layout_constraintVertical_bias="0.037"
+                app:srcCompat="@drawable/video4" />
 
-        <ImageButton
-            android:id="@+id/btnVideo2"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="236dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="39dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Play Video 2"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/imgVideo2"
-            app:layout_constraintEnd_toEndOf="@+id/imgVideo2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imgVideo2"
-            app:layout_constraintTop_toTopOf="@+id/imgVideo2"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/playbtn" />
+            <ImageView
+                android:id="@+id/imgVideo1"
+                android:layout_width="323dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="208dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/video1" />
 
-        <ImageButton
-            android:id="@+id/btnVideo3"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="232dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Play Video 3"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/imgVideo3"
-            app:layout_constraintEnd_toEndOf="@+id/imgVideo3"
-            app:layout_constraintStart_toStartOf="@+id/imgVideo3"
-            app:layout_constraintTop_toTopOf="@+id/imgVideo3"
-            app:srcCompat="@drawable/playbtn" />
+            <ImageButton
+                android:id="@+id/btnVideo1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="236dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="39dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="Play Video 1"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/imgVideo1"
+                app:layout_constraintEnd_toEndOf="@+id/imgVideo1"
+                app:layout_constraintStart_toStartOf="@+id/imgVideo1"
+                app:layout_constraintTop_toTopOf="@+id/imgVideo1"
+                app:srcCompat="@drawable/playbtn" />
 
-        <ImageButton
-            android:id="@+id/btnVideo4"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="232dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Play Video 4"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/imgVideo4"
-            app:layout_constraintEnd_toEndOf="@+id/imgVideo4"
-            app:layout_constraintStart_toStartOf="@+id/imgVideo4"
-            app:layout_constraintTop_toTopOf="@+id/imgVideo4"
-            app:srcCompat="@drawable/playbtn"
-            tools:ignore="DuplicateIds" />
+            <ImageButton
+                android:id="@+id/btnVideo2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="236dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="39dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="Play Video 2"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/imgVideo2"
+                app:layout_constraintEnd_toEndOf="@+id/imgVideo2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imgVideo2"
+                app:layout_constraintTop_toTopOf="@+id/imgVideo2"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/playbtn" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/btnVideo3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="232dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="43dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="Play Video 3"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/imgVideo3"
+                app:layout_constraintEnd_toEndOf="@+id/imgVideo3"
+                app:layout_constraintStart_toStartOf="@+id/imgVideo3"
+                app:layout_constraintTop_toTopOf="@+id/imgVideo3"
+                app:srcCompat="@drawable/playbtn" />
+
+            <ImageButton
+                android:id="@+id/btnVideo4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="232dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="43dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="Play Video 4"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/imgVideo4"
+                app:layout_constraintEnd_toEndOf="@+id/imgVideo4"
+                app:layout_constraintStart_toStartOf="@+id/imgVideo4"
+                app:layout_constraintTop_toTopOf="@+id/imgVideo4"
+                app:srcCompat="@drawable/playbtn"
+                tools:ignore="DuplicateIds" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </FrameLayout>

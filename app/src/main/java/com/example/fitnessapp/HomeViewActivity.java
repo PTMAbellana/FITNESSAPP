@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.example.fitnessapp.databinding.ActivityHomeViewBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeViewActivity extends AppCompatActivity {
     TextView greetings;
@@ -77,7 +76,7 @@ public class HomeViewActivity extends AppCompatActivity {
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.replace(R.id.frame_layout_workout, fragment);
         fragmentTransaction.commit();
     }
     public void onEditProfileActivityClicked(View view) {

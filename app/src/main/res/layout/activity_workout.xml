@@ -8,7 +8,7 @@
     tools:context=".WorkoutActivity">
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnWorkoutBack2"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
@@ -139,7 +139,7 @@
         app:srcCompat="@drawable/video1" />
 
     <ImageButton
-        android:id="@+id/btnVideo5"
+        android:id="@+id/btnVideo1"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="236dp"
