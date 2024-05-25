@@ -62,7 +62,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
@@ -72,20 +72,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12">
 
         <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/timeicon" />
+            android:id="@+id/imageView15"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/caloriesicon" />
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="29dp"
-            android:layout_marginStart="40dp"
             android:text="150 calories"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
+
     </LinearLayout>
 
     <ScrollView
@@ -328,6 +329,7 @@
                 android:id="@+id/btnCalculateRatio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
 
             <ImageView
