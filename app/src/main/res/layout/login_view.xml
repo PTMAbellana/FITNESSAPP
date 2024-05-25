@@ -7,18 +7,6 @@
     android:background="#232323"
     app:flow_verticalAlign="baseline">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="92dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="#00E2F163"
-        android:onClick="onBackClicked"
-        android:text="Back"
-        android:textColor="#E2F163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvGreeting"
         android:layout_width="wrap_content"

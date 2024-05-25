@@ -1,38 +1,50 @@
-package com.example.fitnessapp;
+    package com.example.fitnessapp;
 
-import android.util.Log;
+    import android.util.Log;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+    import java.sql.Connection;
+    import java.sql.DriverManager;
+    import java.sql.SQLException;
 
-public class ConnectionClass {
-    private static final String TAG = "ConnectionClass";
-    private static final String DATABASE = "fitnessdb";
-//    private static final String IP = "192.168.43.238";
-//    private static final String IP = "192.168.1.3";
-    private static final String IP = "10.0.2.2";
-    private static final String PORT = "3306";
-//    private static final String USERNAME = "paul";
-    private static final String USERNAME = "francis";
-//    private static final String PASSWORD = "abellana";
+    // DatabaseHelper
+    public class ConnectionClass {
+        private static final String TAG = "ConnectionClass";
 
-    private static final String PASSWORD = "chavez";
+        // For the local database
+        private static final String DATABASE = "fitnessdb"; // local
+        private static final String IP = "10.0.2.2"; // locally hosted in machine
+        private static final String PORT = "3306";
+        private static final String USERNAME = "francis"; // local
+        private static final String PASSWORD = "chavez"; // local
+//        private static final String IP = "192.168.1.4";
+//        private static final String IP = "127.0.0.1";
+//        private static final String USERNAME = "root";
+//        private static final String PASSWORD = "123456";
 
-    public static Connection getConnection() {
-        Connection conn = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String connectionString = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE;
-            conn = DriverManager.getConnection(connectionString, USERNAME, PASSWORD);
-            Log.d(TAG, "Connection successful");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            Log.e(TAG, "MySQL JDBC Driver not found", e);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Log.e(TAG, "Failed to connect to MySQL server", e);
+        // For the online database
+//        private static final String DATABASE = "sql12709080";
+//        private static final String IP = "sql12.freesqldatabase.com";
+//        private static final String PORT = "3306";
+//        private static final String USERNAME = "sql12709080";
+//        private static final String PASSWORD = "cUFTy1vWpp";
+
+        public static Connection getConnection() {
+            Connection conn = null;
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                String connectionString = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE;
+//                Class.forName("org.mariadb.jdbc.Driver");
+//                String connectionString = "jdbc:mariadb://" + IP + ":" + PORT + "/" + DATABASE;
+                conn = DriverManager.getConnection(connectionString, USERNAME, PASSWORD);
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                Log.e(TAG, "MySQL JDBC Driver not found", e);
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+                Log.e(TAG, "Failed to connect to MySQL server", e);
+            }
+            return conn;
         }
-        return conn;
     }
-}

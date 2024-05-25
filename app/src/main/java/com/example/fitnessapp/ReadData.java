@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ReadData {
-    public static boolean readData(String username, String password) {
+    public static boolean readDataLogin(String username, String password) {
         try (Connection c = ConnectionClass.getConnection();
              PreparedStatement statement = c.prepareStatement("SELECT password FROM tblusers WHERE username = ?")) {
 
@@ -102,22 +102,65 @@ public class ReadData {
         }
     }
 
-    public static int readData(String username) {
-        try (Connection c = ConnectionClass.getConnection();) {
-            Statement statement = c.createStatement();
-            String query = "SELECT * FROM tblusers";
-            ResultSet res = statement.executeQuery(query);
-            while (res.next()) {
-                int id = res.getInt("id");
-                String name = res.getString("username");
-                if (name.equals(username)) {
-                    return id;
-                }
+    // Processing the Plan
+    public static Double getBMI(int uid){
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT height, weight FROM tblusers WHERE user_id=?");
+        ){
+            statement.setInt(1, uid);
+            ResultSet res = statement.executeQuery();
+            if (res.next()) {
+                // convert to meters
+                double height = res.getDouble("height") / 100.0;
+
+                // must be in kg
+                double weight = res.getDouble("weight");
+
+                // kg/m^2
+                return weight / (height * height);
+            } else {
+                Log.e("ReadData", "No weight or height found for user ID: " + uid);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        }catch (SQLException e){
+            throw new RuntimeException();
         }
-        return 0;
+        return null;
     }
 
+    public static String getPlan(int uid){
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT plan FROM tblusers WHERE user_id=?");
+        ){
+            statement.setInt(1, uid);
+            ResultSet res = statement.executeQuery();
+            if (res.next()) {
+                return res.getString("plan");
+            } else {
+                Log.e("ReadData", "No plan found for user ID: " + uid);
+            }
+        }catch (SQLException e){
+            throw new RuntimeException();
+        }
+        return null;
+    }
+
+
+
+//    public static int readDataLogin(String username) {
+//        try (Connection c = ConnectionClass.getConnection();) {
+//            Statement statement = c.createStatement();
+//            String query = "SELECT * FROM tblusers";
+//            ResultSet res = statement.executeQuery(query);
+//            while (res.next()) {
+//                int id = res.getInt("id");
+//                String name = res.getString("username");
+//                if (name.equals(username)) {
+//                    return id;
+//                }
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return 0;
+//    }
 }

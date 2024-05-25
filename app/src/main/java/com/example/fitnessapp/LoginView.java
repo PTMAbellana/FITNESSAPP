@@ -48,7 +48,7 @@ public class LoginView extends AppCompatActivity {
         protected Boolean doInBackground(String... params) {
             username = params[0];
             String password = params[1];
-            if (ReadData.readData(username, password)){
+            if (ReadData.readDataLogin(username, password)){
                 uid = ReadData.getSession(username);
                 return true;
             }
@@ -77,11 +77,7 @@ public class LoginView extends AppCompatActivity {
             }
         }
     }
-    public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-        finish();
-    }
+
     public void onRegisterClicked(View view) {
         Intent intent = new Intent(this, Registering1Activity.class);
         startActivity(intent);

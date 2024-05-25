@@ -13,49 +13,116 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.lang.Runnable;
+
 
 // Checked
 public class LaunchActivity extends AppCompatActivity {
     private ConnectionClass connectionClass;
-    private String name, str;
-    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
         connectionClass = new ConnectionClass();
-        connect();
 
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        connect(new ConnectionCallback() {
             @Override
-            public void run() {
-                 Intent intent = new Intent(LaunchActivity.this, OnBoarding1Activity.class);
-                 startActivity(intent);
-                 finish();
+            public void onConnectionSuccess(String successMessage) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(LaunchActivity.this, successMessage, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(LaunchActivity.this, OnBoarding1Activity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 3000);
+                    }
+                });
             }
-        }, 3000);
+
+
+
+            @Override
+            public void onConnectionFailure(String errorMessage) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(LaunchActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+        });
     }
 
-    private void connect() {
+    private void connect(ConnectionCallback callback) {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
             try (Connection con = connectionClass.getConnection()) {
                 if (con == null) {
-                    str = "Error in connection with MySQL server";
+                    callback.onConnectionFailure("Error in connection with MySQL server");
                 } else {
-                    str = "Connected with MySQL server";
                     CreateTable.createTables();
                     InsertData.insertAllExercisesData();
+                    callback.onConnectionSuccess("Connected with MySQL server");
                 }
             } catch (SQLException e) {
-                str = "Error in connection: " + e.getMessage();
+                callback.onConnectionFailure("Error in connection: " + e.getMessage());
             }
-            runOnUiThread(() -> {
-                Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-            });
         });
     }
 
+
+
+//    private void connect() {
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        executorService.execute(() -> {
+//            try (Connection con = connectionClass.getConnection()) {
+//                if (con == null) {
+//                    str = "Error in connection with MySQL server";
+//                } else {
+//                    str = "Connected with MySQL server";
+//                    CreateTable.createTables();
+//                    InsertData.insertAllExercisesData();
+//                }
+//            } catch (SQLException e) {
+//                str = "Error in connection: " + e.getMessage();
+//            }
+//            runOnUiThread(() -> {
+//                Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+//            });
+//        });
+//    }
+
+    //    private String name, str;
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_launch);
+//
+//        connectionClass = new ConnectionClass();
+//        connect();
+//
+//        handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                 Intent intent = new Intent(LaunchActivity.this, OnBoarding1Activity.class);
+//                 startActivity(intent);
+//                 finish();
+//            }
+//        }, 3000);
+//    }
 }

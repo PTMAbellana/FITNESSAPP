@@ -16,7 +16,7 @@ public class CreateTable {
     public static boolean usersTable(){
         try (Connection c = ConnectionClass.getConnection()) {
             DatabaseMetaData metaData = c.getMetaData();
-            ResultSet resultSet = metaData.getTables(null, null, "tblUsers", new String[]{"TABLE"});
+            ResultSet resultSet = metaData.getTables(null, null, "tblusers", new String[]{"TABLE"});
             return resultSet.next() && !resultSet.wasNull();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -27,44 +27,57 @@ public class CreateTable {
         Connection conn = null;
         Statement stmt = null;
         String query1 = "CREATE TABLE IF NOT EXISTS tblusers (" +
-                "user_id INT(10) PRIMARY KEY AUTO_INCREMENT," +
+                "user_id INT PRIMARY KEY AUTO_INCREMENT," +
                 "name VARCHAR(100) NOT NULL," +
                 "email VARCHAR(100) NOT NULL," +
                 "username VARCHAR(50) NOT NULL," +
                 "password TEXT NOT NULL," +
                 "gender VARCHAR(50) NOT NULL DEFAULT 'Male'," +
                 "plan VARCHAR(50) NOT NULL DEFAULT 'Beginner'," +
-                "num_pushups INT(10) NOT NULL DEFAULT '0'," +
-                "height FLOAT(10) NOT NULL DEFAULT 0," +
-                "weight FLOAT(10) NOT NULL DEFAULT 0," +
-                "age INT(10) NOT NULL DEFAULT 0," +
-                "num_planks INT(10) NOT NULL DEFAULT '0'," +
-                "reminder TIME DEFAULT '00:00:00')";
+                "num_pushups INT NOT NULL DEFAULT 0," +
+                "height FLOAT NOT NULL DEFAULT 0," +
+                "weight FLOAT NOT NULL DEFAULT 0," +
+                "age INT NOT NULL DEFAULT 0," +
+                "num_planks INT NOT NULL DEFAULT 0," +
+                "reminder TIME DEFAULT '00:00:00'," +
+                "UNIQUE (user_id)," +
+                "UNIQUE (plan)" +
+                ")";
 
         String query2 = "CREATE TABLE IF NOT EXISTS tblexercises (" +
-                "exercise_id INT(10) PRIMARY KEY AUTO_INCREMENT," +
+                "exercise_id INT PRIMARY KEY AUTO_INCREMENT," +
                 "exercise_name TEXT NOT NULL," +
                 "target TEXT NOT NULL," +
                 "difficulty TEXT NOT NULL," +
-                "no_of_sets INT(10) NOT NULL," +
-                "no_of_reps INT(10)," +
-                "no_of_seconds INT(10))";
+                "no_of_sets INT NOT NULL," +
+                "no_of_reps INT," +
+                "no_of_seconds INT" +
+                ")";
 
-//        String quesry3 = "CREATE TABLE IF NOT EXISTS tblusersexercises (" +
-//                "user_exercise_id INT(10) PRIMARY KEY AUTO_INCREMENT," +
-//                " TEXT NOT NULL," +
-//                "target TEXT NOT NULL," +
-//                "difficulty TEXT NOT NULL," +
-//                "no_of_sets INT(10) NOT NULL," +
-//                "no_of_reps INT(10)," +
-//                "no_of_seconds INT(10))";
+        // Underweight, Normal, Overweight, Obese
+        String query3 = "CREATE TABLE IF NOT EXISTS tblplans (" +
+                "plan_id INT PRIMARY KEY AUTO_INCREMENT," +
+                "user_id INT NOT NULL," +
+                "current_difficulty VARCHAR(50) NOT NULL DEFAULT 'Beginner'," +
+                "target_difficulty VARCHAR(50) NOT NULL," +
+                "week INT NOT NULL DEFAULT 1," +
+                "day INT NOT NULL DEFAULT 1," +
+                "bmi FLOAT NOT NULL DEFAULT 1," +
+                "FOREIGN KEY (user_id) REFERENCES tblusers(user_id)" +
+                ")";
+
+        String query4 = "CREATE TABLE IF NOT EXISTS tbldietplans (" +
+                "plan_id INT PRIMARY KEY AUTO_INCREMENT," +
+                "bmi_category VARCHAR(50) NOT NULL DEFAULT 'Normal'," +
+                "plan_name TEXT NOT NULL" +
+                ")";
 
         try {
             conn = ConnectionClass.getConnection();
             if (conn != null) {
                 stmt = conn.createStatement();
 
-                if (!tableExists(conn, "tblUsers")) {
+                if (!tableExists(conn, "tblusers")) {
                     stmt.execute(query1);
                     System.out.println("Table tblUsers created successfully!");
                 } else {
@@ -76,6 +89,20 @@ public class CreateTable {
                     System.out.println("Table tblexercises created successfully!");
                 } else {
                     System.out.println("Table tblexercises already exists.");
+                }
+
+                if (!tableExists(conn, "tblplans")) {
+                    stmt.execute(query3);
+                    System.out.println("Table tblplans created successfully!");
+                } else {
+                    System.out.println("Table tblplans already exists.");
+                }
+
+                if (!tableExists(conn, "tbldietplans")) {
+                    stmt.execute(query4);
+                    System.out.println("Table tbldietplans created successfully!");
+                } else {
+                    System.out.println("Table tbldietplans already exists.");
                 }
 
                 System.out.println("Tables checked/created successfully!");

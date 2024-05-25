@@ -216,4 +216,28 @@ public class InsertData {
         }
     }
 
+    public static void insertPlan(int user_id, String current_difficulty, String target_difficulty, int week, int day, double bmi) {
+        String insertQuery = "INSERT INTO tblplans (user_id, current_difficulty, target_difficulty, week, day, bmi) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = ConnectionClass.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(insertQuery)) {
+
+            pstmt.setInt(1, user_id);
+            pstmt.setString(2, current_difficulty);
+            pstmt.setString(3, target_difficulty);
+            pstmt.setInt(4, week);
+            pstmt.setInt(5, day);
+            pstmt.setDouble(6, bmi);
+
+            int affectedRows = pstmt.executeUpdate();
+
+            if (affectedRows > 0) {
+                System.out.println("Plan inserted successfully!");
+            } else {
+                System.out.println("Failed to insert the plan.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
