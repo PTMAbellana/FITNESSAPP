@@ -29,7 +29,6 @@ public class Registering5Activity extends AppCompatActivity {
         username = getIntent().getStringExtra("username");
         user_id = getIntent().getIntExtra("user_id", 0);
 
-
         tfAge = findViewById(R.id.tfAge);
         tfWeight = findViewById(R.id.tfWeight);
         tfHeight = findViewById(R.id.tfHeight);

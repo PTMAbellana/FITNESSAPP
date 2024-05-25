@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.InsertData;
-import com.example.fitnessapp.LoginView;
+import com.example.fitnessapp.LoginViewActivity;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.ReadData;
 
@@ -65,7 +65,6 @@ public class Registering1Activity extends AppCompatActivity {
     // Murag radaw ni shag thread pero dili pang long term... ayy basta wa ko kasabot ehe
     private class SignUpTask extends AsyncTask<String, Void, Integer>{
         String username;
-
         @Override
         protected Integer doInBackground(String... params) {
             String name = params[0];
@@ -154,7 +153,7 @@ public class Registering1Activity extends AppCompatActivity {
 //        finish();
 //    }
     public void onLoginClicked(View view) {
-        Intent intent = new Intent(this, LoginView.class);
+        Intent intent = new Intent(this, LoginViewActivity.class);
         startActivity(intent);
         finish();
     }

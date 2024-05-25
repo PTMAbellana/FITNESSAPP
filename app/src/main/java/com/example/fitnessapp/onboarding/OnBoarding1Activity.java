@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fitnessapp.LoginView;
+import com.example.fitnessapp.LoginViewActivity;
 import com.example.fitnessapp.R;
 
 // Checked
@@ -24,7 +24,7 @@ public class OnBoarding1Activity extends AppCompatActivity {
     }
 
     public void onLoginClicked(View view) {
-        Intent intent = new Intent(this, LoginView.class);
+        Intent intent = new Intent(this, LoginViewActivity.class);
         startActivity(intent);
         finish();
     }

@@ -13,16 +13,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.registering.Registering1Activity;
 
-public class LoginView extends AppCompatActivity {
+public class LoginViewActivity extends AppCompatActivity {
 
     EditText tfUsername, pfPassword;
     TextView lblcheck;
     Button btnSignIn;
 
+    String username, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_view);
+        setContentView(R.layout.activity_login_view);
         btnSignIn = findViewById(R.id.btnSignIn);
         tfUsername = findViewById(R.id.tfUsername);
         pfPassword = findViewById(R.id.pfPassword);
@@ -36,19 +38,21 @@ public class LoginView extends AppCompatActivity {
     }
 
     private void signIn() {
-        String username = tfUsername.getText().toString();
-        String password = pfPassword.getText().toString();
+        username = tfUsername.getText().toString();
+        password = pfPassword.getText().toString();
         new LoginTask().execute(username, password);
     }
 
     private class LoginTask extends AsyncTask<String, Void, Boolean> {
-        String username;
-        int uid;
+        private String username;
+        private int uid;
+
         @Override
         protected Boolean doInBackground(String... params) {
             username = params[0];
+            Log.e("TAWAG", "username is " + username);
             String password = params[1];
-            if (ReadData.readDataLogin(username, password)){
+            if (ReadData.readDataLogin(username, password)) {
                 uid = ReadData.getSession(username);
                 return true;
             }
@@ -57,22 +61,19 @@ public class LoginView extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean result) {
-
             if (result) {
-                Log.e("TAWAG", "UID is "+uid);
+                Log.e("TAWAG", "UID is " + uid);
                 if (uid != 0) {
-                    Intent intent = new Intent(LoginView.this, HomeViewActivity.class);
+                    Intent intent = new Intent(LoginViewActivity.this, HomeViewActivity.class);
+                    intent.putExtra("username", username);
                     intent.putExtra("user_id", uid);
-                    Log.e("TAWAG", "Successful sha");
-//                    intent.putExtra("username",username);
+                    Log.e("TAWAG", "Successful login: " + username + " " + uid);
                     startActivity(intent);
-
-                    Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginViewActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                 } else {
                     lblcheck.setText("Error retrieving user session.");
                 }
             } else {
-                // Show error message
                 lblcheck.setText("Invalid username/password");
             }
         }

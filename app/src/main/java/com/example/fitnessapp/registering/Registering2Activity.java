@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.fitnessapp.LoginView;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.ReadData;
-
-import org.w3c.dom.Text;
 
 public class Registering2Activity extends AppCompatActivity {
 
@@ -28,13 +24,8 @@ public class Registering2Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-//        int uid = intent.getIntExtra("user_id", 0);
-        new GetSessionID().execute(username);
-        greetings = (TextView) findViewById(R.id.tvStartJourneyGreetings);
-        greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
-//        uid = ReadData.getSession(username);
-//        Log.e("Registering2Activity", "UID: " + uid);
-
+        new GetSessionID().execute(username); // Start AsyncTask to get user_id
+        greetings = findViewById(R.id.tvStartJourneyGreetings);
     }
 
     public void onStartPersonalizationClicked(View view) {
@@ -45,17 +36,17 @@ public class Registering2Activity extends AppCompatActivity {
         finish();
     }
 
-    private class GetSessionID extends AsyncTask<String, Void, Boolean>{
+    private class GetSessionID extends AsyncTask<String, Void, Integer>{
+        @Override
+        protected Integer doInBackground(String... strings) {
+            return ReadData.getSession(strings[0]);
+        }
 
         @Override
-        protected Boolean doInBackground(String... strings) {
-            user_id = ReadData.getSession(strings[0]);
-            return user_id != 0;
+        protected void onPostExecute(Integer result) {
+            super.onPostExecute(result);
+            user_id = result;
+            greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
         }
     }
-
-//    public void onRegisterClicked(View view) {
-//        Intent intent = new Intent(this, Registering1Activity.class);
-//        startActivity(intent);
-//    }
 }

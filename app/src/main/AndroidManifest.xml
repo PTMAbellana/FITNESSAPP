@@ -117,7 +117,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginView"
+            android:name=".LoginViewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

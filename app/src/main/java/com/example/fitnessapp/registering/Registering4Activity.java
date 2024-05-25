@@ -38,7 +38,6 @@ public class Registering4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registering4);
 
-        Intent intent = getIntent();
         username = getIntent().getStringExtra("username");
         user_id = getIntent().getIntExtra("user_id", 0);
     }

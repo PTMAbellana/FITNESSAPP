@@ -39,9 +39,9 @@ public class CreateTable {
                 "weight FLOAT NOT NULL DEFAULT 0," +
                 "age INT NOT NULL DEFAULT 0," +
                 "num_planks INT NOT NULL DEFAULT 0," +
-                "reminder TIME DEFAULT '00:00:00'," +
-                "UNIQUE (user_id)," +
-                "UNIQUE (plan)" +
+                "status TEXT NOT NULL DEFAULT 'active'" +
+//                "UNIQUE (user_id)," +
+//                "UNIQUE (plan)" +
                 ")";
 
         String query2 = "CREATE TABLE IF NOT EXISTS tblexercises (" +

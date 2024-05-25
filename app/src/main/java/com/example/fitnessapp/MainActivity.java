@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }   
 
-
 //    public void btnClick(View view) {
 //        ExecutorService executorService = Executors.newSingleThreadExecutor();
 //        executorService.execute(() -> {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onLoginClicked(View view) {
-        Intent intent = new Intent(this, LoginView.class);
+        Intent intent = new Intent(this, LoginViewActivity.class);
         startActivity(intent);
     }
 

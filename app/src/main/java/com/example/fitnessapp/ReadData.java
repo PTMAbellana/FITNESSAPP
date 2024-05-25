@@ -56,7 +56,7 @@ public class ReadData {
         }
     }
 
-    // getting the user_id
+    // getting the user_id, naa nmn diay rawr
     public static int getSession(String username){
         try (Connection c = ConnectionClass.getConnection();
             PreparedStatement statement = c.prepareStatement("SELECT user_id FROM tblusers WHERE username=?");
@@ -64,7 +64,8 @@ public class ReadData {
             statement.setString(1, username);
             ResultSet res = statement.executeQuery();
             if (res.next()){
-                return res.getInt("user_id");
+                int user_id = res.getInt("user_id");
+                return user_id;
             }
         }catch (SQLException e){
             throw new RuntimeException();
@@ -144,6 +145,32 @@ public class ReadData {
         return null;
     }
 
+    public static int[] getPlans(int uid) {
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT day, week FROM tblplans WHERE user_id=?");
+        ){
+            statement.setInt(1, uid);
+            ResultSet res = statement.executeQuery();
+            if (res.next()) {
+                int[] result = new int[2];
+                result[0] = res.getInt("day");
+                result[1] = res.getInt("week");
+
+                return result;
+            } else {
+                Log.e("ReadData", "No day and week found for user ID: " + uid);
+            }
+        }catch (SQLException e){
+            throw new RuntimeException();
+        }
+        return null;
+        // Perform database operations to fetch day and week for the given user ID
+        // Return the values as an array [day, week]
+        // This is a placeholder implementation. Replace with actual database fetching logic.
+//        int day = 1; // Fetch this from the database
+//        int week = 1; // Fetch this from the database
+//        return new int[]{day, week};
+    }
 
 
 //    public static int readDataLogin(String username) {

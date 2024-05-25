@@ -9,21 +9,18 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.fitnessapp.databinding.ActivityHomeViewBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Arrays;
 import java.util.List;
 
-import com.example.fitnessapp.databinding.ActivityHomeViewBinding;
-
 public class HomeViewActivity extends AppCompatActivity {
-    TextView greetings;
 
     public String username;
-    int uid;
-//     binding;
+    protected int user_id;
     ActivityHomeViewBinding binding;
     private Integer[] id = {
             R.id.workout,
@@ -39,22 +36,20 @@ public class HomeViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        setContentView(R.layout.activity_home_view);
-        replaceFragment(new HomeFragment());
-        Intent intent = getIntent();
-        Log.e("TAWAG", "I was called! pero wa pay uid");
-        uid = intent.getIntExtra("user_id", -1);
-        Log.e("TAWAG", "I was called! uid is " + uid);
 
-        if (uid != 0) {
-            new GetUsername().execute(uid);
+        username = getIntent().getStringExtra("username");
+        user_id = getIntent().getIntExtra("user_id", 0);
+
+        Log.e("TAWAG", "I was called! user_id is " + user_id + username);
+
+        if (user_id != 0) {
+            new GetPlansTask().execute(user_id);
         } else {
             Log.e("HomeView", "Error: Invalid user ID received");
             Toast.makeText(this, "Error: Invalid user ID", Toast.LENGTH_SHORT).show();
         }
 
         // Set up bottom navigation view
-
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (menus.indexOf(item.getItemId())) {
                 case 0:
@@ -73,50 +68,34 @@ public class HomeViewActivity extends AppCompatActivity {
             return true;
         });
     }
-    private void replaceFragment(Fragment fragment){
+
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout_workout, fragment);
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
-    public void onEditProfileActivityClicked(View view) {
-        Intent intent = new Intent(HomeViewActivity.this, EditProfileActivity.class);
-        intent.putExtra("user_id", uid);
-        startActivity(intent);
-    }
 
-    public void onWorkoutActivityClicked(View view) {
-        Intent intent = new Intent(HomeViewActivity.this, WorkoutActivity.class);
-        startActivity(intent);
-    }
-
-    public void onNutritionActivityClicked(View view) {
-        Intent intent = new Intent(HomeViewActivity.this, NutritionActivity.class);
-        startActivity(intent);
-    }
-
-    public void onProgressTrackingActivityClicked(View view) {
-        Intent intent = new Intent(HomeViewActivity.this, ProgressTrackingActivity.class);
-        startActivity(intent);
-    }
-
-    private class GetUsername extends AsyncTask<Integer, Void, String> {
-        private int uid;
-
+    private class GetPlansTask extends AsyncTask<Integer, Void, int[]> {
         @Override
-        protected String doInBackground(Integer... integers) {
-            return ReadData.getUsername(integers[0]);
+        protected int[] doInBackground(Integer... integers) {
+            int userId = integers[0];
+            // Fetch day and week from tblplans based on user_id
+            // Assuming you have a method like ReadData.getPlans(userId) that returns an array [day, week]
+            return ReadData.getPlans(userId);
         }
 
         @Override
-        protected void onPostExecute(String result) {
-            if (result != null) {
-                username = result;
-                greetings = findViewById(R.id.tvGreeting);
-                greetings.setText(greetings.getText() + " " + username);
+        protected void onPostExecute(int[] result) {
+            if (result != null && result.length == 2) {
+                int currentDay = result[0];
+                int currentWeek = result[1];
+                Log.e("TAWAG", "Fetched day " + currentDay + " and week " + currentWeek + " for user " + user_id);
+                HomeFragment homeFragment = HomeFragment.newInstance(currentDay, currentWeek, username);
+                replaceFragment(homeFragment);
             } else {
-                Log.e("HomeView", "Error: Username not found for user ID: " + uid);
-                Toast.makeText(HomeViewActivity.this, "Error: Username not found", Toast.LENGTH_SHORT).show();
+                Log.e("HomeView", "Error: Unable to fetch plans for user ID: " + user_id);
+                Toast.makeText(HomeViewActivity.this, "Error: Unable to fetch plans", Toast.LENGTH_SHORT).show();
             }
         }
     }

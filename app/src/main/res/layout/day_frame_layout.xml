@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_margin="15dp"
+    android:background="@drawable/daysinactivelayout_radius"
+    android:gravity="center|center_horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:id="@+id/lblDay"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Day"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnStartDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#232323"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Start"
+        android:textColor="#F8F8F8"
+        app:iconTint="#232323"
+        app:strokeColor="#232323"
+        app:strokeWidth="2dp" />
+
+</FrameLayout>
