@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232323"
+    tools:context=".nutritionalfood.NutritionFoodActivity1">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Avocado and Egg Toast"
+        android:textColor="#E1F063"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="219dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="9dp"
+        android:text="Avocado and Egg Toast"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="92dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#00E2F163"
+        android:onClick="onBackClicked"
+        android:text="Back"
+        android:textColor="#E2F163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnUpdateProfile"
+        android:layout_width="48dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="48dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="Update Profile"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/editprof" />
+
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="137dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nutrition"
+        android:textColor="#896CFE"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="409dp"
+        android:layout_height="274dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPurple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="363dp"
+            android:layout_height="232dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/mealplan1" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

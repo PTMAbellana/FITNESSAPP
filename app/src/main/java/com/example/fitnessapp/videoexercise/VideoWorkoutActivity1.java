@@ -27,7 +27,7 @@ public class VideoWorkoutActivity1 extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
         btnPlayPause = findViewById(R.id.btnPlayPause2);
-        btnBack = findViewById(R.id.btnWorkoutBack2);
+        btnBack = findViewById(R.id.btnBack);
         btnForward = findViewById(R.id.btnForward2);
         videoSeekBar = findViewById(R.id.videoSeekBar2);
 

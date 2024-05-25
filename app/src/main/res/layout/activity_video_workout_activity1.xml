@@ -33,7 +33,7 @@
 
         <TextView
             android:id="@+id/tvChallenge"
-            android:layout_width="333dp"
+            android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="39dp"
             android:layout_marginTop="525dp"
@@ -62,7 +62,7 @@
             android:id="@+id/tvGreeting2"
             android:layout_width="142dp"
             android:layout_height="29dp"
-            android:layout_marginStart="136dp"
+            android:layout_marginStart="115dp"
             android:layout_marginTop="56dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Upper Body "
@@ -115,7 +115,7 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btnWorkoutBack2"
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#673AB7"

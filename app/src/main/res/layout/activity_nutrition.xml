@@ -8,7 +8,7 @@
     tools:context=".NutritionActivity">
 
     <Button
-        android:id="@+id/btnWorkoutBack2"
+        android:id="@+id/btnBack"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
