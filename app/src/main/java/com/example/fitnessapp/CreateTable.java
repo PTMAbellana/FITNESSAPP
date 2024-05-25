@@ -39,7 +39,7 @@ public class CreateTable {
                 "weight FLOAT NOT NULL DEFAULT 0," +
                 "age INT NOT NULL DEFAULT 0," +
                 "num_planks INT NOT NULL DEFAULT 0," +
-                "status TEXT NOT NULL DEFAULT 'active'" +
+                "status VARCHAR(50) NOT NULL DEFAULT 'active'" +
 //                "UNIQUE (user_id)," +
 //                "UNIQUE (plan)" +
                 ")";

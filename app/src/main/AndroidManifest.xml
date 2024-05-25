@@ -19,6 +19,9 @@
             android:name=".nutritionalfood.NutritionFoodActivity1"
             android:exported="false" />
         <activity
+            android:name=".StartDayActivity"
+            android:exported="false" />
+        <activity
             android:name=".videoexercise.VideoWorkoutActivity4"
             android:exported="false" />
         <activity
@@ -35,7 +38,7 @@
             android:label="@string/title_activity_video_workout"
             android:theme="@style/Theme.FITNESSAPP" />
         <activity
-            android:name=".day.Day1"
+            android:name=".DayActivity"
             android:exported="false" />
         <activity
             android:name=".registering.Registering7Activity"

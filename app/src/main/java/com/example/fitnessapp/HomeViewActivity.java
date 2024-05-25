@@ -91,7 +91,7 @@ public class HomeViewActivity extends AppCompatActivity {
                 int currentDay = result[0];
                 int currentWeek = result[1];
                 Log.e("TAWAG", "Fetched day " + currentDay + " and week " + currentWeek + " for user " + user_id);
-                HomeFragment homeFragment = HomeFragment.newInstance(currentDay, currentWeek, username);
+                HomeFragment homeFragment = HomeFragment.newInstance(currentDay, currentWeek, username, user_id);
                 replaceFragment(homeFragment);
             } else {
                 Log.e("HomeView", "Error: Unable to fetch plans for user ID: " + user_id);

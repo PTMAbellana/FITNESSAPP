@@ -1,5 +1,7 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessapp.registering.Registering7Activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
@@ -27,20 +34,26 @@ public class HomeFragment extends Fragment {
     private static final String ARG_CURRENT_WEEK = "currentWeek";
     private static final String ARG_USERNAME = "username";
 
+    private static final String ARG_USER_ID = "user_id";
+
     private int currentDay;
     private int currentWeek;
     private String username;
+    private int user_id;
+
+    private List<Exercise> exerciseList;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    public static HomeFragment newInstance(int currentDay, int currentWeek, String username) {
+    public static HomeFragment newInstance(int currentDay, int currentWeek, String username, int user_id) {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_CURRENT_DAY, currentDay);
         args.putInt(ARG_CURRENT_WEEK, currentWeek);
         args.putString(ARG_USERNAME, username);
+        args.putInt(ARG_USER_ID, user_id);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,6 +65,7 @@ public class HomeFragment extends Fragment {
             currentDay = getArguments().getInt(ARG_CURRENT_DAY);
             currentWeek = getArguments().getInt(ARG_CURRENT_WEEK);
             username = getArguments().getString(ARG_USERNAME);
+            user_id = getArguments().getInt(ARG_USER_ID);
         }
     }
 
@@ -105,15 +119,19 @@ public class HomeFragment extends Fragment {
             TextView dayTextView = dayFrameLayout.findViewById(R.id.lblDay);
             Button startButton = dayFrameLayout.findViewById(R.id.btnStartDay);
 
-            dayTextView.setText("Day " + i);
-
             final int dayNumber = i;
+
+            if((dayNumber % 4) == 0) {
+                dayTextView.setText("Day " + i + ": Rest Day");
+            } else {
+                dayTextView.setText("Day " + i);
+            }
 
             if (dayNumber == currentDay) {
                 dayFrameLayout.setBackgroundResource(R.drawable.dayslayout_radius);
                 startButton.setOnClickListener(v -> {
                     Toast.makeText(getContext(), "Start Day " + dayNumber, Toast.LENGTH_SHORT).show();
-                    // Implement click logic here
+                    new GenerateExerciseList().execute(user_id);
                 });
             } else {
                 startButton.setOnClickListener(v -> {
@@ -122,6 +140,28 @@ public class HomeFragment extends Fragment {
             }
 
             daysContainer.addView(dayFrameLayout);
+        }
+    }
+
+    private class GenerateExerciseList extends AsyncTask<Integer, Void, List<Exercise>> {
+        @Override
+        protected List<Exercise> doInBackground(Integer... integers) {
+            int userId = integers[0];
+            return ReadData.getExerciseList(userId);
+        }
+
+        @Override
+        protected void onPostExecute(List<Exercise> result) {
+            exerciseList = result;
+            Intent intent = new Intent(getActivity(), DayActivity.class);
+            intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
+            intent.putExtra("username", username);
+            intent.putExtra("user_id", user_id);
+            intent.putExtra("currentDay", currentDay);
+
+            Log.e("TAWAG", "Checking " + username + " " + user_id + " " + currentDay + " " + currentWeek);
+
+            startActivity(intent);
         }
     }
 }
