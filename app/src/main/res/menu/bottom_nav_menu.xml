@@ -12,4 +12,7 @@
     <item android:title="Nutrition"
         android:icon="@drawable/nutritionbtn"
         android:id="@+id/nutrition"/>
+    <item android:title="Profile"
+        android:icon="@drawable/editprof"
+        android:id="@+id/profile"/>
 </menu>

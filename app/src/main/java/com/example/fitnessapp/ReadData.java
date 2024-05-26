@@ -96,7 +96,7 @@ public class ReadData {
         Connection c = null;
         try{
             c = ConnectionClass.getConnection();
-            PreparedStatement statement = c.prepareStatement("SELECT name, email, username, height, weight FROM tblusers WHERE user_id=?");
+            PreparedStatement statement = c.prepareStatement("SELECT name, email, username, height, weight, age FROM tblusers WHERE user_id=?");
 
             statement.setInt(1, uid);
             return statement.executeQuery();

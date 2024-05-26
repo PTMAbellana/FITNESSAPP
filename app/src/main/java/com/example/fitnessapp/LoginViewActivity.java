@@ -54,6 +54,11 @@ public class LoginViewActivity extends AppCompatActivity {
             String password = params[1];
             if (ReadData.readDataLogin(username, password)) {
                 uid = ReadData.getSession(username);
+                Session s = new Session(uid, username);
+                Log.e("Login SESSION", "uid : " + s.getUid());
+                Log.e("Login SESSION", "username : " + s.getUsername());
+//                s.setUid(uid);
+//                s.setUsername(username);
                 return true;
             }
             return false;
@@ -65,8 +70,8 @@ public class LoginViewActivity extends AppCompatActivity {
                 Log.e("TAWAG", "UID is " + uid);
                 if (uid != 0) {
                     Intent intent = new Intent(LoginViewActivity.this, HomeViewActivity.class);
-                    intent.putExtra("username", username);
-                    intent.putExtra("user_id", uid);
+//                    intent.putExtra("username", username);
+//                    intent.putExtra("user_id", uid);
                     Log.e("TAWAG", "Successful login: " + username + " " + uid);
                     startActivity(intent);
                     Toast.makeText(LoginViewActivity.this, "Login successful", Toast.LENGTH_SHORT).show();

@@ -26,6 +26,7 @@ public class HomeViewActivity extends AppCompatActivity {
             R.id.workout,
             R.id.progress,
             R.id.nutrition,
+            R.id.profile,
             R.id.home
     };
 
@@ -37,8 +38,10 @@ public class HomeViewActivity extends AppCompatActivity {
         binding = ActivityHomeViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        username = getIntent().getStringExtra("username");
-        user_id = getIntent().getIntExtra("user_id", 0);
+//        username = getIntent().getStringExtra("username");
+//        user_id = getIntent().getIntExtra("user_id", 0);
+        username = Session.getUsername();
+        user_id = Session.getUid();
 
         Log.e("TAWAG", "I was called! user_id is " + user_id + username);
 
@@ -53,16 +56,28 @@ public class HomeViewActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (menus.indexOf(item.getItemId())) {
                 case 0:
-                    replaceFragment(new WorkoutFragment());
+                    WorkoutFragment workoutFragment = WorkoutFragment.newInstance(username, user_id);
+                    replaceFragment(workoutFragment);
+//                    replaceFragment(new WorkoutFragment());
                     break;
                 case 1:
-                    replaceFragment(new ProgressTrackingFragment());
+                    ProgressTrackingFragment progressTrackingFragment = ProgressTrackingFragment.newInstance(username, user_id);
+                    replaceFragment(progressTrackingFragment);
+//                    replaceFragment(new ProgressTrackingFragment());
                     break;
                 case 2:
-                    replaceFragment(new NutritionFragment());
+                    NutritionFragment nutritionFragment = NutritionFragment.newInstance(username, user_id);
+                    replaceFragment(nutritionFragment);
+//                    replaceFragment(new NutritionFragment());
                     break;
                 case 3:
-                    replaceFragment(new HomeFragment());
+                    EditProfileFragment editProfileFragment = EditProfileFragment.newInstance(username, user_id);
+                    replaceFragment(editProfileFragment);
+//                    replaceFragment(new NutritionFragment());
+                    break;
+                case 4:
+                    new GetPlansTask().execute(user_id);
+//                    replaceFragment(new HomeFragment());
                     break;
             }
             return true;

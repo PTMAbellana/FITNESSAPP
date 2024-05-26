@@ -47,19 +47,6 @@
                 tools:layout_editor_absoluteX="39dp"
                 tools:layout_editor_absoluteY="83dp" />
 
-            <ImageButton
-                android:id="@+id/btnUpdateProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|end"
-                android:background="#00FFFFFF"
-                android:contentDescription="Update Profile"
-                android:onClick="onEditProfileActivityClicked"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/editprof"
-                tools:layout_editor_absoluteX="333dp"
-                tools:layout_editor_absoluteY="34dp" />
-
         </FrameLayout>
 
         <FrameLayout

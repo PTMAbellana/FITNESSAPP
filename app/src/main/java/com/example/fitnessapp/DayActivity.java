@@ -34,8 +34,10 @@ public class DayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
 
-        user_id = getIntent().getIntExtra("user_id", 0);
-        username = getIntent().getStringExtra("username");
+//        user_id = getIntent().getIntExtra("user_id", 0);
+//        username = getIntent().getStringExtra("username");
+        user_id = Session.getUid();
+        username = Session.getUsername();
         currentDay = getIntent().getIntExtra("currentDay", 0);
         currentWeek = getIntent().getIntExtra("currentWeek", 0);
 
@@ -56,16 +58,16 @@ public class DayActivity extends AppCompatActivity {
     }
     public void onBackClicked(View view) {
         Intent intent = new Intent(DayActivity.this, HomeViewActivity.class);
-        intent.putExtra("username", username);
-        intent.putExtra("user_id", user_id);
+//        intent.putExtra("username", username);
+//        intent.putExtra("user_id", user_id);
         startActivity(intent);
         finish();
     }
 
     public void onStartDayClicked(View view) {
-        Intent intent = new Intent(DayActivity.this, HomeViewActivity.class);
-        intent.putExtra("username", username);
-        intent.putExtra("user_id", user_id);
+        Intent intent = new Intent(DayActivity.this, StartDayActivity.class);
+//        intent.putExtra("username", username);
+//        intent.putExtra("user_id", user_id);
         intent.putExtra("currentDay", currentDay);
         intent.putExtra("currentWeek", currentWeek);
         intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));

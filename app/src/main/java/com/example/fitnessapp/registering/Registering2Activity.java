@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.ReadData;
+import com.example.fitnessapp.Session;
 
 public class Registering2Activity extends AppCompatActivity {
 
@@ -32,6 +33,9 @@ public class Registering2Activity extends AppCompatActivity {
         Intent intent = new Intent(this, Registering3Activity.class);
         intent.putExtra("username", username);
         intent.putExtra("user_id", user_id);
+        Session s = new Session(user_id, username);
+        s.setUid(user_id);
+        s.setUsername(username);
         startActivity(intent);
         finish();
     }

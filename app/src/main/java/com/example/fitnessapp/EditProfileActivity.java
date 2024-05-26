@@ -175,7 +175,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     tvHeight.setText(String.valueOf(userProfile.getString("height") + " cm"));
                     tvWeight.setText(String.valueOf(userProfile.getString("weight")) + " kg");
                     username = userProfile.getString("username");
-//                tvAge.setText(userProfile.getString("age"));
+                    tvAge.setText(String.valueOf(userProfile.getString("age")));
                 } else {
                     Log.e("TAG", "NO PROFILE");
                 }

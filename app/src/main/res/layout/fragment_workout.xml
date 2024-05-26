@@ -17,33 +17,6 @@
             android:background="#232323"
             tools:context=".WorkoutActivity">
 
-            <Button
-                android:id="@+id/btnBack"
-                android:layout_width="92dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:background="#00E2F163"
-                android:onClick="onBackClicked"
-                android:text="Back"
-                android:textColor="#E2F163"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/btnUpdateProfile"
-                android:layout_width="48dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="40dp"
-                android:background="#00FFFFFF"
-                android:contentDescription="Update Profile"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.867"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/editprof" />
-
             <TextView
                 android:id="@+id/tvGreeting"
                 android:layout_width="137dp"
