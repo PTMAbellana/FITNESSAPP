@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@android:id/background">
+    <item>
         <shape
-            android:shape="rectangle">
+            android:shape="ring"
+            android:useLevel="false"
+            android:thicknessRatio="20">
             <solid android:color="@color/colorPurple" />
-            <corners android:radius="50dp"/>
         </shape>
     </item>
-    <item android:id="@android:id/progress">
-        <clip>
-            <shape android:shape="rectangle">
+    <item>
+        <rotate
+            android:fromDegrees="-270"
+            android:toDegrees="-270">
+
+            <shape
+                android:shape="ring"
+                android:useLevel="true"
+                android:thicknessRatio="20">
                 <solid android:color="@color/colorYellow" />
-                <corners android:radius="50dp"/>
             </shape>
-        </clip>
+        </rotate>
     </item>
 </layer-list>

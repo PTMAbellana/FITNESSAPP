@@ -1,5 +1,7 @@
 package com.example.fitnessapp;
 
+import static java.sql.Types.NULL;
+
 import android.util.Log;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -224,7 +226,7 @@ public class ReadData {
                                     if(num_pushups == 0) {
                                         exercise_name = "Mountain Climbers";
                                         no_of_sets = 3;
-                                        no_of_reps = Integer.parseInt(null);
+                                        no_of_reps = 0;
                                         no_of_seconds = 30;
                                     } else if (num_pushups <= 5) {
                                         no_of_reps += 0;
@@ -239,7 +241,7 @@ public class ReadData {
                                     if(num_planks == 0) {
                                         exercise_name = "Mountain Climbers";
                                         no_of_sets = 3;
-                                        no_of_reps = Integer.parseInt(null);
+                                        no_of_reps = 0;
                                         no_of_seconds = 30;
                                     } else if (num_planks <= 30) {
                                         no_of_seconds += 0;

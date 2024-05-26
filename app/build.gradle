@@ -77,5 +77,10 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
 //    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // Glide Dependencies
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.bumptech.glide:annotations:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 }
 

@@ -7,12 +7,15 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
-public class StartDayActivity extends AppCompatActivity {
+public class StartDayWithpgActivity extends AppCompatActivity {
     ProgressBar progress;
     TextView exercise;
     TextView timer;
@@ -29,7 +32,7 @@ public class StartDayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_day);
+        setContentView(R.layout.activity_start_day_withpg);
         progress = findViewById(R.id.progressBar);
         exercise = findViewById(R.id.tvExercise);
         timer = findViewById(R.id.tvTimer);
@@ -45,6 +48,9 @@ public class StartDayActivity extends AppCompatActivity {
             Log.e("StartDayActivity", "Exercise list size: " + exerciseList.size());
             startExercise();
         }
+
+        ImageView imageViewGif = findViewById(R.id.imageViewGif);
+        Glide.with(this).asGif().load(R.drawable.armcircles_g).into(imageViewGif);
     }
 
     private void startExercise() {

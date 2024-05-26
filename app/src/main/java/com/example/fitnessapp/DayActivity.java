@@ -1,20 +1,12 @@
 package com.example.fitnessapp;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,7 +57,7 @@ public class DayActivity extends AppCompatActivity {
     }
 
     public void onStartDayClicked(View view) {
-        Intent intent = new Intent(DayActivity.this, StartDayActivity.class);
+        Intent intent = new Intent(DayActivity.this, StartDayWithpgActivity.class);
 //        intent.putExtra("username", username);
 //        intent.putExtra("user_id", user_id);
         intent.putExtra("currentDay", currentDay);
