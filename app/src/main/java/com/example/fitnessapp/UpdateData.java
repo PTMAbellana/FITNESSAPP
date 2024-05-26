@@ -121,4 +121,11 @@ public class UpdateData {
         }
         return false;
     }
+//    create mo ug function sa UpdateData para tblplans
+//    updateDayWeek(int user_id, int day, int week)
+//    updateCurrentDifficulty(int user_id, int currentDifficulty)
+    public static boolean updateDayWeel(int user_id, int day, int week) {
+        return false;
+    }
+
 }

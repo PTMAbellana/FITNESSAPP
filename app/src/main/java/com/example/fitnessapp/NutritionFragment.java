@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity1;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity2;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
@@ -88,7 +89,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                navigateToVideoWorkoutFragment();
-                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity2.class);
                 startActivity(intent);
             }
         });

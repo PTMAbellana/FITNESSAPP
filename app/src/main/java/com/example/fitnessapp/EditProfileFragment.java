@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.fitnessapp.registering.Registering1Activity;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +30,7 @@ public class EditProfileFragment extends Fragment {
     private static final String ARG_USERNAME = "username";
     private static final String ARG_USERID = "user_id";
 
-    private Button update;
+    private Button update,logout;
     private TextView tvName, tvEmail, tvWeight, tvHeight, tvAge;
     private EditText tfName, tfEmail, tfUsername, tfWeight, tfHeight;
     private String username;
@@ -73,6 +76,7 @@ public class EditProfileFragment extends Fragment {
         tfUsername = view.findViewById(R.id.tfUsername);
         tfWeight = view.findViewById(R.id.tfWeight);
         tfHeight = view.findViewById(R.id.tfHeight);
+        logout = view.findViewById(R.id.btnLogout);
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +87,12 @@ public class EditProfileFragment extends Fragment {
         });
 
         new GetProfileInfo().execute(user_id);
-
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLogoutClicked();
+            }
+        });
         return view;
     }
 
@@ -209,5 +218,10 @@ public class EditProfileFragment extends Fragment {
                 }
             }
         }
+    }
+    public void onLogoutClicked() {
+        Intent intent = new Intent(getActivity(), LaunchActivity.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 }

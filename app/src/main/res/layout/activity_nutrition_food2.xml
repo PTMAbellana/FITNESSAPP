@@ -6,23 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".nutritionalfood.NutritionFoodActivity1">
+    tools:context=".nutritionalfood.NutritionFoodActivity2">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Avocado and Egg Toast"
         android:textColor="#E1F063"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
+        app:layout_constraintTop_toBottomOf="@+id/tvGreeting6" />
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnBack7"
         android:layout_width="92dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
@@ -35,11 +35,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvGreeting"
+        android:id="@+id/tvGreeting6"
         android:layout_width="137dp"
         android:layout_height="29dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Nutrition"
         android:textColor="#896CFE"
@@ -51,12 +51,10 @@
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
 
         <ImageView
             android:id="@+id/imageView15"
@@ -77,8 +75,10 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -328,6 +328,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

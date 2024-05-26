@@ -16,6 +16,9 @@
         android:theme="@style/Theme.FITNESSAPP"
         tools:targetApi="31">
         <activity
+            android:name=".nutritionalfood.NutritionFoodActivity2"
+            android:exported="false" />
+        <activity
             android:name=".nutritionalfood.NutritionFoodActivity1"
             android:exported="false" />
         <activity
