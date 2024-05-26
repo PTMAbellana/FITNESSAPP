@@ -14,11 +14,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessapp.registering.Registering7Activity;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
+import com.example.fitnessapp.videoexercise.VideoWorkoutActivity4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +45,7 @@ public class HomeFragment extends Fragment {
     private int currentWeek;
     private String username;
     private int user_id;
+    private ImageButton btnWorkoutVideo1, btnWorkoutVideo2, btnWorkoutVideo3, btnWorkoutVideo4;
 
     private List<Exercise> exerciseList;
 
@@ -72,6 +78,44 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        btnWorkoutVideo1 = view.findViewById(R.id.btnWorkoutVideo1);
+        btnWorkoutVideo2 = view.findViewById(R.id.btnWorkoutVideo2);
+        btnWorkoutVideo3 = view.findViewById(R.id.btnWorkoutVideo3);
+        btnWorkoutVideo4 = view.findViewById(R.id.btnWorkoutVideo4);
+        btnWorkoutVideo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity1.class);
+                startActivity(intent);
+            }
+        });
+        btnWorkoutVideo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        btnWorkoutVideo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity3.class);
+                startActivity(intent);
+            }
+        });
+
+        btnWorkoutVideo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                navigateToVideoWorkoutFragment();
+                Intent intent = new Intent(requireContext(), VideoWorkoutActivity4.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

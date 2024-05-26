@@ -57,6 +57,7 @@ public class VideoWorkoutActivity1 extends AppCompatActivity {
             videoView.seekTo(Math.min(currentPosition + 5000, videoView.getDuration()));
         });
 
+
         videoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

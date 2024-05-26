@@ -126,7 +126,7 @@
                         android:contentDescription="Workout Video 2"
                         android:scaleType="centerCrop"
                         android:text=" "
-                        app:srcCompat="@drawable/recoim2"
+                        app:srcCompat="@drawable/recoimg2"
                         tools:layout_editor_absoluteX="224dp"
                         tools:layout_editor_absoluteY="244dp" />
 
@@ -138,7 +138,7 @@
                         android:background="#00FFFFFF"
                         android:contentDescription="Workout Video 3"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/recoimg1"
+                        app:srcCompat="@drawable/recoimg3"
                         tools:layout_editor_absoluteX="39dp"
                         tools:layout_editor_absoluteY="240dp" />
 
@@ -151,7 +151,7 @@
                         android:contentDescription="Workout Video 4"
                         android:scaleType="centerCrop"
                         android:text=" "
-                        app:srcCompat="@drawable/recoim2"
+                        app:srcCompat="@drawable/recoimg4"
                         tools:layout_editor_absoluteX="224dp"
                         tools:layout_editor_absoluteY="244dp" />
                 </LinearLayout>

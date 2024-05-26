@@ -2,6 +2,7 @@ package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -115,6 +116,8 @@ public class StartDayWithpgActivity extends AppCompatActivity {
     }
 
     public void onBackClicked(View view) {
+//        Intent intent = new Intent(this, StartDayWithtvActivity.class);
+//        startActivity(intent);
         finish();
     }
 }
