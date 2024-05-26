@@ -15,10 +15,8 @@ import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity2;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity3;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity4;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity5;
-import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
-import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
-import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
-import com.example.fitnessapp.videoexercise.VideoWorkoutActivity4;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity6;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity7;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,30 +25,17 @@ import com.example.fitnessapp.videoexercise.VideoWorkoutActivity4;
  */
 public class NutritionFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_USERNAME = "username";
     private static final String ARG_USERID = "user_id";
 
-    // TODO: Rename and change types of parameters
     private String username;
     private int user_id;
-    private ImageButton btnViewFood1, btnViewFood2, btnViewFood3, btnViewFood4, btnViewFood5;
-
+    private ImageButton btnViewFood1, btnViewFood2, btnViewFood3, btnViewFood4, btnViewFood5, btnViewFood6, btnViewFood7;
 
     public NutritionFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param username Parameter 1.
-     * @param user_id Parameter 2.
-     * @return A new instance of fragment NutritionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static NutritionFragment newInstance(String username, int user_id) {
         NutritionFragment fragment = new NutritionFragment();
         Bundle args = new Bundle();
@@ -73,16 +58,18 @@ public class NutritionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_nutrition, container, false);
+        View view = inflater.inflate(R.layout.fragment_nutrition, container, false);
         btnViewFood1 = view.findViewById(R.id.btnViewFood1);
         btnViewFood2 = view.findViewById(R.id.btnViewFood2);
         btnViewFood3 = view.findViewById(R.id.btnViewFood3);
         btnViewFood4 = view.findViewById(R.id.btnViewFood4);
         btnViewFood5 = view.findViewById(R.id.btnViewFood5);
+        btnViewFood6 = view.findViewById(R.id.btnViewFood6);
+        btnViewFood7 = view.findViewById(R.id.btnViewFood7);
+
         btnViewFood1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                navigateToVideoWorkoutFragment();
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
                 startActivity(intent);
             }
@@ -91,7 +78,6 @@ public class NutritionFragment extends Fragment {
         btnViewFood2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                navigateToVideoWorkoutFragment();
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity2.class);
                 startActivity(intent);
             }
@@ -100,7 +86,6 @@ public class NutritionFragment extends Fragment {
         btnViewFood3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                navigateToVideoWorkoutFragment();
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity3.class);
                 startActivity(intent);
             }
@@ -109,19 +94,35 @@ public class NutritionFragment extends Fragment {
         btnViewFood4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                navigateToVideoWorkoutFragment();
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity4.class);
                 startActivity(intent);
             }
         });
+
         btnViewFood5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                navigateToVideoWorkoutFragment();
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity5.class);
                 startActivity(intent);
             }
         });
+
+        btnViewFood6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity6.class);
+                startActivity(intent);
+            }
+        });
+
+        btnViewFood7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity7.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }

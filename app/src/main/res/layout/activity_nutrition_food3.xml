@@ -103,7 +103,7 @@
                     android:layout_width="363dp"
                     android:layout_height="232dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/mealplan1" />
+                    app:srcCompat="@drawable/mealplan3" />
 
             </FrameLayout>
 

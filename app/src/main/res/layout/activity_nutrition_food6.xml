@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".nutritionalfood.NutritionFoodActivity5">
+    tools:context=".nutritionalfood.NutritionFoodActivity6">
 
     <TextView
         android:id="@+id/textView21"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Baked Salmon"
+        android:text="Teriyaki Chicken With Brown Rice"
         android:textColor="#E1F063"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
-            android:text="350 calories"
+            android:text="375 calories"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
 
@@ -103,7 +103,7 @@
                     android:layout_width="363dp"
                     android:layout_height="232dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/mealplan5" />
+                    app:srcCompat="@drawable/mealplan6" />
 
             </FrameLayout>
 
@@ -329,4 +329,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

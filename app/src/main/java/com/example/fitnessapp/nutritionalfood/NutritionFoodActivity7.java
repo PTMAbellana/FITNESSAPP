@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.fitnessapp.R;
 
-public class NutritionFoodActivity3 extends AppCompatActivity {
+public class NutritionFoodActivity7 extends AppCompatActivity {
 //    private PieChart pieChart;
 
     private EditText editText;
@@ -27,7 +27,7 @@ public class NutritionFoodActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_nutrition_food3);
+        setContentView(R.layout.activity_nutrition_food7);
 //        pieChart = findViewById(R.id.pieChart);
         editText = findViewById(R.id.editTextText);
         btnCalculateRatio = findViewById(R.id.btnCalculateRatio);
