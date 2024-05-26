@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".nutritionalfood.NutritionFoodActivity2">
+    tools:context=".nutritionalfood.NutritionFoodActivity3">
 
     <TextView
         android:id="@+id/textView21"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Fruit Smoothie"
+        android:text="Delights With Greek Yogurt"
         android:textColor="#E1F063"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
-            android:text="120 calories"
+            android:text="200 calories"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
 

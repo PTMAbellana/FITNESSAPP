@@ -16,42 +16,65 @@
         android:theme="@style/Theme.FITNESSAPP"
         tools:targetApi="31">
         <activity
+            android:name=".nutritionalfood.NutritionFoodActivity5"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".nutritionalfood.NutritionFoodActivity4"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".nutritionalfood.NutritionFoodActivity3"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".nutritionalfood.NutritionFoodActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".nutritionalfood.NutritionFoodActivity1"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".StartDayActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".videoexercise.VideoWorkoutActivity4"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".videoexercise.VideoWorkoutActivity3"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".videoexercise.VideoWorkoutActivity2"
             android:exported="false"
             android:label="@string/title_activity_video_workout2"
-            android:theme="@style/Theme.FITNESSAPP" />
+            android:theme="@style/Theme.FITNESSAPP"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".videoexercise.VideoWorkoutActivity1"
             android:exported="false"
             android:label="@string/title_activity_video_workout"
-            android:theme="@style/Theme.FITNESSAPP" />
+            android:theme="@style/Theme.FITNESSAPP"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DayActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".registering.Registering7Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".registering.Registering6Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".registering.Registering5Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ProgressTrackingActivity"
             android:exported="false"

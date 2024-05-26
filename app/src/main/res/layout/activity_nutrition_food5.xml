@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".nutritionalfood.NutritionFoodActivity2">
+    tools:context=".nutritionalfood.NutritionFoodActivity5">
 
     <TextView
         android:id="@+id/textView21"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Fruit Smoothie"
+        android:text="Avocado And Egg Toast"
         android:textColor="#E1F063"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

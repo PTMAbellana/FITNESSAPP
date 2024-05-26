@@ -12,6 +12,9 @@ import android.widget.ImageButton;
 
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity1;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity2;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity3;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity4;
+import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity5;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
@@ -98,7 +101,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                navigateToVideoWorkoutFragment();
-                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity3.class);
                 startActivity(intent);
             }
         });
@@ -107,7 +110,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                navigateToVideoWorkoutFragment();
-                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity4.class);
                 startActivity(intent);
             }
         });
@@ -115,7 +118,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                navigateToVideoWorkoutFragment();
-                Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                Intent intent = new Intent(requireContext(), NutritionFoodActivity5.class);
                 startActivity(intent);
             }
         });
