@@ -34,13 +34,13 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StartDayWithtvActivity"
+            android:name=".dayexercise.StartExerciseWithtvActivity"
             android:exported="false" />
         <activity
-            android:name=".CompletedDayActivity"
+            android:name=".dayexercise.EndExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".RestActivity"
+            android:name=".dayexercise.RestActivity"
             android:exported="false" />
         <activity
             android:name=".nutritionalfood.NutritionFoodActivity2"
@@ -51,7 +51,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StartDayWithpgActivity"
+            android:name=".dayexercise.StartExerciseWithpgActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -75,7 +75,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.FITNESSAPP" />
         <activity
-            android:name=".DayActivity"
+            android:name=".dayexercise.DayActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

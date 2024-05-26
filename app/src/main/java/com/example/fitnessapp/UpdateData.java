@@ -2,6 +2,7 @@ package com.example.fitnessapp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UpdateData {
@@ -124,9 +125,50 @@ public class UpdateData {
 //    create mo ug function sa UpdateData para tblplans
 //    updateDayWeek(int user_id, int day, int week)
 //    updateCurrentDifficulty(int user_id, int currentDifficulty)
-    public static boolean updateDayWeek(int user_id, int day, int week) {
+    public static boolean updateDayWeekPlan(int user_id) {
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement selectStatement = c.prepareStatement(
+                     "SELECT day, week, target_difficulty FROM tblplans WHERE user_id = ?"
+             );
+             PreparedStatement updateStatement = c.prepareStatement(
+                     "UPDATE tblplans SET day = ?, week = ?, current_difficulty = ? WHERE user_id = ?"
+             )) {
+            selectStatement.setInt(1, user_id);
+            ResultSet rs = selectStatement.executeQuery();
+
+            if (rs.next()) {
+                int currentDay = rs.getInt("day");
+                int currentWeek = rs.getInt("week");
+                String targetDifficulty = rs.getString("target_difficulty");
+
+                int newDay = currentDay + 1;
+                int newWeek = currentWeek;
+                String updateDifficulty = targetDifficulty;
+
+                if (newDay == 8 || newDay == 15 || newDay == 22 || newDay == 29) {
+                    newWeek++;
+                }
+
+                if((updateDifficulty == "Intermediate" || updateDifficulty == "Advanced") && newWeek == 3) {
+                    updateDifficulty = "Intermediate";
+                }
+
+                if(updateDifficulty == "Advanced" && newWeek <= 4) {
+                    updateDifficulty = "Advanced";
+                }
+
+                updateStatement.setInt(1, newDay);
+                updateStatement.setInt(2, newWeek);
+                updateStatement.setString(3, updateDifficulty);
+                updateStatement.setInt(4, user_id);
+                int rowsUpdated = updateStatement.executeUpdate();
+
+                return rowsUpdated > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
-
 
 }

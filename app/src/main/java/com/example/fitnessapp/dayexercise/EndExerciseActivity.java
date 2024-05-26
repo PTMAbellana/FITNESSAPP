@@ -1,6 +1,9 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.dayexercise;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,60 +11,62 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.fitnessapp.Exercise;
+import com.example.fitnessapp.HomeViewActivity;
+import com.example.fitnessapp.R;
+import com.example.fitnessapp.Session;
+import com.example.fitnessapp.UpdateData;
+import com.example.fitnessapp.registering.Registering6Activity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DayActivity extends AppCompatActivity {
+public class EndExerciseActivity extends AppCompatActivity {
+
     public String username;
     protected int user_id;
     protected int currentDay, currentWeek;
+    protected int skipped_exercises;
     TextView tvDay;
+    TextView tvSkippedExercises;
 
     protected List<Exercise> exerciseList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_day);
-
-//        user_id = getIntent().getIntExtra("user_id", 0);
-//        username = getIntent().getStringExtra("username");
+        setContentView(R.layout.activity_end_exercise);
         user_id = Session.getUid();
         username = Session.getUsername();
+
+        // wala nmn guro ni nagamit
         currentDay = getIntent().getIntExtra("currentDay", 0);
         currentWeek = getIntent().getIntExtra("currentWeek", 0);
+        skipped_exercises = getIntent().getIntExtra("skipped_exercises", 0);
 
-        Log.e("TAWAG", "I was called in DayActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek);
+        Log.e("EndExerciseActivity", "I was called in EndExerciseActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek + " " + skipped_exercises);
 
         tvDay = findViewById(R.id.tvDay);
         tvDay.setText("DAY " + currentDay);
 
+        tvSkippedExercises = findViewById(R.id.tvSkippedExercises);
+        tvSkippedExercises.setText("Number of skipped exercises: " + skipped_exercises);
+
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("TAWAG", "Naay Sulod");
+            Log.e("EndExerciseActivity", "Naay Sulod");
             for (Exercise exercise : exerciseList) {
-                Log.e("TAWAG", exercise.getExerciseName());
+                Log.e("EndExerciseActivity", exercise.getExerciseName());
             }
         }
 
         addExercisesInLayout();
-    }
-    public void onBackClicked(View view) {
-        Intent intent = new Intent(DayActivity.this, HomeViewActivity.class);
-//        intent.putExtra("username", username);
-//        intent.putExtra("user_id", user_id);
-        startActivity(intent);
-        finish();
+
+        new ExecuteUpdateDayWeekPlan().execute(user_id);
     }
 
-    public void onStartDayClicked(View view) {
-        Intent intent = new Intent(DayActivity.this, StartDayWithpgActivity.class);
-//        intent.putExtra("username", username);
-//        intent.putExtra("user_id", user_id);
-        intent.putExtra("currentDay", currentDay);
-        intent.putExtra("currentWeek", currentWeek);
+    public void onCheckDayClicked(View view) {
+        Intent intent = new Intent(EndExerciseActivity.this, HomeViewActivity.class);
         intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
         startActivity(intent);
         finish();
@@ -92,6 +97,13 @@ public class DayActivity extends AppCompatActivity {
             } else {
                 Log.e("DayActivity", "Walay png: " + exercise.getExerciseName());
             }
+        }
+    }
+
+    private class ExecuteUpdateDayWeekPlan extends AsyncTask<Integer, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(Integer... integers) {
+            return UpdateData.updateDayWeekPlan(integers[0]);
         }
     }
 }

@@ -116,89 +116,89 @@ public class InsertData {
              PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
 
             // Add all exercises data
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Beginner", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Plank", "Abs","Beginner", 3, 0, 20);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Beginner", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Plank", "Abs","Beginner", 2, 0, 20);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Intermediate", 3, 20, 0);
-            addExercise(checkStmt, insertStmt, "Plank", "Abs","Intermediate", 3, 0, 30);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Intermediate", 2, 20, 0);
+            addExercise(checkStmt, insertStmt, "Plank", "Abs","Intermediate", 2, 0, 30);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Advanced", 4, 25, 0);
-            addExercise(checkStmt, insertStmt, "Plank", "Abs","Advanced", 3, 0, 60);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Abs","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Crunches", "Abs","Advanced", 3, 25, 0);
+            addExercise(checkStmt, insertStmt, "Plank", "Abs","Advanced", 2, 0, 60);
 
-            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Beginner", 3, 10, 0);
-            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Beginner", 3, 12, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Beginner", 3, 0, 30);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Beginner", 2, 10, 0);
+            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Beginner", 2, 12, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Beginner", 2, 0, 30);
 
-            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Intermediate", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Intermediate", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Intermediate", 3, 0, 45);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Intermediate", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Intermediate", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Intermediate", 2, 0, 45);
 
-            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Advanced", 4, 20, 0);
-            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Advanced", 4, 20, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Advanced", 3, 0, 60);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Chest","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Incline Push-ups", "Chest","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Chest","Advanced", 2, 0, 60);
 
-            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Beginner", 3, 10, 0);
+            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Beginner", 2, 10, 0);
 
-            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Intermediate", 3, 15, 0);
+            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Intermediate", 2, 15, 0);
 
-            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Arm Circles", "Shoulder","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Shoulder","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Plank to Downward Dog", "Shoulder","Advanced", 2, 20, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Beginner", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Beginner", 3, 10, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Beginner", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Beginner", 2, 10, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Intermediate", 3, 20, 0);
-            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Intermediate", 3, 15, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Intermediate", 2, 20, 0);
+            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Intermediate", 2, 15, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Advanced", 4, 25, 0);
-            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Back","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Superman Exercise", "Back","Advanced", 3, 25, 0);
+            addExercise(checkStmt, insertStmt, "Plank Rows", "Back","Advanced", 2, 20, 0);
 
-            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Beginner", 3, 12, 0);
-            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Beginner", 3, 10, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Beginner", 3, 0, 30);
+            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Beginner", 2, 12, 0);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Beginner", 2, 10, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Beginner", 2, 0, 30);
 
-            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Intermediate", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Intermediate", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Intermediate", 3, 0, 45);
+            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Intermediate", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Intermediate", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Intermediate", 2, 0, 45);
 
-            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Advanced", 4, 20, 0);
-            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Advanced", 4, 20, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Advanced", 3, 0, 60);
+            addExercise(checkStmt, insertStmt, "Tricep Dips", "Arm","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Push-ups", "Arm","Advanced", 3, 20, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Arm","Advanced", 2, 0, 60);
 
-            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Beginner", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Beginner", 3, 12, 0);
+            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Beginner", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Beginner", 2, 12, 0);
 
-            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Intermediate", 3, 20, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Intermediate", 3, 15, 0);
+            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Intermediate", 2, 20, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Intermediate", 2, 15, 0);
 
-            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Advanced", 4, 25, 0);
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Advanced", 4, 20, 0);
+            addExercise(checkStmt, insertStmt, "Bodyweight Squats", "Leg","Advanced", 3, 25, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Leg","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Lunges", "Leg","Advanced", 3, 20, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Beginner", 3, 0, 30);
-            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Beginner", 3, 15, 0);
-            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Beginner", 3, 12, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Beginner", 2, 0, 30);
+            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Beginner", 2, 15, 0);
+            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Beginner", 2, 12, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Intermediate", 3, 0, 45);
-            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Intermediate", 3, 20, 0);
-            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Intermediate", 3, 15, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Intermediate", 2, 0, 45);
+            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Intermediate", 2, 20, 0);
+            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Intermediate", 2, 15, 0);
 
-            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Advanced", 3, 0, 60);
-            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Advanced", 4, 25, 0);
-            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Advanced", 4, 20, 0);
+            addExercise(checkStmt, insertStmt, "Mountain Climbers", "Glutes","Advanced", 2, 0, 60);
+            addExercise(checkStmt, insertStmt, "Glute Bridges", "Glutes","Advanced", 3, 25, 0);
+            addExercise(checkStmt, insertStmt, "Donkey Kicks", "Glutes","Advanced", 3, 20, 0);
 
             insertStmt.executeBatch();
 

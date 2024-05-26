@@ -7,66 +7,58 @@
     android:background="#232323"
     tools:context=".registering.Registering2Activity">
 
-    <Button
-        android:id="@+id/btnstart"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="131dp"
-        android:backgroundTint="@color/colorPurple"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onStartPersonalizationClicked"
-        android:text="Start"
-        android:textColor="@color/colorDarkPurple"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome4" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvStartJourneyGreetings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splashimg2" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:srcCompat="@drawable/splashimg2" />
 
-    <TextView
-        android:id="@+id/tvStartJourneyGreetings"
-        android:layout_width="408dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:text="Hello, name! \nWelcome to the journey \nto your dream body"
-        android:textAlignment="viewStart"
-        android:textColor="#E2F163"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        <TextView
+            android:id="@+id/tvStartJourneyGreetings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Hello, name! \nWelcome to the journey \nto your dream body"
+            android:textAlignment="viewStart"
+            android:textColor="#E2F163"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/tvWelcome4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_light"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:text="Here comes a few simple questions before we can personalize your daily goal and schedule"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStartJourneyGreetings" />
+        <TextView
+            android:id="@+id/tvWelcome4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Here comes a few simple questions before we can personalize your daily goal and schedule"
+            android:textAlignment="textStart"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnstart"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorPurple"
+            android:fontFamily="@font/poppins_semibold"
+            android:onClick="onStartPersonalizationClicked"
+            android:text="Start"
+            android:textColor="@color/colorDarkPurple" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

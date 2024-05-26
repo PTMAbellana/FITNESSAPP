@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/background1" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/dimEffect"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/ivBackground1"
@@ -99,11 +99,9 @@
 
     <Button
         android:id="@+id/btnNext"
-        android:layout_width="0dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="120dp"
         android:backgroundTint="@color/colorBlack25"
         android:fontFamily="@font/poppins_semibold"
         android:onClick="onNextClicked"

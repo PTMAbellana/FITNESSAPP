@@ -8,222 +8,247 @@
     tools:context=".registering.Registering4Activity">
 
     <Button
-        android:id="@+id/btnNext"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:backgroundTint="@color/colorPurple"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onNextClicked"
-        android:text="Next"
-        android:textColor="@color/colorDarkPurple"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/btnBackReg3"
         android:layout_width="108dp"
         android:layout_height="57dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:background="#00E2F163"
-        android:text="Back"
         android:onClick="onBackClicked"
+        android:text="Back"
         android:textColor="#E2F163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/seekBar2"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="203dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="64dp"
-        android:max="3"
-        android:progress="1"
-        android:progressTint="@color/colorWhite"
-        android:thumbTint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvChooseNoOfPushUps"
+    <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:text="How many push-ups can you do at one time"
-        android:textAlignment="center"
-        android:textColor="#E2F163"
-        android:textSize="24sp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <FrameLayout
-        android:id="@+id/frameChoosePlan1"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="56dp"
-        android:background="@drawable/rounded_frame_layout"
-        android:onClick="onFrameClick"
+        <SeekBar
+            android:id="@+id/seekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:max="3"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:progress="1"
+            android:progressTint="@color/colorWhite"
+            android:thumbTint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChooseNoOfPushUps">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvChooseNoOfPushUps"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="I can't do it."
-            android:textSize="16sp" />
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="How many push-ups can you do at one time"
+            android:textAlignment="center"
+            android:textColor="#E2F163"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="122dp" />
 
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:id="@+id/frameChoosePlan1"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="56dp"
+            android:background="@drawable/rounded_frame_layout"
+            android:onClick="onFrameClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChooseNoOfPushUps">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="I can't do it."
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:backgroundTint="@android:color/transparent"
+                android:buttonTint="@android:color/white"
+                android:clickable="false" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameChoosePlan2"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_frame_layout"
+            android:onClick="onFrameClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="0 - 5 repeats"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:backgroundTint="@android:color/transparent"
+                android:buttonTint="@android:color/white"
+                android:clickable="false" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameChoosePlan3"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_frame_layout"
+            android:onClick="onFrameClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="5 - 10 repeats"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:backgroundTint="@android:color/transparent"
+                android:buttonTint="@android:color/white"
+                android:clickable="false" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameChoosePlan4"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_frame_layout"
+            android:onClick="onFrameClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="10 - 20 repeats"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:backgroundTint="@android:color/transparent"
+                android:buttonTint="@android:color/white"
+                android:clickable="false" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameChoosePlan5"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_frame_layout"
+            android:onClick="onFrameClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Over 20 repeats"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:backgroundTint="@android:color/transparent"
+                android:buttonTint="@android:color/white"
+                android:clickable="false" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white"
-            android:clickable="false" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan2"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_frame_layout"
-        android:onClick="onFrameClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colorPurple"
             android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="0 - 5 repeats"
-            android:textSize="16sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white"
-            android:clickable="false" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan3"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_frame_layout"
-        android:onClick="onFrameClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="5 - 10 repeats"
-            android:textSize="16sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white"
-            android:clickable="false" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan4"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_frame_layout"
-        android:onClick="onFrameClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan3">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="10 - 20 repeats"
-            android:textSize="16sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white"
-            android:clickable="false" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameChoosePlan5"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_frame_layout"
-        android:onClick="onFrameClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameChoosePlan4">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Over 20 repeats"
-            android:textSize="16sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:backgroundTint="@android:color/transparent"
-            android:buttonTint="@android:color/white"
-            android:clickable="false" />
-
-    </FrameLayout>
+            android:onClick="onNextClicked"
+            android:text="Next"
+            android:textColor="@color/colorDarkPurple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

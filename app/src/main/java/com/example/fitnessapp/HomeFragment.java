@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fitnessapp.registering.Registering7Activity;
+import com.example.fitnessapp.dayexercise.DayActivity;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
@@ -158,29 +158,47 @@ public class HomeFragment extends Fragment {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
 
-        for (int i = 1; i <= 30; i++) {
+        int start = 0;
+        if(currentDay < 5) {
+            start = 1;
+        } else {
+            start = currentDay - 3;
+        }
+
+        for (int i = start ; i <= 30; i++) {
             FrameLayout dayFrameLayout = (FrameLayout) inflater.inflate(R.layout.day_frame_layout, daysContainer, false);
             TextView dayTextView = dayFrameLayout.findViewById(R.id.lblDay);
             Button startButton = dayFrameLayout.findViewById(R.id.btnStartDay);
 
             final int dayNumber = i;
 
-            if((dayNumber % 4) == 0) {
+            if ((dayNumber % 4) == 0) {
                 dayTextView.setText("Day " + i + ": Rest Day");
+                startButton.setText("Rest");
+                startButton.setOnClickListener(v -> {
+                    Toast.makeText(getContext(), "Rest Day", Toast.LENGTH_SHORT).show();
+                });
             } else {
                 dayTextView.setText("Day " + i);
-            }
 
-            if (dayNumber == currentDay) {
-                dayFrameLayout.setBackgroundResource(R.drawable.dayslayout_radius);
-                startButton.setOnClickListener(v -> {
-                    Toast.makeText(getContext(), "Start Day " + dayNumber, Toast.LENGTH_SHORT).show();
-                    new GenerateExerciseList().execute(user_id);
-                });
-            } else {
-                startButton.setOnClickListener(v -> {
-                    Toast.makeText(getContext(), "Proceed to Day " + currentDay, Toast.LENGTH_SHORT).show();
-                });
+                if (dayNumber == currentDay) {
+                    dayFrameLayout.setBackgroundResource(R.drawable.dayslayout_radius);
+                    startButton.setText("Start");
+                    startButton.setOnClickListener(v -> {
+                        Toast.makeText(getContext(), "Start Day " + dayNumber, Toast.LENGTH_SHORT).show();
+                        new GenerateExerciseList().execute(user_id);
+                    });
+                } else if (dayNumber < currentDay) {
+                    startButton.setText("Done");
+                    startButton.setOnClickListener(v -> {
+                        Toast.makeText(getContext(), "Day " + dayNumber + " is already done", Toast.LENGTH_SHORT).show();
+                    });
+                } else {
+                    startButton.setText("Wait");
+                    startButton.setOnClickListener(v -> {
+                        Toast.makeText(getContext(), "Proceed to Day " + currentDay, Toast.LENGTH_SHORT).show();
+                    });
+                }
             }
 
             daysContainer.addView(dayFrameLayout);

@@ -22,6 +22,10 @@ public class Exercise implements Parcelable {
         this.noOfSeconds = noOfSeconds;
     }
 
+    public void setNoOfSets(int noOfSets) {
+        this.noOfSets = noOfSets;
+    }
+
     protected Exercise(Parcel in) {
         exerciseId = in.readInt();
         exerciseName = in.readString();

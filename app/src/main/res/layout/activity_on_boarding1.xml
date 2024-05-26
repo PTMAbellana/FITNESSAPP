@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/background2" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/dimEffect"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/ivBackground2"
@@ -33,70 +33,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#80000000" />
-
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/tvWelcomeTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/welcome_to"
-        android:textColor="@color/colorYellow"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivLogo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/logo_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcomeTo"
-        app:srcCompat="@drawable/logo2" />
-
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="@color/colorBlack25"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onGetStartedClicked"
-        android:text="@string/get_started"
-        android:textAlignment="gravity"
-        android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivLogo2"
-        app:layout_constraintVertical_bias="0.95"
-        app:strokeColor="@color/colorPurple"
-        app:strokeWidth="2dp" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="@android:color/transparent"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onLoginClicked"
-        android:text="@string/have_account"
-        android:textAlignment="gravity"
-        android:textColor="@color/colorWhite"
-        android:textSize="12sp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivLogo2" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvWelcomeTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/welcome_to"
+            android:textColor="@color/colorYellow"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:id="@+id/ivLogo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/logo_2"
+            app:srcCompat="@drawable/logo2" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="@color/colorBlack25"
+            android:fontFamily="@font/poppins_semibold"
+            android:onClick="onGetStartedClicked"
+            android:text="@string/get_started"
+            android:textAlignment="gravity"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:strokeColor="@color/colorPurple"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/poppins_semibold"
+            android:onClick="onLoginClicked"
+            android:text="@string/have_account"
+            android:textAlignment="gravity"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

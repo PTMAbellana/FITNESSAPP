@@ -11,17 +11,17 @@
 
     <TextView
         android:id="@+id/lblDay"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|start"
         android:layout_marginStart="15dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Day"
-        android:textSize="24sp" />
+        android:text="Day 20: Rest Day"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnStartDay"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|end"
         android:layout_marginEnd="15dp"

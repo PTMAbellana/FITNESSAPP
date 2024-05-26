@@ -52,32 +52,26 @@ public class HomeViewActivity extends AppCompatActivity {
             Toast.makeText(this, "Error: Invalid user ID", Toast.LENGTH_SHORT).show();
         }
 
-        // Set up bottom navigation view
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (menus.indexOf(item.getItemId())) {
                 case 0:
                     WorkoutFragment workoutFragment = WorkoutFragment.newInstance(username, user_id);
                     replaceFragment(workoutFragment);
-//                    replaceFragment(new WorkoutFragment());
                     break;
                 case 1:
                     ProgressTrackingFragment progressTrackingFragment = ProgressTrackingFragment.newInstance(username, user_id);
                     replaceFragment(progressTrackingFragment);
-//                    replaceFragment(new ProgressTrackingFragment());
                     break;
                 case 2:
                     NutritionFragment nutritionFragment = NutritionFragment.newInstance(username, user_id);
                     replaceFragment(nutritionFragment);
-//                    replaceFragment(new NutritionFragment());
                     break;
                 case 3:
                     EditProfileFragment editProfileFragment = EditProfileFragment.newInstance(username, user_id);
                     replaceFragment(editProfileFragment);
-//                    replaceFragment(new NutritionFragment());
                     break;
                 case 4:
                     new GetPlansTask().execute(user_id);
-//                    replaceFragment(new HomeFragment());
                     break;
             }
             return true;

@@ -6,21 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".dayexercise.DayActivity">
-
-    <Button
-        android:id="@+id/btnBackToHome"
-        android:layout_width="108dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:background="#00E2F163"
-        android:fontFamily="@font/poppins_semibold"
-        android:onClick="onBackClicked"
-        android:text="Back"
-        android:textColor="#E2F163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".dayexercise.EndExerciseActivity">
 
     <TextView
         android:id="@+id/tvDay"
@@ -58,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:text="How's your day?"
+            android:text="Congratulations!"
             android:textAlignment="center"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
@@ -71,20 +57,33 @@
             android:fontFamily="@font/poppins_light"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="Get ready and prepare yourself for today's exercise?"
+            android:text="You have completed today's workout."
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSkippedExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Number of skipped exercises: "
             android:textAlignment="center"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnStartDay"
-            android:layout_width="120dp"
+            android:id="@+id/btnCheckDay"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppins_semibold"
-            android:onClick="onStartDayClicked"
-            android:text="Start"
+            android:onClick="onCheckDayClicked"
+            android:text="Check Day"
             android:textSize="18sp" />
 
     </LinearLayout>

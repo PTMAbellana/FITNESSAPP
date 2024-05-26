@@ -252,6 +252,9 @@ public class ReadData {
                                     }
                                 }
 
+                                Log.e("ReadData", "Exercise_id: " + exercise_id + "Exercise_name: " + exercise_name + "Target: " + target +
+                                        "Difficulty: " + difficulty + "Sets: " + no_of_sets + "Reps: " + no_of_reps + "Seconds: " + no_of_seconds);
+
                                 Exercise exercise = new Exercise(exercise_id, exercise_name, target, difficulty, no_of_sets, no_of_reps, no_of_seconds);
                                 exerciseList.add(exercise);
                             }

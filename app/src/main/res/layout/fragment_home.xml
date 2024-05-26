@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:padding="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/recommendation_frame"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,7 +31,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Hi, "
                 android:textColor="#896CFE"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 tools:layout_editor_absoluteX="39dp"
                 tools:layout_editor_absoluteY="34dp" />
 
@@ -43,7 +44,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="It's time to challenge your limits."
                 android:textColor="#FFFFFF"
-                android:textSize="13sp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="39dp"
                 tools:layout_editor_absoluteY="83dp" />
 
@@ -54,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="190dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/daily_exercise_scroll"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header_frame">
