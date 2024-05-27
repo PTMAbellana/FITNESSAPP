@@ -201,10 +201,10 @@ public class EditProfileFragment extends Fragment {
             try {
                 if (userProfile.next()) {
                     tvName.setText(userProfile.getString("name"));
-                    tvEmail.setText(userProfile.getString("email"));
-                    tvHeight.setText(String.format("%s cm", userProfile.getString("height")));
-                    tvWeight.setText(String.format("%s kg", userProfile.getString("weight")));
-                    tvAge.setText(String.valueOf(userProfile.getInt("age")));
+                    tvEmail.setText(String.format("Email: %s", userProfile.getString("email")));
+                    tvHeight.setText(String.format("Height: %s cm", userProfile.getString("height")));
+                    tvWeight.setText(String.format("Weight: %s kg", userProfile.getString("weight")));
+                    tvAge.setText(String.format("Age: %s", String.valueOf(userProfile.getInt("age"))));
                 } else {
                     Log.e("EditProfileFragment", "No profile found for user ID: " + user_id);
                 }

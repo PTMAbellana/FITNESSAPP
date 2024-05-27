@@ -53,9 +53,9 @@ public class ProgressTrackingActivity extends AppCompatActivity {
             try {
                 if (res.next()){
                     tvName.setText(res.getString("name"));
-                    tvWeight.setText(String.valueOf(res.getString("weight")) + " kg");
-                    tvHeight.setText(String.valueOf(res.getString("height") + " cm"));
-                    tvAge.setText(res.getString("age"));
+                    tvWeight.setText(String.format("Weight: %s kg", String.valueOf(res.getString("weight"))));
+                    tvHeight.setText(String.format("Height: %s", String.valueOf(res.getString("height") + " cm")));
+                    tvAge.setText(String.format("Age: %s", res.getString("age")));
                 } else {
                     Log.e("TAG", "NO PROFILE");
                 }
