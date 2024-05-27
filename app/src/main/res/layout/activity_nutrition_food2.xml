@@ -155,7 +155,7 @@
                     android:layout_gravity="center|left"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Strawberry"
+                    android:text="Strawberries"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="69.1"
+                    android:text="54"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -183,7 +183,7 @@
                     android:layout_gravity="center|left"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Low-fa"
+                    android:text="Small Yogurt"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="56.8"
+                    android:text="50"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -211,7 +211,7 @@
                     android:layout_gravity="center|left"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Low-Fat Milk"
+                    android:text="Spoonful Sugar"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -220,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="71.5"
+                    android:text="39"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
             </FrameLayout>
@@ -238,38 +238,11 @@
                     android:layout_gravity="center|left"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Yogurt"
+                    android:text="500ml water"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="9.9"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp">
-
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Honey"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
@@ -283,28 +256,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp">
+                android:paddingEnd="20dp"/>
 
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Sugar"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="0.3"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite" />
-            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -329,7 +287,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="207.6"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -343,7 +301,6 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
-
             <Button
                 android:id="@+id/btnOrder"
                 android:layout_width="wrap_content"

@@ -49,20 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvGreeting5"
-        android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Nutrition"
-        android:textColor="#896CFE"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView21"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
@@ -170,7 +156,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Wheat Tortilla"
+                    android:text="Whole Wheat Tortilla"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -179,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="69.1"
+                    android:text="100.2"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -198,7 +184,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Turkey Breast"
+                    android:text="Sliced Turkey Breast"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -207,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="56.8"
+                    android:text="30.5"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -235,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="71.5"
+                    android:text="160.5"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
             </FrameLayout>
@@ -262,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="9.9"
+                    android:text="5.5"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
             </FrameLayout>
@@ -280,7 +266,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Hummus"
+                    android:text="Tomato"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -289,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="0"
+                    android:text="10.5"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
             </FrameLayout>
@@ -298,28 +284,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp">
-
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|start"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Mayonnaise"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="0.3"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite" />
-            </FrameLayout>
+                android:paddingEnd="20dp"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -344,7 +309,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="207.6"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
@@ -358,7 +323,6 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
-
             <Button
                 android:id="@+id/btnOrder"
                 android:layout_width="wrap_content"

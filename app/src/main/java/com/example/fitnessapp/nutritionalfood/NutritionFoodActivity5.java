@@ -46,8 +46,7 @@ public class NutritionFoodActivity5 extends AppCompatActivity {
         checkBox2 = findViewById(R.id.checkBox2);
         checkBox3 = findViewById(R.id.checkBox3);
         checkBox4 = findViewById(R.id.checkBox4);
-        checkBox5 = findViewById(R.id.checkBox5);
-        checkBox6 = findViewById(R.id.checkBox6);
+
         totalCaloriesTextView = findViewById(R.id.textView26);
 
         dialog = new Dialog(NutritionFoodActivity5.this);
@@ -86,28 +85,20 @@ public class NutritionFoodActivity5 extends AppCompatActivity {
         float[] calories = new float[6];
 
         if (checkBox1.isChecked()) {
-            calories[0] = 69.1f * multiplier;
+            calories[0] = 200.1f * multiplier;
             totalCalories += calories[0];
         }
         if (checkBox2.isChecked()) {
-            calories[1] = 56.8f * multiplier;
+            calories[1] = 5.1f * multiplier;
             totalCalories += calories[1];
         }
         if (checkBox3.isChecked()) {
-            calories[2] = 71.5f * multiplier;
+            calories[2] = 5.1f * multiplier;
             totalCalories += calories[2];
         }
         if (checkBox4.isChecked()) {
             calories[3] = 9.9f * multiplier;
             totalCalories += calories[3];
-        }
-        if (checkBox5.isChecked()) {
-            calories[4] = 0.0f * multiplier;
-            totalCalories += calories[4];
-        }
-        if (checkBox6.isChecked()) {
-            calories[5] = 0.3f * multiplier;
-            totalCalories += calories[5];
         }
 
         totalCaloriesTextView.setText(String.valueOf(totalCalories));

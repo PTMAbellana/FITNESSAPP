@@ -155,7 +155,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Large Eggs"
+                    android:text="Spinach"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -183,7 +183,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Cooked Spinach"
+                    android:text="Tomato"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -211,7 +211,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Diced Tomatoes"
+                    android:text="Egg"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -343,7 +343,6 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
-
             <Button
                 android:id="@+id/btnOrder"
                 android:layout_width="wrap_content"
