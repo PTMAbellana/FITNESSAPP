@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Home"
-        android:icon="@drawable/workoutbtn"
+        android:icon="@drawable/home_nav"
         android:id="@+id/home"/>
     <item android:title="Workout"
-        android:icon="@drawable/workoutbtn"
+        android:icon="@drawable/workout_nav"
         android:id="@+id/workout"/>
     <item android:title="Progress Tracking"
-        android:icon="@drawable/progressbtn"
+        android:icon="@drawable/progress_nav"
         android:id="@+id/progress"/>
     <item android:title="Nutrition"
-        android:icon="@drawable/nutritionbtn"
+        android:icon="@drawable/nutrition_nav"
         android:id="@+id/nutrition"/>
     <item android:title="Profile"
         android:icon="@drawable/editprof"
