@@ -1,6 +1,7 @@
 package com.example.fitnessapp;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.fitnessapp.crud.ReadData;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity1;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity2;
 import com.example.fitnessapp.nutritionalfood.NutritionFoodActivity3;
@@ -30,6 +32,7 @@ public class NutritionFragment extends Fragment {
 
     private String username;
     private int user_id;
+    private Double bmi;
     private ImageButton btnViewFood1, btnViewFood2, btnViewFood3, btnViewFood4, btnViewFood5, btnViewFood6, btnViewFood7;
 
     public NutritionFragment() {
@@ -67,10 +70,13 @@ public class NutritionFragment extends Fragment {
         btnViewFood6 = view.findViewById(R.id.btnViewFood6);
         btnViewFood7 = view.findViewById(R.id.btnViewFood7);
 
+        new GetBMI().execute(Session.getUid());
+
         btnViewFood1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity1.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -79,6 +85,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity2.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -87,6 +94,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity3.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -95,6 +103,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity4.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -103,6 +112,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity5.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -111,6 +121,7 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity6.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
@@ -119,10 +130,20 @@ public class NutritionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireContext(), NutritionFoodActivity7.class);
+                intent.putExtra("BMI", bmi);
                 startActivity(intent);
             }
         });
 
         return view;
+    }
+
+    private class GetBMI extends AsyncTask<Integer, Void, Boolean>{
+
+        @Override
+        protected Boolean doInBackground(Integer... integers) {
+            bmi = ReadData.getBMI(integers[0]);
+            return true;
+        }
     }
 }

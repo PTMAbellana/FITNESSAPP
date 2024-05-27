@@ -1,7 +1,9 @@
 package com.example.fitnessapp.nutritionalfood;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,15 +15,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.R;
 
 public class NutritionFoodActivity7 extends AppCompatActivity {
 //    private PieChart pieChart;
 
     private EditText editText;
-    private Button btnCalculateRatio;
+    private Button btnCalculateRatio, btnOrder;
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
     private TextView totalCaloriesTextView;
+
+    private Double bmi;
+    Dialog dialog;
+    Button btnOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +36,12 @@ public class NutritionFoodActivity7 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_nutrition_food7);
 //        pieChart = findViewById(R.id.pieChart);
+
+        bmi = getIntent().getDoubleExtra("BMI", 0);
+
         editText = findViewById(R.id.editTextText);
         btnCalculateRatio = findViewById(R.id.btnCalculateRatio);
+        btnOrder = findViewById(R.id.btnOrder);
         checkBox1 = findViewById(R.id.checkBox);
         checkBox2 = findViewById(R.id.checkBox2);
         checkBox3 = findViewById(R.id.checkBox3);
@@ -39,10 +50,32 @@ public class NutritionFoodActivity7 extends AppCompatActivity {
         checkBox6 = findViewById(R.id.checkBox6);
         totalCaloriesTextView = findViewById(R.id.textView26);
 
+        dialog = new Dialog(NutritionFoodActivity7.this);
+        dialog.setContentView(R.layout.pop_up_message);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pop_up_message_bg));
+
+        btnOk = dialog.findViewById(R.id.btnOks);
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
         btnCalculateRatio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calculateAndDisplayRatio();
+            }
+        });
+
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
+                placeOrder();
             }
         });
     }
@@ -91,6 +124,17 @@ public class NutritionFoodActivity7 extends AppCompatActivity {
 //        pieChart.setData(pieData);
 //        pieChart.invalidate(); // refresh
     }
+
+    public void placeOrder(){
+        String bmi_cat;
+        if (bmi >= 30) bmi_cat = "Obesity";
+        else if(bmi >= 25.0 && bmi< 30.0) bmi_cat = "Overweight";
+        else if (bmi >= 18.5 && bmi < 25.0) bmi_cat = "Normal";
+        else bmi_cat = "Underweight";
+
+        InsertData.insertDiet(bmi_cat, "Spinach And Tomato Omelette");
+    }
+
     public void onBackClicked(View view) {
 //        Intent intent = new Intent(this, HomeView.class);
 //        startActivity(intent);

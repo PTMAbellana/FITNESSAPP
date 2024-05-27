@@ -155,7 +155,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Multi-grain Bread"
+                    android:text="Greek yogurt"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -183,7 +183,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Avocados"
+                    android:text="Strawberry"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -211,7 +211,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Egg"
+                    android:text="Blue Raspberry"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -238,7 +238,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Olive Oil"
+                    android:text="Granola"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -265,7 +265,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Salt"
+                    android:text="Almonds"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -292,7 +292,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Pepper"
+                    android:text="Cereal"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -343,6 +343,14 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
+
+            <Button
+                android:id="@+id/btnOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Add Order" />
 
         </LinearLayout>
     </ScrollView>

@@ -170,7 +170,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Multi-grain Bread"
+                    android:text="Wheat Tortilla"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -198,7 +198,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Avocados"
+                    android:text="Turkey Breast"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -226,7 +226,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Egg"
+                    android:text="Avocado"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -253,7 +253,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Olive Oil"
+                    android:text="Lettuce"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -280,7 +280,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Salt"
+                    android:text="Hummus"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -307,7 +307,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Pepper"
+                    android:text="Mayonnaise"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -358,6 +358,14 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
+
+            <Button
+                android:id="@+id/btnOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Add Order" />
 
         </LinearLayout>
     </ScrollView>

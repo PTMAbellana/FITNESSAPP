@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import androidx.compose.foundation.text.modifiers.SelectableTextAnnotatedStringElement;
+
 import com.example.fitnessapp.ConnectionClass;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -231,6 +233,30 @@ public class InsertData {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void insertDiet(String bmiCat, String food){
+        new InsertDiet().execute(bmiCat, food);
+    }
+
+    private static class InsertDiet extends AsyncTask<String, Void, Boolean>{
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            try (
+                 Connection c = ConnectionClass.getConnection();
+                 PreparedStatement statement = c.prepareStatement("INSERT INTO tbldietplans (bmi_category, plan_name) VALUES (?, ?)");
+            ) {
+
+                statement.setString(1, strings[0]);
+                statement.setString(2, strings[1]);
+                int res = statement.executeUpdate();
+                return res != 0;
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

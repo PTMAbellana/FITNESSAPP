@@ -155,7 +155,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Multi-grain Bread"
+                    android:text="Salmon Fillet"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -183,7 +183,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Avocados"
+                    android:text="Carrots"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -211,7 +211,7 @@
                     android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Egg"
+                    android:text="Fat"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -343,6 +343,14 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
+
+            <Button
+                android:id="@+id/btnOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Add Order" />
 
         </LinearLayout>
     </ScrollView>
