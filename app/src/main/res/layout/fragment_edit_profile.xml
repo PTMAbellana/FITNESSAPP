@@ -37,11 +37,12 @@
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         android:background="#B3A0FF"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView6"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/scrollView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnBack2">
@@ -62,7 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
             tools:text="paulmabellana@gmail.com" />
@@ -72,7 +74,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
             tools:text="60kg" />
@@ -82,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
             tools:text="1.65cm" />
@@ -92,7 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
+            android:gravity="center|start"
+            android:paddingStart="20dp"
             android:text="20 years old"
             android:textColor="#FFFFFF"
             android:textSize="13sp" />
