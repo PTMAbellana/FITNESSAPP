@@ -24,6 +24,7 @@ import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity1 extends AppCompatActivity {
 //    private PieChart pieChart;
+    private static int user_id = Session.getUid();
     private EditText editText;
     private Button btnCalculateRatio, btnOrder, btnCancel;
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
@@ -87,22 +88,23 @@ public class NutritionFoodActivity1 extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btnOrder.getText().toString().equals("Add Order")) {
-                    dialog.show();
-                    placeOrder();
-                    btnOrder.setText("Cancel Order");
-                } else if (btnOrder.getText().toString().equals("Cancel Order")) {
-                    dialog2.show();
-                    cancelOrder();
-                    btnOrder.setText("Add Order");
+                if (!isFinishing()) { // Check if activity is not finishing
+                    if (btnOrder.getText().toString().equals("Add Order")) {
+                        dialog.show();
+                        placeOrder();
+                        btnOrder.setText("Cancel Order");
+                    } else if (btnOrder.getText().toString().equals("Cancel Order")) {
+                        dialog2.show();
+                        cancelOrder();
+                        btnOrder.setText("Add Order");
+                    }
                 }
             }
         });
     }
 
     private void cancelOrder() {
-        UpdateData.deleteDietPlan("Avocado And Egg Toast");
-
+        UpdateData.deleteDietPlan("Avocado And Egg Toast", String.valueOf(user_id));
     }
 
     private void calculateAndDisplayRatio() {
@@ -158,7 +160,7 @@ public class NutritionFoodActivity1 extends AppCompatActivity {
         else if (bmi >= 18.5 && bmi < 25.0) bmi_cat = "Normal";
         else bmi_cat = "Underweight";
 
-        InsertData.insertDiet(bmi_cat, "Avocado And Egg Toast");
+        InsertData.insertDiet(String.valueOf(user_id), bmi_cat, "Avocado And Egg Toast");
     }
 
     public void onBackClicked(View view) {

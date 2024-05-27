@@ -174,8 +174,8 @@ public class UpdateData {
         }
         return false;
     }
-    public static void deleteDietPlan(String foodName) {
-        new DeleteDietPlan().execute(foodName);
+    public static void deleteDietPlan(String foodName, String user_id) {
+        new DeleteDietPlan().execute(foodName, user_id);
     }
 
     private static class DeleteDietPlan extends AsyncTask<String, Void, Boolean> {
@@ -184,9 +184,10 @@ public class UpdateData {
         protected Boolean doInBackground(String... strings) {
             try (
                     Connection c = ConnectionClass.getConnection();
-                    PreparedStatement statement = c.prepareStatement("DELETE FROM tbldietplans WHERE plan_name = ?");
+                    PreparedStatement statement = c.prepareStatement("DELETE FROM tbldietplans WHERE plan_name = ? AND user_id = ?");
             ) {
                 statement.setString(1, strings[0]);
+                statement.setInt(2, Integer.parseInt(strings[1]));
                 int res = statement.executeUpdate();
                 return res != 0;
             } catch (SQLException e) {

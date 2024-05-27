@@ -15,12 +15,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fitnessapp.Session;
 import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity4 extends AppCompatActivity {
 //    private PieChart pieChart;
+    private static int user_id = Session.getUid();
 
     private EditText editText;
     private Button btnCalculateRatio, btnOrder;
@@ -90,21 +92,23 @@ public class NutritionFoodActivity4 extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btnOrder.getText().toString().equals("Add Order")) {
-                    dialog.show();
-                    placeOrder();
-                    btnOrder.setText("Cancel Order");
-                } else if (btnOrder.getText().toString().equals("Cancel Order")) {
-                    dialog2.show();
-                    cancelOrder();
-                    btnOrder.setText("Add Order");
+                if (!isFinishing()) { // Check if activity is not finishing
+                    if (btnOrder.getText().toString().equals("Add Order")) {
+                        dialog.show();
+                        placeOrder();
+                        btnOrder.setText("Cancel Order");
+                    } else if (btnOrder.getText().toString().equals("Cancel Order")) {
+                        dialog2.show();
+                        cancelOrder();
+                        btnOrder.setText("Add Order");
+                    }
                 }
             }
         });
     }
 
     private void cancelOrder() {
-        UpdateData.deleteDietPlan("Turkey And Avocado Wrap");
+        UpdateData.deleteDietPlan("Turkey And Avocado Wrap", String.valueOf(user_id));
     }
 
     private void calculateAndDisplayRatio() {
@@ -151,13 +155,15 @@ public class NutritionFoodActivity4 extends AppCompatActivity {
     }
 
     public void placeOrder(){
+        int user_id = Session.getUid();
+
         String bmi_cat;
         if (bmi >= 30) bmi_cat = "Obesity";
         else if(bmi >= 25.0 && bmi< 30.0) bmi_cat = "Overweight";
         else if (bmi >= 18.5 && bmi < 25.0) bmi_cat = "Normal";
         else bmi_cat = "Underweight";
 
-        InsertData.insertDiet(bmi_cat, "Turkey And Avocado Wrap");
+        InsertData.insertDiet(String.valueOf(user_id), bmi_cat, "Turkey And Avocado Wrap");
     }
 
     public void onBackClicked(View view) {

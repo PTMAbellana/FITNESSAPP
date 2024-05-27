@@ -40,11 +40,11 @@ public class VideoWorkoutActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_workout_activity2);
 
-        videoView2 = findViewById(R.id.videoView3);
-        btnPlayPause2 = findViewById(R.id.btnPlayPause2);
-        btnBack2 = findViewById(R.id.btnBack);
-        btnForward2 = findViewById(R.id.btnForward2);
-        videoSeekBar2 = findViewById(R.id.videoSeekBar2);
+        videoView2 = findViewById(R.id.videoView);
+        btnPlayPause2 = findViewById(R.id.btnPlayPause);
+        btnBack2 = findViewById(R.id.btnWorkoutBack);
+        btnForward2 = findViewById(R.id.btnForward);
+        videoSeekBar2 = findViewById(R.id.videoSeekBar);
 
         String fileName = "videoworkout2";
         String filePlace = "android.resource://" + getPackageName() + "/raw/" + fileName;

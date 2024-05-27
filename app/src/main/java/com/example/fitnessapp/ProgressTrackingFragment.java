@@ -26,6 +26,9 @@ public class ProgressTrackingFragment extends Fragment {
     TextView tvWeight;
     TextView tvHeight;
     TextView tvAge;
+    TextView tvCurrentDifficulty;
+    TextView tvTargetDifficulty;
+    TextView tvBMI;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_USERNAME = "username";
@@ -83,7 +86,7 @@ public class ProgressTrackingFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(ResultSet res) {
+        protected void onPostExecute(ResultSet userProfile) {
 
             View fragmentView = getView();
 
@@ -91,23 +94,29 @@ public class ProgressTrackingFragment extends Fragment {
             tvWeight = fragmentView.findViewById(R.id.tvWeight);
             tvHeight = fragmentView.findViewById(R.id.tvHeight);
             tvAge = fragmentView.findViewById(R.id.tvAge);
+            tvCurrentDifficulty = fragmentView.findViewById(R.id.tvCurrentDifficulty);
+            tvTargetDifficulty = fragmentView.findViewById(R.id.tvTargetDifficulty);
+            tvBMI = fragmentView.findViewById(R.id.tvBMI);
 
             try {
-                if (res.next()){
-                    tvName.setText(res.getString("name"));
-                    tvWeight.setText(String.format("Weight: %s kg", String.valueOf(res.getString("weight"))));
-                    tvHeight.setText(String.format("Height: %s", String.valueOf(res.getString("height") + " cm")));
-                    tvAge.setText(String.format("Age: %s", res.getString("age")));
-                } else {
-                    Log.e("TAG", "NO PROFILE");
+                if (userProfile.next()) {
+                    tvName.setText(userProfile.getString("name"));
+                    tvHeight.setText(String.format("Height: %.2f cm", userProfile.getFloat("height")));
+                    tvWeight.setText(String.format("Weight: %.2f kg", userProfile.getFloat("weight")));
+                    tvAge.setText(String.format("Age: %d", userProfile.getInt("age")));
+                    tvCurrentDifficulty.setText(String.format("Current Difficulty: %s", userProfile.getString("current_difficulty")));
+                    tvTargetDifficulty.setText(String.format("Target Difficulty: %s", userProfile.getString("target_difficulty")));
+                    tvBMI.setText(String.format("BMI: %.2f", userProfile.getFloat("bmi")));
                 }
-            } catch (SQLException e){
-                throw new RuntimeException(e);
+            } catch (SQLException e) {
+                e.printStackTrace();
             } finally {
-                try{
-                    res.close();
-                } catch (SQLException r){
-                    r.printStackTrace();
+                try {
+                    if (userProfile != null) {
+                        userProfile.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }

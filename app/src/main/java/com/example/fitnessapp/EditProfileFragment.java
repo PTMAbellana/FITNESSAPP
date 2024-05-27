@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.fitnessapp.crud.DeleteData;
 import com.example.fitnessapp.crud.ReadData;
 
 import java.sql.Connection;
@@ -77,6 +78,15 @@ public class EditProfileFragment extends Fragment {
         tfWeight = view.findViewById(R.id.tfWeight);
         tfHeight = view.findViewById(R.id.tfHeight);
         logout = view.findViewById(R.id.btnLogout);
+
+        Button deactivate = view.findViewById(R.id.btnDeactivateAccount);
+
+        deactivate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onDeactivateClicked();
+            }
+        });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,8 +216,8 @@ public class EditProfileFragment extends Fragment {
                 if (userProfile.next()) {
                     tvName.setText(userProfile.getString("name"));
                     tvEmail.setText(String.format("Email: %s", userProfile.getString("email")));
-                    tvHeight.setText(String.format("Height: %s cm", userProfile.getString("height")));
-                    tvWeight.setText(String.format("Weight: %s kg", userProfile.getString("weight")));
+                    tvHeight.setText(String.format("Height: %.2f cm", userProfile.getFloat("height")));
+                    tvWeight.setText(String.format("Weight: %.2f kg", userProfile.getFloat("weight")));
                     tvAge.setText(String.format("Age: %s", String.valueOf(userProfile.getInt("age"))));
                 } else {
                     Log.e("EditProfileFragment", "No profile found for user ID: " + user_id);
@@ -227,5 +237,28 @@ public class EditProfileFragment extends Fragment {
         Intent intent = new Intent(getActivity(), LaunchActivity.class);
         startActivity(intent);
         getActivity().finish();
+    }
+
+    public void onDeactivateClicked() {
+        int userId = user_id;
+        new UpdateStatusTask().execute(userId);
+    }
+
+    private class UpdateStatusTask extends AsyncTask<Integer, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(Integer... params) {
+            int userId = params[0];
+            return DeleteData.updateStatus(userId);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean success) {
+            if (success) {
+                Toast.makeText(getContext(), "Account deactivated successfully", Toast.LENGTH_SHORT).show();
+                onLogoutClicked();
+                Toast.makeText(getContext(), "Failed to deactivate account", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

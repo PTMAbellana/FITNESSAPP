@@ -236,8 +236,8 @@ public class InsertData {
         }
     }
 
-    public static void insertDiet(String bmiCat, String food){
-        new InsertDiet().execute(bmiCat, food);
+    public static void insertDiet(String user_id, String bmiCat, String food){
+        new InsertDiet().execute(user_id, bmiCat, food);
     }
 
     private static class InsertDiet extends AsyncTask<String, Void, Boolean>{
@@ -246,11 +246,12 @@ public class InsertData {
         protected Boolean doInBackground(String... strings) {
             try (
                  Connection c = ConnectionClass.getConnection();
-                 PreparedStatement statement = c.prepareStatement("INSERT INTO tbldietplans (bmi_category, plan_name) VALUES (?, ?)");
+                 PreparedStatement statement = c.prepareStatement("INSERT INTO tbldietplans (user_id, bmi_category, plan_name) VALUES (?, ?, ?)");
             ) {
 
-                statement.setString(1, strings[0]);
+                statement.setInt(1, Integer.parseInt(strings[0]));
                 statement.setString(2, strings[1]);
+                statement.setString(3, strings[2]);
                 int res = statement.executeUpdate();
                 return res != 0;
 

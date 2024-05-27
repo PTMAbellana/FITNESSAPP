@@ -7,134 +7,124 @@
     android:layout_height="match_parent"
     tools:context=".videoexercise.VideoWorkoutActivity1">
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#232323"
-        tools:context=".videoexercise.VideoWorkoutFragment"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <!-- TODO: Update blank fragment layout -->
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="335dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="500dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Creator: Move With Nicole"
-            android:textColor="#DAA251"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-        <TextView
-            android:id="@+id/tvChallenge"
-            android:layout_width="301dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="525dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="Strengthen your upper body with this quick 5 Minute Upper Body Workout - no equipment needed! Repeat 1-2 more times for even more of a burn! "
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="335dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="475dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="5 MINUTE UPPER BODY WORKOUT "
-            android:textColor="#E1F063"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-        <TextView
-            android:id="@+id/tvGreeting2"
-            android:layout_width="142dp"
-            android:layout_height="29dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="56dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Upper Body "
-            android:textAlignment="center"
-            android:textColor="#896CFE"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btnBack4"
+            android:id="@+id/btnBack"
             android:layout_width="92dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
             android:background="#00E2F163"
             android:onClick="onBackClicked"
             android:text="Back"
-            android:textColor="#E2F163"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="#E2F163" />
+
+        <TextView
+            android:id="@+id/tvGreeting4"
+            android:layout_width="158dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Upper Body"
+            android:textAlignment="center"
+            android:textColor="#896CFE"
+            android:textSize="20sp" />
 
         <VideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:layout_marginTop="120dp" />
+            android:layout_marginTop="16dp" />
 
         <LinearLayout
             android:id="@+id/media_seek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="370dp"
             android:orientation="horizontal">
 
             <SeekBar
-                android:id="@+id/videoSeekBar2"
+                android:id="@+id/videoSeekBar"
                 android:layout_width="324dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"
                 android:max="100" />
+
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/media_controls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btnBack"
+                android:id="@+id/btnWorkoutBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:backgroundTint="#673AB7"
                 android:text="Back 5s" />
 
             <Button
-                android:id="@+id/btnPlayPause2"
+                android:id="@+id/btnPlayPause"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Play" />
 
             <Button
-                android:id="@+id/btnForward2"
+                android:id="@+id/btnForward"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:backgroundTint="#673AB7"
                 android:text="Forward 5s " />
 
         </LinearLayout>
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="5 MINUTE UPPER BODY WORKOUT "
+            android:textAlignment="center"
+            android:textColor="#E1F063"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Creator:  Move With Nicole"
+            android:textAlignment="center"
+            android:textColor="#DAA251"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvChallenge4"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_light"
+            android:text="Strengthen your upper body with this quick 5 Minute Upper Body Workout - no equipment needed! Repeat 1-2 more times for even more of a burn!"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

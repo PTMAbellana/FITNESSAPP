@@ -40,7 +40,7 @@ public class VideoWorkoutActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_workout_activity3);
 
-        videoView3 = findViewById(R.id.videoView3);
+        videoView3 = findViewById(R.id.videoView);
         btnPlayPause = findViewById(R.id.btnPlayPause);
         btnBack = findViewById(R.id.btnWorkoutBack);
         btnForward = findViewById(R.id.btnForward);

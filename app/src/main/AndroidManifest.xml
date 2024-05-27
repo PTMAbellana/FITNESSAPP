@@ -97,18 +97,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ProgressTrackingActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".NutritionActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".WorkoutActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".onboarding.OnBoarding4Activity"
             android:exported="false"
             android:screenOrientation="portrait" />

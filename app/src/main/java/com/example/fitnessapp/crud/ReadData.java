@@ -35,6 +35,25 @@ public class ReadData {
         return false;
     }
 
+    public static boolean readStatus(String username) {
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT status FROM tblusers WHERE username = ?")) {
+
+            statement.setString(1, username);
+            ResultSet res = statement.executeQuery();
+            if (res.next()){
+                String status = res.getString("status");
+                Log.e("ReadData", status);
+                if(status.equals("active")) {
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
     public static boolean usernameExist(String username) {
         try (Connection c = ConnectionClass.getConnection();
              PreparedStatement statement = c.prepareStatement("SELECT username FROM tblusers WHERE username = ?")) {
@@ -118,8 +137,10 @@ public class ReadData {
         Connection c = null;
         try{
             c = ConnectionClass.getConnection();
-            PreparedStatement statement = c.prepareStatement("SELECT name, email, username, height, weight, age FROM tblusers WHERE user_id=?");
-
+            PreparedStatement statement = c.prepareStatement("SELECT u.name, u.email, u.username, u.height, u.weight, u.age, p.current_difficulty, p.target_difficulty, p.week, p.day, p.bmi " +
+                    "FROM tblusers u " +
+                    "JOIN tblplans p ON u.user_id = p.user_id " +
+                    "WHERE u.user_id=?");
             statement.setInt(1, uid);
             return statement.executeQuery();
         }catch(SQLException e){

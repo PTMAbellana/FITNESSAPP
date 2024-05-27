@@ -40,11 +40,11 @@ public class VideoWorkoutActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_workout_activity4);
 
-        videoView4 = findViewById(R.id.videoView4);
-        btnPlayPause4 = findViewById(R.id.btnPlayPause4);
-        btnBack4 = findViewById(R.id.btnWorkoutBack4);
-        btnForward4 = findViewById(R.id.btnForward4);
-        videoSeekBar4 = findViewById(R.id.videoSeekBar4);
+        videoView4 = findViewById(R.id.videoView);
+        btnPlayPause4 = findViewById(R.id.btnPlayPause);
+        btnBack4 = findViewById(R.id.btnWorkoutBack);
+        btnForward4 = findViewById(R.id.btnForward);
+        videoSeekBar4 = findViewById(R.id.videoSeekBar);
 
         String fileName = "videoworkout4";
         String filePlace = "android.resource://" + getPackageName() + "/raw/" + fileName;

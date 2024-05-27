@@ -53,7 +53,10 @@ public class LoginViewActivity extends AppCompatActivity {
             username = params[0];
             Log.e("TAWAG", "username is " + username);
             String password = params[1];
-            if (ReadData.readDataLogin(username, password)) {
+
+            boolean checkStatus = ReadData.readStatus(username);
+            Log.e("Login", String.valueOf(checkStatus));
+            if (ReadData.readDataLogin(username, password) && checkStatus) {
                 uid = ReadData.getSession(username);
                 Session s = new Session(uid, username);
                 Log.e("Login SESSION", "uid : " + s.getUid());
