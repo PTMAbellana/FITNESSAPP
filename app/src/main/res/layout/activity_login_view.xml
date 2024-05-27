@@ -51,119 +51,123 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="575dp"
+        android:layout_height="0dp"
         android:background="@drawable/layout_radius"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome2"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingTop="15dp"
-            android:text="Username"
-            android:textColor="#0C0C0C"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/tfUsername"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Username"
-            android:padding="10dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvPassword"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Password"
-            android:textColor="#020202"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/pfPassword"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/lblcheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:text=""
-            android:textColor="#E63333"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="178dp"
-            android:layout_height="48dp"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Sign In"
-            android:textSize="18sp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome2">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="25dp"
-            android:baselineAligned="true"
-            android:foregroundGravity="bottom"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="40dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingTop="15dp"
+                android:text="Username"
+                android:textColor="#0C0C0C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tfUsername"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Username"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Password"
+                android:textColor="#020202"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/pfPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblcheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/no_account" />
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:text=""
+                android:textColor="#E63333"
+                android:textSize="16sp" />
 
             <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="#00FFFFFF"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:onClick="onRegisterClicked"
-                android:text="@string/register"
-                android:textColor="#000000" />
-        </LinearLayout>
+                android:id="@+id/btnSignIn"
+                android:layout_width="178dp"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Sign In"
+                android:textSize="18sp" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="25dp"
+                android:baselineAligned="true"
+                android:foregroundGravity="bottom"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no_account" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#00FFFFFF"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:onClick="onRegisterClicked"
+                    android:text="@string/register"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,21 +21,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        android:onClick="onLogoutClicked"
+        android:text="Logout"
+        android:textColor="@color/colorPurple"
+        app:layout_constraintStart_toEndOf="@+id/btnBack2"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="418dp"
-        android:layout_height="150dp"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
         android:background="#B3A0FF"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnBack2">
 
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="252dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_semibold"
@@ -46,7 +59,7 @@
 
         <TextView
             android:id="@+id/tvEmail"
-            android:layout_width="252dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
@@ -85,157 +98,155 @@
             android:textSize="13sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="412dp"
+    <ScrollView
+        android:id="@+id/scrollView6"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
-        android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-        <TextView
-            android:id="@+id/lblName"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Name"
-            android:textAlignment="textStart"
-            android:textColor="#896CFE"
-            android:textSize="16dp" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="30dp"
+            android:paddingBottom="50dp">
 
-        <EditText
-            android:id="@+id/tfName"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Name"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Name"
+                android:textAlignment="textStart"
+                android:textColor="#896CFE"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblEmail"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Email"
-            android:textColor="#896CFE"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfName"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Name"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfEmail"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Email"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Email"
+                android:textColor="#896CFE"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblUsername"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Username"
-            android:textColor="#896CFE"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfEmail"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Email"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfUsername"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Username"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblUsername"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Username"
+                android:textColor="#896CFE"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblWeight"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Weight"
-            android:textColor="#896CFE"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfUsername"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Username"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfWeight"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Weight"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblWeight"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Weight"
+                android:textColor="#896CFE"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblHeight"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Height"
-            android:textColor="#896CFE"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfWeight"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Weight"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfHeight"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Height"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblHeight"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Height"
+                android:textColor="#896CFE"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblcheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#E63333"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/tfHeight"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Height"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <Button
-            android:id="@+id/btnEditProfile"
-            android:layout_width="178dp"
-            android:layout_height="48dp"
-            android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/colorYellow"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Update Profile"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#E63333"
+                android:textSize="16sp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="178dp"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorYellow"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Update Profile"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:background="#00FFFFFF"
-        android:onClick="onLogoutClicked"
-        android:text="Logout"
-        android:textColor="@color/colorPurple"
-        app:layout_constraintStart_toEndOf="@+id/btnBack2"
-        app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

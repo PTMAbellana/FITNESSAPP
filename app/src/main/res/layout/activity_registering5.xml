@@ -50,119 +50,124 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center|top"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
-        <TextView
-            android:id="@+id/tvAgeWeightHeight"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="What's your age, weight and height?"
-            android:textAlignment="center"
-            android:textColor="#E2F163"
-            android:textSize="24sp" />
+            android:gravity="center|top"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/lblAge"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Age"
-            android:textAlignment="textStart"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/tvAgeWeightHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="What's your age, weight and height?"
+                android:textAlignment="center"
+                android:textColor="#E2F163"
+                android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/tfAge"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Age"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblAge"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Age"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblWeight"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Weight (kg)"
-            android:textAlignment="textStart"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfAge"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Age"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfWeight"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Weight"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblWeight"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Weight (kg)"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblHeight"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Height (cm)"
-            android:textAlignment="textStart"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp" />
+            <EditText
+                android:id="@+id/tfWeight"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Weight"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <EditText
-            android:id="@+id/tfHeight"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:background="@drawable/edittext_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="Height"
-            android:padding="10dp"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/lblHeight"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Height (cm)"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/lblcheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text=""
-            android:textColor="#E63333"
-            android:textSize="16sp"
-            tools:text="testing" />
+            <EditText
+                android:id="@+id/tfHeight"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/poppins_semibold"
+                android:hint="Height"
+                android:padding="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="16dp" />
 
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="64dp"
-            android:backgroundTint="@color/colorPurple"
-            android:fontFamily="@font/poppins_semibold"
-            android:onClick="onNextClicked"
-            android:text="Next"
-            android:textColor="@color/colorDarkPurple" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/lblcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text=""
+                android:textColor="#E63333"
+                android:textSize="16sp"
+                tools:text="testing" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                android:backgroundTint="@color/colorPurple"
+                android:fontFamily="@font/poppins_semibold"
+                android:onClick="onNextClicked"
+                android:text="Next"
+                android:textColor="@color/colorDarkPurple" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

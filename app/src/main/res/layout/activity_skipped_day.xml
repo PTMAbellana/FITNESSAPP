@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#232323"
-    tools:context=".dayexercise.EndExerciseActivity">
+    tools:context=".dayexercise.SkippedDayActivity">
 
     <TextView
         android:id="@+id/tvDay"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Congratulations!"
+            android:text="Skipped Day"
             android:textAlignment="center"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
@@ -57,24 +57,15 @@
             android:layout_gravity="center|start"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
-            android:text="You have completed today's workout."
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="If you are not feeling well, please rest today. We value your physical health."
             android:textAlignment="center"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvSkippedExercises"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|start"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="Number of skipped exercises: "
-            android:textAlignment="center"
-            android:textColor="#0C0C0C"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/btnCheckDay"

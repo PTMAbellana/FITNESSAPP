@@ -161,6 +161,19 @@ public class RestActivity extends AppCompatActivity {
         finish();
     }
 
+    public void onSkipExerciseClicked(View view) {
+        if (!isFinishing()) {
+            Intent intent = new Intent(RestActivity.this, SkippedDayActivity.class);
+            intent.putExtra("currentDay", currentDay);
+            intent.putExtra("currentWeek", currentWeek);
+            intent.putExtra("current_index", current_index);
+            intent.putExtra("skipped_exercises", skipped_exercises);
+            intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
+            startActivity(intent);
+            finish();
+        }
+    }
+
     private void disableButtonsTemporarily() {
         playButton.setEnabled(false);
         pauseButton.setEnabled(false);
