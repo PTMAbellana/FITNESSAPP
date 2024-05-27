@@ -16,6 +16,9 @@
         android:theme="@style/Theme.FITNESSAPP"
         tools:targetApi="31">
         <activity
+            android:name=".dayexercise.RestDayActivity"
+            android:exported="false" />
+        <activity
             android:name=".dayexercise.SkippedDayActivity"
             android:exported="false" />
         <activity
@@ -106,10 +109,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TestingActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".onboarding.OnBoarding4Activity"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -172,10 +171,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".registering.Registering1Activity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 

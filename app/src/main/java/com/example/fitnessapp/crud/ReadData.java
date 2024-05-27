@@ -80,6 +80,23 @@ public class ReadData {
         return 0;
     }
 
+    public static String getName(int user_id) {
+        try (Connection c = ConnectionClass.getConnection();
+             PreparedStatement statement = c.prepareStatement("SELECT name FROM tblusers WHERE user_id = ?");
+        ){
+            statement.setInt(1, user_id);
+            ResultSet res = statement.executeQuery();
+            if (res.next()){
+                String name = res.getString("name");
+                return name;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return null;
+    }
+
     public static String getUsername(int uid){
         try (Connection c = ConnectionClass.getConnection();
              PreparedStatement statement = c.prepareStatement("SELECT username FROM tblusers WHERE user_id=?");

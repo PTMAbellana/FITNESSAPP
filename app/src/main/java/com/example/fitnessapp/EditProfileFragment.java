@@ -129,6 +129,10 @@ public class EditProfileFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                tvName.setText(name);
+                                tvEmail.setText(String.format("Email: %s", email));
+                                tvWeight.setText(String.format("Weight: %s kg", weight));
+                                tvHeight.setText(String.format("Height: %s cm", height));
                                 Toast.makeText(getContext(), "Edit Profile Successful", Toast.LENGTH_SHORT).show();
                             }
                         });

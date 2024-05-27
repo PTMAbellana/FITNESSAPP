@@ -15,7 +15,7 @@ import com.example.fitnessapp.Session;
 public class Registering2Activity extends AppCompatActivity {
 
     TextView greetings;
-    public String username;
+    public String username, name;
     protected int user_id;
 
     @Override
@@ -25,6 +25,7 @@ public class Registering2Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
+        name = intent.getStringExtra("name");
         new GetSessionID().execute(username); // Start AsyncTask to get user_id
         greetings = findViewById(R.id.tvStartJourneyGreetings);
     }
@@ -50,7 +51,7 @@ public class Registering2Activity extends AppCompatActivity {
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
             user_id = result;
-            greetings.setText("Hello, " + username + "! \nWelcome to the journey \nto your dream body" );
+            greetings.setText("Hello, " + name + "! \nWelcome to the journey \nto your dream body" );
         }
     }
 }
