@@ -20,15 +20,16 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.Session;
+import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity1 extends AppCompatActivity {
 //    private PieChart pieChart;
     private EditText editText;
-    private Button btnCalculateRatio, btnOrder;
+    private Button btnCalculateRatio, btnOrder, btnCancel;
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
     private TextView totalCaloriesTextView;
-    Dialog dialog;
-    Button btnOk;
+    Dialog dialog,dialog2;
+    Button btnOk,btnOk2;
     private Double bmi;
 
     @Override
@@ -55,9 +56,20 @@ public class NutritionFoodActivity1 extends AppCompatActivity {
         dialog.setContentView(R.layout.pop_up_message);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pop_up_message_bg));
+        dialog2 = new Dialog(NutritionFoodActivity1.this);
+        dialog2.setContentView(R.layout.pop_up_message2);
+        dialog2.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog2.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pop_up_message_bg));
 
         btnOk = dialog.findViewById(R.id.btnOks);
-
+        btnOrder = findViewById(R.id.btnOrder);
+        btnOk2 = dialog2.findViewById(R.id.btnOks2);
+        btnOk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog2.dismiss();
+            }
+        });
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,11 +87,24 @@ public class NutritionFoodActivity1 extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.show();
-                placeOrder();
+                if (btnOrder.getText().toString().equals("Add Order")) {
+                    dialog.show();
+                    placeOrder();
+                    btnOrder.setText("Cancel Order");
+                } else if (btnOrder.getText().toString().equals("Cancel Order")) {
+                    dialog2.show();
+                    cancelOrder();
+                    btnOrder.setText("Add Order");
+                }
             }
         });
     }
+
+    private void cancelOrder() {
+        UpdateData.deleteDietPlan("Avocado And Egg Toast");
+
+    }
+
     private void calculateAndDisplayRatio() {
         int multiplier = Integer.parseInt(editText.getText().toString());
 

@@ -17,18 +17,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity6 extends AppCompatActivity {
 //    private PieChart pieChart;
 
     private EditText editText;
-    private Button btnCalculateRatio, btnOrder;
+    private Button btnCalculateRatio, btnOrder, btnCancel;
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
     private TextView totalCaloriesTextView;
 
     private Double bmi;
     Dialog dialog;
+    Dialog dialog2;
     Button btnOk;
+    Button btnOk2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,20 @@ public class NutritionFoodActivity6 extends AppCompatActivity {
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pop_up_message_bg));
 
+        dialog2 = new Dialog(NutritionFoodActivity6.this);
+        dialog2.setContentView(R.layout.pop_up_message2);
+        dialog2.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog2.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pop_up_message_bg));
+
         btnOk = dialog.findViewById(R.id.btnOks);
+        btnOrder = findViewById(R.id.btnOrder);
+        btnOk2 = dialog2.findViewById(R.id.btnOks2);
+        btnOk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog2.dismiss();
+            }
+        });
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,11 +90,30 @@ public class NutritionFoodActivity6 extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.show();
-                placeOrder();
+                if (btnOrder.getText().toString().equals("Add Order")) {
+                    dialog.show();
+                    placeOrder();
+                    btnOrder.setText("Cancel Order");
+                } else if (btnOrder.getText().toString().equals("Cancel Order")) {
+                    dialog2.show();
+                    cancelOrder();
+                    btnOrder.setText("Add Order");
+                }
             }
         });
+//        btnCancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog2.show();
+//                cancelOrder();
+//            }
+//        });
     }
+
+    public void cancelOrder() {
+        UpdateData.deleteDietPlan("Teriyaki Chicken With Brown Rice");
+    }
+
     private void calculateAndDisplayRatio() {
         int multiplier = Integer.parseInt(editText.getText().toString());
 

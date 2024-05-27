@@ -336,14 +336,21 @@
 
             </FrameLayout>
 
-            <Button
-                android:id="@+id/btnCalculateRatio"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Calculate" />
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <Button
+                    android:id="@+id/btnCalculateRatio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Calculate" />
+            </FrameLayout>
 
             <Button
                 android:id="@+id/btnOrder"

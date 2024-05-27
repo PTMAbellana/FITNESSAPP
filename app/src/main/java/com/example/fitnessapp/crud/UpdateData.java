@@ -1,5 +1,7 @@
 package com.example.fitnessapp.crud;
 
+import android.os.AsyncTask;
+
 import com.example.fitnessapp.ConnectionClass;
 
 import java.sql.Connection;
@@ -171,6 +173,26 @@ public class UpdateData {
             e.printStackTrace();
         }
         return false;
+    }
+    public static void deleteDietPlan(String foodName) {
+        new DeleteDietPlan().execute(foodName);
+    }
+
+    private static class DeleteDietPlan extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            try (
+                    Connection c = ConnectionClass.getConnection();
+                    PreparedStatement statement = c.prepareStatement("DELETE FROM tbldietplans WHERE plan_name = ?");
+            ) {
+                statement.setString(1, strings[0]);
+                int res = statement.executeUpdate();
+                return res != 0;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 }
