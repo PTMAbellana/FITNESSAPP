@@ -3,7 +3,6 @@ package com.example.fitnessapp.registering;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.UpdateData;
+import com.example.fitnessapp.crud.UpdateData;
 
 import java.util.Arrays;
 import java.util.List;

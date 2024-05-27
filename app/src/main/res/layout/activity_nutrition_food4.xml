@@ -8,19 +8,6 @@
     android:background="#232323"
     tools:context=".nutritionalfood.NutritionFoodActivity4">
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Turkey And Avocado Wrap"
-        android:textColor="#E1F063"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGreeting6" />
-
     <Button
         android:id="@+id/btnBack7"
         android:layout_width="92dp"
@@ -35,6 +22,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Turkey And Avocado Wrap"
+        android:textColor="#E1F063"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGreeting6" />
+
+    <TextView
         android:id="@+id/tvGreeting6"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
@@ -43,6 +44,21 @@
         android:text="Nutrition"
         android:textColor="#896CFE"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGreeting5"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nutrition"
+        android:textColor="#896CFE"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +70,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21">
@@ -68,7 +85,8 @@
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
-            android:layout_height="29dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="230 calories"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -79,14 +97,14 @@
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
@@ -96,7 +114,9 @@
                 android:layout_width="409dp"
                 android:layout_height="274dp"
                 android:layout_marginTop="13dp"
-                android:background="@color/colorPurple">
+                android:background="@color/colorPurple"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <ImageView
                     android:id="@+id/imageView6"
@@ -107,15 +127,17 @@
 
             </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <TextView
                     android:id="@+id/textView14"
-                    android:layout_width="353dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Calorie Count Tracker"
                     android:textColor="#E1F063"
@@ -123,8 +145,9 @@
 
                 <EditText
                     android:id="@+id/editTextText"
-                    android:layout_width="59dp"
-                    android:layout_height="48dp"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center|end"
                     android:ems="10"
                     android:fontFamily="@font/poppins_semibold"
                     android:inputType="text"
@@ -132,17 +155,19 @@
                     android:textAlignment="center"
                     android:textColor="@color/white" />
 
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Multi-grain Bread"
@@ -152,23 +177,25 @@
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="69.1"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Avocados"
@@ -178,23 +205,25 @@
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="56.8"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox3"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Egg"
@@ -204,22 +233,24 @@
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="71.5"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox4"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Olive Oil"
@@ -229,22 +260,24 @@
                     android:id="@+id/textView18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="9.9"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox5"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Salt"
@@ -254,22 +287,24 @@
                     android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="0"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <CheckBox
                     android:id="@+id/checkBox6"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
                     android:layout_marginLeft="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Pepper"
@@ -279,23 +314,25 @@
                     android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="0.3"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
-            </LinearLayout>
+            </FrameLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <TextView
                     android:id="@+id/textView23"
-                    android:layout_width="340dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="20dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Total Number of Calories"
                     android:textAlignment="center"
@@ -305,27 +342,22 @@
                     android:id="@+id/textView26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center|end"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="207.6"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite" />
 
-            </LinearLayout>
+            </FrameLayout>
 
             <Button
                 android:id="@+id/btnCalculateRatio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Calculate" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/background3" />
 
         </LinearLayout>
     </ScrollView>

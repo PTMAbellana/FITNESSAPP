@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.ReadData;
+import com.example.fitnessapp.crud.ReadData;
 import com.example.fitnessapp.Session;
 
 public class Registering2Activity extends AppCompatActivity {

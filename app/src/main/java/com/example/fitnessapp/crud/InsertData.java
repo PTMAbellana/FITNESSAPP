@@ -1,9 +1,10 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.crud;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
+
+import com.example.fitnessapp.ConnectionClass;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -11,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class InsertData {
 

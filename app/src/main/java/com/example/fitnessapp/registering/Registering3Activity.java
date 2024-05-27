@@ -5,18 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.fitnessapp.ConnectionClass;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.UpdateData;
+import com.example.fitnessapp.crud.UpdateData;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.Arrays;
 import java.util.List;
 

@@ -12,10 +12,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fitnessapp.InsertData;
+import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.LoginViewActivity;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.ReadData;
+import com.example.fitnessapp.crud.ReadData;
 
 // Note: Ensure that the textfields are not NULL before clicking Sign Up
 // Additional Note: Ensure that the inputted username is not existing; Read the data if username exist // this is done

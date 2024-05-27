@@ -15,8 +15,7 @@ import com.example.fitnessapp.Exercise;
 import com.example.fitnessapp.HomeViewActivity;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.Session;
-import com.example.fitnessapp.UpdateData;
-import com.example.fitnessapp.registering.Registering6Activity;
+import com.example.fitnessapp.crud.UpdateData;
 
 import java.util.ArrayList;
 import java.util.List;

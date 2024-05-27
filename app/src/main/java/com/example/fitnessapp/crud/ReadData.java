@@ -1,8 +1,11 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.crud;
 
 import static java.sql.Types.NULL;
 
 import android.util.Log;
+
+import com.example.fitnessapp.ConnectionClass;
+import com.example.fitnessapp.Exercise;
 
 import org.mindrot.jbcrypt.BCrypt;
 

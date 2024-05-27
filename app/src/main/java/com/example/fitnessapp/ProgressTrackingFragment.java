@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.fitnessapp.crud.ReadData;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.example.fitnessapp.crud.CreateTable;
+import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.onboarding.OnBoarding1Activity;
 
 import java.sql.Connection;

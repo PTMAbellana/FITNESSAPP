@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessapp.crud.ReadData;
 import com.example.fitnessapp.dayexercise.DayActivity;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
@@ -175,8 +176,12 @@ public class HomeFragment extends Fragment {
             if ((dayNumber % 4) == 0) {
                 dayTextView.setText("Day " + i + ": Rest Day");
                 startButton.setText("Rest");
+                if(dayNumber == currentDay) {
+                    dayFrameLayout.setBackgroundResource(R.drawable.dayslayout_radius);
+                }
                 startButton.setOnClickListener(v -> {
                     Toast.makeText(getContext(), "Rest Day", Toast.LENGTH_SHORT).show();
+
                 });
             } else {
                 dayTextView.setText("Day " + i);

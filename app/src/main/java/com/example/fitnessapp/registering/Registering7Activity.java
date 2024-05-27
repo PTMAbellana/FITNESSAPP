@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
-import com.example.fitnessapp.CreateTable;
 import com.example.fitnessapp.HomeViewActivity;
-import com.example.fitnessapp.InsertData;
+import com.example.fitnessapp.crud.InsertData;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.ReadData;
+import com.example.fitnessapp.crud.ReadData;
 
 public class Registering7Activity extends AppCompatActivity {
     public String username;

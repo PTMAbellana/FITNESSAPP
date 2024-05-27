@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.fitnessapp.registering.Registering1Activity;
+import com.example.fitnessapp.crud.ReadData;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

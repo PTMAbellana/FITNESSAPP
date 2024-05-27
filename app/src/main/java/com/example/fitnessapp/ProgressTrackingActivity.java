@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.fitnessapp.crud.ReadData;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

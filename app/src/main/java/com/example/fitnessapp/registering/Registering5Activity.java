@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.UpdateData;
+import com.example.fitnessapp.crud.UpdateData;
 
 public class Registering5Activity extends AppCompatActivity {
 

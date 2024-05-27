@@ -1,4 +1,6 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.crud;
+
+import com.example.fitnessapp.ConnectionClass;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
