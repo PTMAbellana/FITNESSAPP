@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.fitnessapp.crud.ReadData;
 import com.example.fitnessapp.dayexercise.DayActivity;
+import com.example.fitnessapp.dayexercise.RestDayActivity;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity1;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity2;
 import com.example.fitnessapp.videoexercise.VideoWorkoutActivity3;
@@ -178,11 +179,16 @@ public class HomeFragment extends Fragment {
                 startButton.setText("Rest");
                 if(dayNumber == currentDay) {
                     dayFrameLayout.setBackgroundResource(R.drawable.dayslayout_radius);
-                }
-                startButton.setOnClickListener(v -> {
-                    Toast.makeText(getContext(), "Rest Day", Toast.LENGTH_SHORT).show();
+                    startButton.setOnClickListener(v -> {
+                        Toast.makeText(getContext(), "Start Day " + dayNumber, Toast.LENGTH_SHORT).show();
+                        startRestDay();
+                    });
+                } else {
+                    startButton.setOnClickListener(v -> {
+                        Toast.makeText(getContext(), "Rest Day", Toast.LENGTH_SHORT).show();
 
-                });
+                    });
+                }
             } else {
                 dayTextView.setText("Day " + i);
 
@@ -193,6 +199,7 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), "Start Day " + dayNumber, Toast.LENGTH_SHORT).show();
                         new GenerateExerciseList().execute(user_id);
                     });
+
                 } else if (dayNumber < currentDay) {
                     startButton.setText("Done");
                     startButton.setOnClickListener(v -> {
@@ -230,5 +237,13 @@ public class HomeFragment extends Fragment {
 
             startActivity(intent);
         }
+    }
+
+    private void startRestDay() {
+        Intent intent = new Intent(getActivity(), RestDayActivity.class);
+        intent.putExtra("username", username);
+        intent.putExtra("user_id", user_id);
+        intent.putExtra("currentDay", currentDay);
+        startActivity(intent);
     }
 }

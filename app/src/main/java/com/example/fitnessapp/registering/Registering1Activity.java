@@ -24,6 +24,8 @@ public class Registering1Activity extends AppCompatActivity {
     RadioButton rbMale, rbFemale;
     TextView lblCheck;
     Button btnSignUp;
+
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,7 @@ public class Registering1Activity extends AppCompatActivity {
     }
 
     public void signUp() {
-        String name = tfName.getText().toString();
+        name = tfName.getText().toString();
         String username = tfUsername.getText().toString();
         String email = tfEmail.getText().toString();
         String password = pfPassword.getText().toString();
@@ -91,6 +93,7 @@ public class Registering1Activity extends AppCompatActivity {
                     Intent intent = new Intent(Registering1Activity.this,
                             Registering2Activity.class);
                     intent.putExtra("username", username);
+                    intent.putExtra("name", name);
                     startActivity(intent);
                     Toast.makeText(Registering1Activity.this, "Register Successful", Toast.LENGTH_SHORT).show();
                     finish();

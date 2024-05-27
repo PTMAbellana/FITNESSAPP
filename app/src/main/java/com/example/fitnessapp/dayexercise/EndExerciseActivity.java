@@ -66,7 +66,7 @@ public class EndExerciseActivity extends AppCompatActivity {
 
     public void onCheckDayClicked(View view) {
         Intent intent = new Intent(EndExerciseActivity.this, HomeViewActivity.class);
-        intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
+//        intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
         startActivity(intent);
         finish();
     }
@@ -78,23 +78,25 @@ public class EndExerciseActivity extends AppCompatActivity {
             return;
         }
 
-        for (Exercise exercise : exerciseList) {
-            ImageView imageView = new ImageView(this);
+        if(exerciseList != null) {
+            for (Exercise exercise : exerciseList) {
+                ImageView imageView = new ImageView(this);
 
-            String drawableName = exercise.getExerciseName().toLowerCase().replace(" ", "").replace("-", "");
-            int drawableResourceId = getResources().getIdentifier(drawableName + "_p", "drawable", getPackageName());
+                String drawableName = exercise.getExerciseName().toLowerCase().replace(" ", "").replace("-", "");
+                int drawableResourceId = getResources().getIdentifier(drawableName + "_p", "drawable", getPackageName());
 
-            if (drawableResourceId != 0) {
-                imageView.setImageResource(drawableResourceId);
-                imageView.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        (int) getResources().getDisplayMetrics().density * 110
-                ));
-                imageView.setPadding(5, 5, 5, 5);
+                if (drawableResourceId != 0) {
+                    imageView.setImageResource(drawableResourceId);
+                    imageView.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            (int) getResources().getDisplayMetrics().density * 110
+                    ));
+                    imageView.setPadding(5, 5, 5, 5);
 
-                exerciseContainer.addView(imageView);
-            } else {
-                Log.e("DayActivity", "Walay png: " + exercise.getExerciseName());
+                    exerciseContainer.addView(imageView);
+                } else {
+                    Log.e("DayActivity", "Walay png: " + exercise.getExerciseName());
+                }
             }
         }
     }

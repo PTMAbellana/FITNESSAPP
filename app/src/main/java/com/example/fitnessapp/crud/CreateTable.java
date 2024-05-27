@@ -70,8 +70,10 @@ public class CreateTable {
 
         String query4 = "CREATE TABLE IF NOT EXISTS tbldietplans (" +
                 "plan_id INT PRIMARY KEY AUTO_INCREMENT," +
+                "user_id INT NOT NULL," +
                 "bmi_category VARCHAR(50) NOT NULL DEFAULT 'Normal'," +
-                "plan_name TEXT NOT NULL" +
+                "plan_name TEXT NOT NULL," +
+                "FOREIGN KEY (user_id) REFERENCES tblusers(user_id)" +
                 ")";
 
         try {
