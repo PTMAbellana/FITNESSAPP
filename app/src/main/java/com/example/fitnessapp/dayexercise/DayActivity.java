@@ -44,9 +44,9 @@ public class DayActivity extends AppCompatActivity {
 
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("TAWAG", "Naay Sulod");
+            Log.i("DayActivity", "Not Empty");
             for (Exercise exercise : exerciseList) {
-                Log.e("TAWAG", exercise.getExerciseName());
+                Log.e("DayActivity", exercise.getExerciseName());
             }
         }
 
@@ -54,16 +54,12 @@ public class DayActivity extends AppCompatActivity {
     }
     public void onBackClicked(View view) {
         Intent intent = new Intent(DayActivity.this, HomeViewActivity.class);
-//        intent.putExtra("username", username);
-//        intent.putExtra("user_id", user_id);
         startActivity(intent);
         finish();
     }
 
     public void onStartDayClicked(View view) {
         Intent intent = new Intent(DayActivity.this, RestActivity.class);
-//        intent.putExtra("username", username);
-//        intent.putExtra("user_id", user_id);
         intent.putExtra("currentDay", currentDay);
         intent.putExtra("currentWeek", currentWeek);
         intent.putExtra("current_index", 0);
@@ -96,7 +92,7 @@ public class DayActivity extends AppCompatActivity {
 
                 exerciseContainer.addView(imageView);
             } else {
-                Log.e("DayActivity", "Walay png: " + exercise.getExerciseName());
+                Log.e("DayActivity", "No png: " + exercise.getExerciseName());
             }
         }
     }
