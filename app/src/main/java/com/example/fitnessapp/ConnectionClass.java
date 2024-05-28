@@ -21,18 +21,18 @@
 //        private static final String PASSWORD = "123456";
 
         // Francis localhost
-        private static final String DATABASE = "fitnessdb"; // local
-        private static final String IP = "10.0.2.2"; // locally hosted in machine
-        private static final String PORT = "3306";
-        private static final String USERNAME = "francis"; // local
-        private static final String PASSWORD = "chavez"; // local
+//        private static final String DATABASE = "fitnessdb"; // local
+//        private static final String IP = "10.0.2.2"; // locally hosted in machine
+//        private static final String PORT = "3306";
+//        private static final String USERNAME = "francis"; // local
+//        private static final String PASSWORD = "chavez"; // local
 
         // For the online database
-//        private static final String DATABASE = "sql12709080";
-//        private static final String IP = "sql12.freesqldatabase.com";
-//        private static final String PORT = "3306";
-//        private static final String USERNAME = "sql12709080";
-//        private static final String PASSWORD = "cUFTy1vWpp";
+        private static final String DATABASE = "sql12709080";
+        private static final String IP = "sql12.freesqldatabase.com";
+        private static final String PORT = "3306";
+        private static final String USERNAME = "sql12709080";
+        private static final String PASSWORD = "cUFTy1vWpp";
 
         public static Connection getConnection() {
             Connection conn = null;
