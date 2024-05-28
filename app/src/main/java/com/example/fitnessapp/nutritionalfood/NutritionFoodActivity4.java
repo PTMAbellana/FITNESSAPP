@@ -21,7 +21,6 @@ import com.example.fitnessapp.R;
 import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity4 extends AppCompatActivity {
-//    private PieChart pieChart;
     private static int user_id = Session.getUid();
 
     private EditText editText;
@@ -39,7 +38,6 @@ public class NutritionFoodActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_nutrition_food4);
-//        pieChart = findViewById(R.id.pieChart);
 
         bmi = getIntent().getDoubleExtra("BMI", 0);
 
@@ -142,16 +140,6 @@ public class NutritionFoodActivity4 extends AppCompatActivity {
         totalCaloriesTextView.setText(String.valueOf(totalCalories));
 
         float remainingCalories = 2600 - totalCalories;
-
-//        ArrayList<PieEntry> entries = new ArrayList<>();
-//        entries.add(new PieEntry(totalCalories, "Consumed"));
-//        entries.add(new PieEntry(remainingCalories, "Remaining"));
-//
-//        PieDataSet dataSet = new PieDataSet(entries, "Calorie Distribution");
-//        PieData pieData = new PieData(dataSet);
-//
-//        pieChart.setData(pieData);
-//        pieChart.invalidate(); // refresh
     }
 
     public void placeOrder(){
@@ -167,8 +155,6 @@ public class NutritionFoodActivity4 extends AppCompatActivity {
     }
 
     public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, HomeView.class);
-//        startActivity(intent);
         finish();
     }
 }

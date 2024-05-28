@@ -21,6 +21,7 @@ import com.example.fitnessapp.R;
 import com.example.fitnessapp.crud.UpdateData;
 
 public class NutritionFoodActivity3 extends AppCompatActivity {
+    // Note: In case we'll use PieChart
 //    private PieChart pieChart;
     private static int user_id = Session.getUid();
 
