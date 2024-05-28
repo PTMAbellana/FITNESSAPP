@@ -69,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|start"
+                    android:layout_margin="20dp"
                     android:layout_marginStart="30dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Recommendations"
@@ -76,16 +77,6 @@
                     android:textSize="15sp"
                     tools:layout_editor_absoluteX="39dp"
                     tools:layout_editor_absoluteY="196dp" />
-
-                <Button
-                    android:id="@+id/btnSeeAllVideos"
-                    android:layout_width="100dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="end"
-                    android:background="#00FFFFFF"
-                    android:text="See All"
-                    tools:layout_editor_absoluteX="296dp"
-                    tools:layout_editor_absoluteY="187dp" />
 
             </FrameLayout>
 
