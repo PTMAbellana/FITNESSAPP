@@ -57,7 +57,7 @@ public class StartExerciseWithtvActivity extends AppCompatActivity {
         Log.i("StartExerciseWithtvActivity", "Current Exercise Index: " + current_index);
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("StartExerciseWithtvActivity", "Exercise list size: " + exerciseList.size());
+            Log.i("StartExerciseWithtvActivity", "Exercise list size: " + exerciseList.size());
         }
 
         Exercise currentExercise = null;
@@ -96,7 +96,7 @@ public class StartExerciseWithtvActivity extends AppCompatActivity {
             ImageView imageViewGif = findViewById(R.id.imageViewGif);
             Glide.with(this).asGif().load(gifResourceId).into(imageViewGif);
         } else {
-            Log.e("StartExerciseWithpgActivity", "Drawable resource not found for GIF: " + gifName);
+            Log.e("StartExerciseWithtvActivity", "Drawable resource not found for GIF: " + gifName);
         }
 
     }

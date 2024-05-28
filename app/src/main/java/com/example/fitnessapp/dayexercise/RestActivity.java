@@ -113,7 +113,7 @@ public class RestActivity extends AppCompatActivity {
             ImageView imageViewGif = findViewById(R.id.imageViewGif);
             Glide.with(this).asGif().load(gifResourceId).into(imageViewGif);
         } else {
-            Log.e("DayActivity", "Drawable resource not found for GIF: " + gifName);
+            Log.e("RestActivity", "Drawable resource not found for GIF: " + gifName);
         }
     }
 

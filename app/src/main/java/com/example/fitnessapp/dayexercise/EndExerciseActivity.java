@@ -43,7 +43,7 @@ public class EndExerciseActivity extends AppCompatActivity {
         currentWeek = getIntent().getIntExtra("currentWeek", 0);
         skipped_exercises = getIntent().getIntExtra("skipped_exercises", 0);
 
-        Log.e("EndExerciseActivity", "I was called in EndExerciseActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek + " " + skipped_exercises);
+        Log.i("EndExerciseActivity", "I was called in EndExerciseActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek + " " + skipped_exercises);
 
         tvDay = findViewById(R.id.tvDay);
         tvDay.setText("DAY " + currentDay);
@@ -53,7 +53,7 @@ public class EndExerciseActivity extends AppCompatActivity {
 
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("EndExerciseActivity", "Naay Sulod");
+            Log.i("EndExerciseActivity", "Naay Sulod");
             for (Exercise exercise : exerciseList) {
                 Log.e("EndExerciseActivity", exercise.getExerciseName());
             }
@@ -66,7 +66,6 @@ public class EndExerciseActivity extends AppCompatActivity {
 
     public void onCheckDayClicked(View view) {
         Intent intent = new Intent(EndExerciseActivity.this, HomeViewActivity.class);
-//        intent.putParcelableArrayListExtra("exercise_list", new ArrayList<>(exerciseList));
         startActivity(intent);
         finish();
     }

@@ -43,16 +43,16 @@ public class SkippedDayActivity extends AppCompatActivity {
         currentWeek = getIntent().getIntExtra("currentWeek", 0);
         skipped_exercises = getIntent().getIntExtra("skipped_exercises", 0);
 
-        Log.e("EndExerciseActivity", "I was called in EndExerciseActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek + " " + skipped_exercises);
+        Log.i("SkippedDayActivity", "I was called in SkippedDayActivity! " + user_id + " " + username + " " + currentDay + " " + currentWeek + " " + skipped_exercises);
 
         tvDay = findViewById(R.id.tvDay);
         tvDay.setText("DAY " + currentDay);
 
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("EndExerciseActivity", "Naay Sulod");
+            Log.i("SkippedDayActivity", "Naay Sulod");
             for (Exercise exercise : exerciseList) {
-                Log.e("EndExerciseActivity", exercise.getExerciseName());
+                Log.e("SkippedDayActivity", exercise.getExerciseName());
             }
         }
 
@@ -71,7 +71,7 @@ public class SkippedDayActivity extends AppCompatActivity {
     private void addExercisesInLayout() {
         LinearLayout exerciseContainer = findViewById(R.id.exerciseLayouyList);
         if (exerciseContainer == null) {
-            Log.e("DayActivity", "Exercise container is null");
+            Log.e("SkippedDayActivity", "Exercise container is null");
             return;
         }
 
@@ -91,7 +91,7 @@ public class SkippedDayActivity extends AppCompatActivity {
 
                 exerciseContainer.addView(imageView);
             } else {
-                Log.e("DayActivity", "Walay png: " + exercise.getExerciseName());
+                Log.e("SkippedDayActivity", "Walay png: " + exercise.getExerciseName());
             }
         }
     }

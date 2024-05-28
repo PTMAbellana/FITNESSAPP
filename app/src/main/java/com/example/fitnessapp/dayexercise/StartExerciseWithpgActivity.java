@@ -71,7 +71,7 @@ public class StartExerciseWithpgActivity extends AppCompatActivity {
         Log.i("StartExerciseWithpgActivity", "Current Exercise Index: " + current_index);
         exerciseList = getIntent().getParcelableArrayListExtra("exercise_list");
         if (exerciseList != null) {
-            Log.e("StartExerciseWithpgActivity", "Exercise list size: " + exerciseList.size());
+            Log.i("StartExerciseWithpgActivity", "Exercise list size: " + exerciseList.size());
         }
 
         Exercise currentExercise = null;

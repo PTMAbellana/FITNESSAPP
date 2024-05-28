@@ -29,8 +29,6 @@ public class RestDayActivity extends AppCompatActivity {
     protected int user_id;
     protected int currentDay, currentWeek;
     protected int current_index;
-    protected List<Exercise> exerciseList;
-
     private final Handler handler = new Handler(Looper.getMainLooper());
 
     private int restElapsed = 0;
