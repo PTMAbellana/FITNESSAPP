@@ -61,9 +61,9 @@ public class Registering1Activity extends AppCompatActivity {
         new SignUpTask().execute(name, username, email, password, gender);
     }
 
+    // Documentation during the creation of the project
     // Pwede paexplain ani na part
-
-    //wa sd ko kasabot kay wa ko kasabot unsa ning AsyncTask, but this works...
+    // wa sd ko kasabot kay wa ko kasabot unsa ning AsyncTask, but this works...
     // Murag radaw ni shag thread pero dili pang long term... ayy basta wa ko kasabot ehe
     private class SignUpTask extends AsyncTask<String, Void, Integer>{
         String username;
@@ -102,59 +102,9 @@ public class Registering1Activity extends AppCompatActivity {
                     lblCheck.setText("All fields are required");
                     break;
             }
-//            lblCheck.setTextColor(getColor(R.color.colorPurple));
-//            if (result == 1) {
-//                Intent intent = new Intent(Registering1Activity.this,
-//                        Registering2Activity.class);
-//                intent.putExtra("username", username);
-//                startActivity(intent);
-//                Toast.makeText(Registering1Activity.this, "Register Successful", Toast.LENGTH_SHORT).show();
-//                finish();
-//            } else {
-//                // Show error message
-//                lblCheck.setText("Username already exist");
-//                lblCheck.setTextColor(getColor(R.color.colorPurple));
-//            }
         }
     }
 
-//    private void signUp() {
-//        String name = tfName.getText().toString();
-//        String username = tfUsername.getText().toString();
-//        String email = tfEmail.getText().toString();
-//        String password = pfPassword.getText().toString();
-//        new RegisterView.RegisterTask().execute(name, username,email, password);
-//    }
-//
-//    private class RegisterTask extends AsyncTask<String, Void, Boolean> {
-//
-//        @Override
-//        protected Boolean doInBackground(String... params) {
-//            String name = params[0];
-//            String username = params[1];
-//            String email = params[2];
-//            String password = params[3];
-//            return InsertData.insertData(name, email, username, password);
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Boolean result) {
-//            if (result) {
-//                // Navigate to the next screen
-//                Intent intent = new Intent(LoginView.this, HomeView.class);
-//                startActivity(intent);
-//                Toast.makeText(LoginView.this, "Login successful", Toast.LENGTH_SHORT).show();
-//            } else {
-//                // Show error message
-//                lblcheck.setText("Invalid username/password");
-//            }
-//        }
-//    }
-//    public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
     public void onLoginClicked(View view) {
         Intent intent = new Intent(this, LoginViewActivity.class);
         startActivity(intent);

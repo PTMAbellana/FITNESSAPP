@@ -37,6 +37,7 @@ public class HomeViewActivity extends AppCompatActivity {
         binding = ActivityHomeViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Before we created the Session Class, we had to pass it through intents
 //        username = getIntent().getStringExtra("username");
 //        user_id = getIntent().getIntExtra("user_id", 0);
         username = Session.getUsername();
@@ -88,8 +89,6 @@ public class HomeViewActivity extends AppCompatActivity {
         @Override
         protected int[] doInBackground(Integer... integers) {
             int userId = integers[0];
-            // Fetch day and week from tblplans based on user_id
-            // Assuming you have a method like ReadData.getPlans(userId) that returns an array [day, week]
             return ReadData.getPlans(userId);
         }
 
@@ -98,11 +97,11 @@ public class HomeViewActivity extends AppCompatActivity {
             if (result != null && result.length == 2) {
                 int currentDay = result[0];
                 int currentWeek = result[1];
-                Log.e("TAWAG", "Fetched day " + currentDay + " and week " + currentWeek + " for user " + user_id);
+                Log.i("HomeViewActivity", "Fetched day " + currentDay + " and week " + currentWeek + " for user " + user_id);
                 HomeFragment homeFragment = HomeFragment.newInstance(currentDay, currentWeek, username, user_id);
                 replaceFragment(homeFragment);
             } else {
-                Log.e("HomeView", "Error: Unable to fetch plans for user ID: " + user_id);
+                Log.e("HomeViewActivity", "Error: Unable to fetch plans for user ID: " + user_id);
                 Toast.makeText(HomeViewActivity.this, "Error: Unable to fetch plans", Toast.LENGTH_SHORT).show();
             }
         }

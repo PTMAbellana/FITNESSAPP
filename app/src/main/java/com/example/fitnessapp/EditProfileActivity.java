@@ -50,7 +50,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-//        username = intent.getStringExtra("username");
         uid = intent.getIntExtra("user_id", -1);
         new GetProfileInfo().execute(uid);
 
@@ -60,7 +59,6 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateProfile();
-//                Toast.makeText(EditProfileActivity.this, "Edit Profile Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -71,8 +69,6 @@ public class EditProfileActivity extends AppCompatActivity {
         String username = tfUsername.getText().toString();
         String weight = tfWeight.getText().toString();
         String height = tfHeight.getText().toString();
-
-//        new UpdateProfile().execute(name, email, username, weight, height);
 
         final Object lock = new Object();
         final int numberOfUpdates = 5;
@@ -111,8 +107,6 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void onBackClicked(View view) {
-//        Intent intent = new Intent(this, HomeView.class);
-//        startActivity(intent);
         finish();
     }
 
@@ -151,7 +145,7 @@ public class EditProfileActivity extends AppCompatActivity {
             } finally {
                 synchronized (lock){
                     remainingtasks[0]--;
-                    Log.d("UpdateProfile", "Task completed, remaining tasks: " + remainingtasks[0]);
+                    Log.d("EditProfileActivity", "Task completed, remaining tasks: " + remainingtasks[0]);
                     if (remainingtasks[0] == 0){
                         lock.notifyAll();
                     }
@@ -178,7 +172,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     username = userProfile.getString("username");
                     tvAge.setText(String.valueOf(userProfile.getString("age")));
                 } else {
-                    Log.e("TAG", "NO PROFILE");
+                    Log.e("EditProfileActivity", "NO PROFILE");
                 }
             } catch (SQLException e){
                 throw new RuntimeException(e);

@@ -51,11 +51,11 @@ public class LoginViewActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(String... params) {
             username = params[0];
-            Log.e("TAWAG", "username is " + username);
+            Log.i("LoginViewActivity", "username is " + username);
             String password = params[1];
 
             boolean checkStatus = ReadData.readStatus(username);
-            Log.e("Login", String.valueOf(checkStatus));
+            Log.i("LoginViewActivity", String.valueOf(checkStatus));
             if (ReadData.readDataLogin(username, password) && checkStatus) {
                 uid = ReadData.getSession(username);
                 Session s = new Session(uid, username);
@@ -71,12 +71,12 @@ public class LoginViewActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result) {
             if (result) {
-                Log.e("TAWAG", "UID is " + uid);
+                Log.i("LoginViewActivity", "UID is " + uid);
                 if (uid != 0) {
                     Intent intent = new Intent(LoginViewActivity.this, HomeViewActivity.class);
 //                    intent.putExtra("username", username);
 //                    intent.putExtra("user_id", uid);
-                    Log.e("TAWAG", "Successful login: " + username + " " + uid);
+                    Log.i("LoginViewActivity", "Successful login: " + username + " " + uid);
                     startActivity(intent);
                     Toast.makeText(LoginViewActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                 } else {

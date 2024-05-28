@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fitnessapp.R;
 
 public class VideoWorkoutActivity2 extends AppCompatActivity {
+    // In case we use this
 //    VideoView videoView;
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {

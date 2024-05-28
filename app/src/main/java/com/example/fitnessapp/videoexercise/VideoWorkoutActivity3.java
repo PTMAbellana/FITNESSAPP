@@ -14,20 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fitnessapp.R;
 
 public class VideoWorkoutActivity3 extends AppCompatActivity {
-    //    VideoView videoView;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_video_workout_activity2);
-//        videoView = findViewById(R.id.videoView2);
-//        MediaController mediaController = new MediaController(this);
-//        mediaController.setAnchorView(mediaController);
-//        String fileName = "videoworkout1";
-//        String filePlace = "android.resource://" + getPackageName() + "/raw/" + fileName;
-//        videoView.setVideoURI(Uri.parse(filePlace));
-//        videoView.setMediaController(mediaController);
-//    }
     private VideoView videoView3;
 
     private Button btnPlayPause, btnBack, btnForward;

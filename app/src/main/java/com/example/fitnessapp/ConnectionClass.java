@@ -39,8 +39,6 @@
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 String connectionString = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE;
-//                Class.forName("org.mariadb.jdbc.Driver");
-//                String connectionString = "jdbc:mariadb://" + IP + ":" + PORT + "/" + DATABASE;
                 conn = DriverManager.getConnection(connectionString, USERNAME, PASSWORD);
 
             } catch (ClassNotFoundException e) {

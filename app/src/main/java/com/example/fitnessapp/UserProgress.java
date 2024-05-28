@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+// Might Delete this class since it's not used
 public class UserProgress {
     private String name;
     private double bmi;
