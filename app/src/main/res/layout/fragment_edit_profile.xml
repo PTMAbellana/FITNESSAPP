@@ -59,7 +59,7 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            tools:text="Paul Abellana" />
+            tools:text="User" />
 
         <TextView
             android:id="@+id/tvEmail"
@@ -70,7 +70,7 @@
             android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
-            tools:text="paulmabellana@gmail.com" />
+            tools:text="Email: user@gmail.com" />
 
         <TextView
             android:id="@+id/tvWeight"
@@ -81,7 +81,7 @@
             android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
-            tools:text="60kg" />
+            tools:text="Weight: 0 kg" />
 
         <TextView
             android:id="@+id/tvHeight"
@@ -92,7 +92,7 @@
             android:paddingStart="20dp"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
-            tools:text="1.65cm" />
+            tools:text="Height: 0 cm" />
 
         <TextView
             android:id="@+id/tvAge"
@@ -101,7 +101,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center|start"
             android:paddingStart="20dp"
-            android:text="20 years old"
+            android:text="Age: 0"
             android:textColor="#FFFFFF"
             android:textSize="13sp" />
     </LinearLayout>

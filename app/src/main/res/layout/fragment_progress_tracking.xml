@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                android:text="Paul Abellana"
+                android:text="User"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -58,7 +58,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="start"
                 android:paddingStart="20dp"
-                android:text="Weight: 60kg"
+                android:text="Weight: 0 kg"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
@@ -70,7 +70,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="start"
                 android:paddingStart="20dp"
-                android:text="Height: 165cm"
+                android:text="Height: 0 cm"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
@@ -82,7 +82,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="start"
                 android:paddingStart="20dp"
-                android:text="Age: 20"
+                android:text="Age: 0"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
@@ -106,7 +106,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="start"
                 android:paddingStart="20dp"
-                android:text="Target Difficulty: Intermediate"
+                android:text="Target Difficulty: Beginner"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
@@ -118,7 +118,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="start"
                 android:paddingStart="20dp"
-                android:text="BMI: 25.42"
+                android:text="BMI: 0"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
