@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import androidx.compose.foundation.text.modifiers.SelectableTextAnnotatedStringElement;
-
 import com.example.fitnessapp.ConnectionClass;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -43,7 +41,7 @@ public class InsertData {
         protected Boolean doInBackground(Void... voids) {
             Connection c = ConnectionClass.getConnection();
             if (c == null) {
-                return false; // Failed to connect to the database
+                return false;
             }
 
             if ( !CreateTable.usersTable() ){
@@ -62,7 +60,7 @@ public class InsertData {
                 int rowsInserted = statement.executeUpdate();
                 System.out.println("Rows Inserted: " + rowsInserted);
 
-                return true; // Insertion successful
+                return true;
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             } finally {
@@ -72,16 +70,13 @@ public class InsertData {
                     e.printStackTrace();
                 }
             }
-//            return false;
         }
 
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-//                InsertData.uid = id;
                 showToast(context, "User inserted successfully!");
             } else {
-//                InsertData.uid = 0;
                 showToast(context, "Failed to insert user. Please check your network connection.");
             }
         }

@@ -126,6 +126,8 @@ public class UpdateData {
         }
         return false;
     }
+
+//  Some documentations in creating some update methods:
 //    create mo ug function sa UpdateData para tblplans
 //    updateDayWeek(int user_id, int day, int week)
 //    updateCurrentDifficulty(int user_id, int currentDifficulty)

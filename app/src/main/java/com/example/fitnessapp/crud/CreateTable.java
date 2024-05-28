@@ -42,8 +42,6 @@ public class CreateTable {
                 "age INT NOT NULL DEFAULT 0," +
                 "num_planks INT NOT NULL DEFAULT 0," +
                 "status VARCHAR(50) NOT NULL DEFAULT 'active'" +
-//                "UNIQUE (user_id)," +
-//                "UNIQUE (plan)" +
                 ")";
 
         String query2 = "CREATE TABLE IF NOT EXISTS tblexercises (" +

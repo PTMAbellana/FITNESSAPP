@@ -1,7 +1,5 @@
 package com.example.fitnessapp.crud;
 
-import static java.sql.Types.NULL;
-
 import android.util.Log;
 
 import com.example.fitnessapp.ConnectionClass;
@@ -67,15 +65,13 @@ public class ReadData {
         }
     }
 
+    // no usages with getProfile
     public static ResultSet getProfile(String username){
         Connection c = null;
         try{
             c = ConnectionClass.getConnection();
             PreparedStatement statement = c.prepareStatement("SELECT name, email, height, weight FROM tblusers WHERE username=?");
-//            Statement statement = c.createStatement();
-//            String query = "SELECT name, email, height, weight, FROM tblusers WHERE username="+username;
             statement.setString(1, username);
-//            ResultSet res = statement.executeQuery();
             return statement.executeQuery();
         }catch(SQLException e){
             throw new RuntimeException(e);
@@ -313,71 +309,4 @@ public class ReadData {
             throw new RuntimeException(e);
         }
     }
-
-
-//    public static int[] getExerciseList(int uid) {
-//        int[] exerciseList = {1, 2, 3, 4, 5};
-//        try (Connection c = ConnectionClass.getConnection();
-//             PreparedStatement statement = c.prepareStatement(
-//                     "SELECT * FROM tblusers AS user JOIN tblplans AS plan " +
-//                             "ON user.user_id = plan.user_id WHERE user.user_id = ?");
-//        ){
-//            Log.e("ReadData", "Before getExerciseList");
-//            statement.setInt(1, uid);
-//            ResultSet res = statement.executeQuery();
-//
-//            if (res.next()) { // Ensure to move the cursor to the first row
-//                int num_pushups = res.getInt("num_pushups");
-//                int num_planks = res.getInt("num_planks");
-//                String current_difficulty = res.getString("current_difficulty");
-//                double bmi = res.getDouble("bmi");
-//                int current_day = res.getInt("day");
-//                int current_week = res.getInt("week");
-//
-//                Log.e("ReadData", "Success getExercise List: " + uid + " " + num_pushups + " " + num_planks
-//                        + " " + current_difficulty + " " + bmi + " " + current_week + " " + current_day);
-//
-//                String recommended_difficulty;
-//                if(bmi >= 18.5 && bmi <= 24.9) {
-//                    // if normal weight ra
-//                    recommended_difficulty = current_difficulty;
-//                } else if (current_week < 3){
-//                    recommended_difficulty = "Beginner";
-//                } else if (current_week == 3){
-//                    recommended_difficulty = "Intermediate";
-//                } else {
-//                    recommended_difficulty = current_difficulty;
-//                }
-//
-//                // should i use query or statement?
-//                String query = "SELECT * FROM tblexercises";
-//
-//
-//            } else {
-//                Log.e("ReadData", "No data found for user: " + uid);
-//            }
-//            return exerciseList;
-//        }catch (SQLException e){
-//            throw new RuntimeException();
-//        }
-//    }
-
-
-//    public static int readDataLogin(String username) {
-//        try (Connection c = ConnectionClass.getConnection();) {
-//            Statement statement = c.createStatement();
-//            String query = "SELECT * FROM tblusers";
-//            ResultSet res = statement.executeQuery(query);
-//            while (res.next()) {
-//                int id = res.getInt("id");
-//                String name = res.getString("username");
-//                if (name.equals(username)) {
-//                    return id;
-//                }
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return 0;
-//    }
 }
